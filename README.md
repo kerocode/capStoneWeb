@@ -1,4 +1,9 @@
 # CapStoneWeb
+first 
+-install node.js 
+-npm 
+-typescript
+
 how to set up your environment 
 1- git clone https://github.com/angular/angular-cli.git
 2- cd angular-cli
