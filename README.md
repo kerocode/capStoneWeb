@@ -1,21 +1,21 @@
 # CapStoneWeb
-first 
--install node.js 
--npm 
--typescript
+first <br />
+-install node.js <br />
+-npm <br />
+-typescript<br />
 
-how to set up your environment 
-1- git clone https://github.com/angular/angular-cli.git
-2- cd angular-cli
-3- npm link
-
-#then 
-3- clone CapStoneWeb repository if you have not done already 
-3.1- go to  your project folder (CapStoneWeb) or cd  
-4- npm link angular-cli
-5- ng serve 
-6- open browser and Navigate to `http://localhost:4200/`
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+how to set up your environment <br />
+1- git clone https://github.com/angular/angular-cli.git<br />
+2- cd angular-cli<br />
+3- npm link<br />
+<br />
+#then <br />
+3- clone CapStoneWeb repository if you have not done already <br />
+3.1- go to  your project folder (CapStoneWeb) or cd  <br />
+4- npm link angular-cli<br />
+5- ng serve <br />
+6- open browser and Navigate to `http://localhost:4200/`<br />
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.<br />
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
