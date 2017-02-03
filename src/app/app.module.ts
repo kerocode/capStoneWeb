@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
+import { MyHeaderComponent } from './my-header/my-header.component';
+import { MyTabsComponent } from './my-tabs/my-tabs.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyHeaderComponent,
+    MyTabsComponent
   ],
   imports: [
     BrowserModule,
