@@ -6,12 +6,14 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MyHeaderComponent } from './my-header/my-header.component';
 import { MyTabsComponent } from './my-tabs/my-tabs.component';
+import { CELLULITISWOMCCComponent } from './cellulitiswomcc/cellulitiswomcc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyHeaderComponent,
-    MyTabsComponent
+    MyTabsComponent,
+    CELLULITISWOMCCComponent
   ],
   imports: [
     BrowserModule,
