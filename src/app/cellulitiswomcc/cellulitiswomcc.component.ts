@@ -23,9 +23,14 @@ export class CELLULITISWOMCCComponent implements OnInit {
     "attending_change_order",
     "age"]
   patient = {};
-  model = {};
+  res ;
+  reportModel={};
+  model = {
+    type: null, AdmitSource: 0, PrimaryInsurance: 0, DischargeDisposition: 0, AdmitUnit: 0,
+    BedCategory: 0, isoResult: 0, admOrderMdDept: 0, icuOrder: 0, stepdownOrder: 0, generalCareOrder: 0,
+    attendingChangeOrder: 0, age: 0
+  };
   CELLULITISWOMCCC = {
-
     "lasso": {
       Admit_Source: -0.0,
       Primary_Insurance: 0.00340259227803,
@@ -103,11 +108,11 @@ export class CELLULITISWOMCCComponent implements OnInit {
     { viewValue: 'HOME /WORK / OTHER', value: 2 }, { viewValue: 'TRANSF FROM ANOTH HC', value: 3 }
     ],
     Primary_Insurance: [
-    { viewValue: 'INDIGENT CARE', value: 4 }, { viewValue: 'MEDICAID MANA', value: 6 }, { viewValue: 'ANTHEM MANAGE', value: 1 },
-    { viewValue: 'ANTHEM', value: 0 }, { viewValue: 'COMMERCIAL', value: 2 }, { viewValue: 'HMO/PPO', value: 3 },
-    { viewValue: 'SELF PAY', value: 10 }, { viewValue: 'OTHER', value: 9 }, { viewValue: 'MEDICARE', value: 7 },
-    { viewValue: 'MEDICARE MANA', value: 8 }, 
-    {viewValue: 'MEDICAID', value: 5}
+      { viewValue: 'INDIGENT CARE', value: 4 }, { viewValue: 'MEDICAID MANA', value: 6 }, { viewValue: 'ANTHEM MANAGE', value: 1 },
+      { viewValue: 'ANTHEM', value: 0 }, { viewValue: 'COMMERCIAL', value: 2 }, { viewValue: 'HMO/PPO', value: 3 },
+      { viewValue: 'SELF PAY', value: 10 }, { viewValue: 'OTHER', value: 9 }, { viewValue: 'MEDICARE', value: 7 },
+      { viewValue: 'MEDICARE MANA', value: 8 },
+      { viewValue: 'MEDICAID', value: 5 }
     ],
     Discharge_Disposition: [
       { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 8 },
@@ -216,6 +221,88 @@ export class CELLULITISWOMCCComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+  predict() {
+    let results;
+    switch (this.model.type) {
+      case "lasso":
+        results = (this.CELLULITISWOMCCC.lasso.Admit_Source * this.model.AdmitSource) + (this.CELLULITISWOMCCC.lasso.adm_order_md_dept * this.model.admOrderMdDept) +
+          (this.CELLULITISWOMCCC.lasso.Admit_Unit * this.model.AdmitUnit) + (this.CELLULITISWOMCCC.lasso.age * this.model.age) + (this.CELLULITISWOMCCC.lasso.attending_change_order * this.model.attendingChangeOrder) +
+          (this.CELLULITISWOMCCC.lasso.Bed_Category * this.model.BedCategory) + (this.CELLULITISWOMCCC.lasso.Discharge_Disposition * this.model.DischargeDisposition) +
+          (this.CELLULITISWOMCCC.lasso.general_care_order * this.model.generalCareOrder) + (this.CELLULITISWOMCCC.lasso.icu_order * this.model.icuOrder) + (this.CELLULITISWOMCCC.lasso.iso_result * this.model.isoResult) +
+          (this.CELLULITISWOMCCC.lasso.Primary_Insurance * this.model.PrimaryInsurance) + (this.CELLULITISWOMCCC.lasso.stepdown_order * this.model.stepdownOrder);
+        break;
+      case "lassoCv":
+        results = (this.CELLULITISWOMCCC.lassoCv.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.lassoCv.adm_order_md_dept * this.model.admOrderMdDept) +
+          (this.CELLULITISWOMCCC.lassoCv.Admit_Unit * this.model.AdmitUnit) +
+          (this.CELLULITISWOMCCC.lassoCv.age * this.model.age) +
+          (this.CELLULITISWOMCCC.lassoCv.attending_change_order * this.model.attendingChangeOrder) +
+          (this.CELLULITISWOMCCC.lassoCv.Bed_Category * this.model.BedCategory) +
+          (this.CELLULITISWOMCCC.lassoCv.Discharge_Disposition * this.model.DischargeDisposition) +
+          (this.CELLULITISWOMCCC.lassoCv.general_care_order * this.model.generalCareOrder) +
+          (this.CELLULITISWOMCCC.lassoCv.icu_order * this.model.icuOrder) +
+          (this.CELLULITISWOMCCC.lassoCv.iso_result * this.model.isoResult) +
+          (this.CELLULITISWOMCCC.lassoCv.Primary_Insurance * this.model.PrimaryInsurance) +
+          (this.CELLULITISWOMCCC.lassoCv.stepdown_order * this.model.stepdownOrder);
+        break;
+      case "ridge":
+        results = (this.CELLULITISWOMCCC.ridge.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.ridge.adm_order_md_dept * this.model.admOrderMdDept) +
+          (this.CELLULITISWOMCCC.ridge.Admit_Unit * this.model.AdmitUnit) +
+          (this.CELLULITISWOMCCC.ridge.age * this.model.age) +
+          (this.CELLULITISWOMCCC.ridge.attending_change_order * this.model.attendingChangeOrder) +
+          (this.CELLULITISWOMCCC.ridge.Bed_Category * this.model.BedCategory) +
+          (this.CELLULITISWOMCCC.ridge.Discharge_Disposition * this.model.DischargeDisposition) +
+          (this.CELLULITISWOMCCC.ridge.general_care_order * this.model.generalCareOrder) +
+          (this.CELLULITISWOMCCC.ridge.icu_order * this.model.icuOrder) +
+          (this.CELLULITISWOMCCC.ridge.iso_result * this.model.isoResult) +
+          (this.CELLULITISWOMCCC.ridge.Primary_Insurance * this.model.PrimaryInsurance) +
+          (this.CELLULITISWOMCCC.ridge.stepdown_order * this.model.stepdownOrder);
+        break;
+      case "ridgeCv":
+        results = (this.CELLULITISWOMCCC.ridgeCv.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.ridgeCv.adm_order_md_dept * this.model.admOrderMdDept) +
+          (this.CELLULITISWOMCCC.ridgeCv.Admit_Unit * this.model.AdmitUnit) +
+          (this.CELLULITISWOMCCC.ridgeCv.age * this.model.age) +
+          (this.CELLULITISWOMCCC.ridgeCv.attending_change_order * this.model.attendingChangeOrder) +
+          (this.CELLULITISWOMCCC.ridgeCv.Bed_Category * this.model.BedCategory) +
+          (this.CELLULITISWOMCCC.ridgeCv.Discharge_Disposition * this.model.DischargeDisposition) +
+          (this.CELLULITISWOMCCC.ridgeCv.general_care_order * this.model.generalCareOrder) +
+          (this.CELLULITISWOMCCC.ridgeCv.icu_order * this.model.icuOrder) +
+          (this.CELLULITISWOMCCC.ridgeCv.iso_result * this.model.isoResult) +
+          (this.CELLULITISWOMCCC.ridgeCv.Primary_Insurance * this.model.PrimaryInsurance) +
+          (this.CELLULITISWOMCCC.ridgeCv.stepdown_order * this.model.stepdownOrder);
+        break;
+      case "linear":
+        results = (this.CELLULITISWOMCCC.linear.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.linear.adm_order_md_dept * this.model.admOrderMdDept) +
+          (this.CELLULITISWOMCCC.linear.Admit_Unit * this.model.AdmitUnit) +
+          (this.CELLULITISWOMCCC.linear.age * this.model.age) +
+          (this.CELLULITISWOMCCC.linear.attending_change_order * this.model.attendingChangeOrder) +
+          (this.CELLULITISWOMCCC.linear.Bed_Category * this.model.BedCategory) +
+          (this.CELLULITISWOMCCC.linear.Discharge_Disposition * this.model.DischargeDisposition) +
+          (this.CELLULITISWOMCCC.linear.general_care_order * this.model.generalCareOrder) +
+          (this.CELLULITISWOMCCC.linear.icu_order * this.model.icuOrder) +
+          (this.CELLULITISWOMCCC.linear.iso_result * this.model.isoResult) +
+          (this.CELLULITISWOMCCC.linear.Primary_Insurance * this.model.PrimaryInsurance) +
+          (this.CELLULITISWOMCCC.linear.stepdown_order * this.model.stepdownOrder);
+        break;
+      default:
+        results = 0;
+        break;
+    }
+    return Math.round(results);
+  }
+  onSubmit() {
+    this.res = this.predict();
+    this.reportModel =  this.CELLULITISWOMCCC[this.model.type];
+    this.reportModel['type']= this.model.type;
+    this.model = {
+      type: null, AdmitSource: 0, PrimaryInsurance: 0, DischargeDisposition: 0, AdmitUnit: 0,
+      BedCategory: 0, isoResult: 0, admOrderMdDept: 0, icuOrder: 0, stepdownOrder: 0, generalCareOrder: 0,
+      attendingChangeOrder: 0, age: 0
+    };
   }
   processData(allText) {
     let allTextLines = allText.split(/\r\n|\n/);

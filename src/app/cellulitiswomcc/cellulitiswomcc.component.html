@@ -1,3 +1,4 @@
+<button md-raised-button class="md-primary" (click)="openDialog()" style="text-align: center;margin:0px auto;display: block; font-size:18px;"> Models </button>
 <div style="display: none;">
   <md-grid-list cols="3">
     <md-grid-tile>
@@ -70,148 +71,178 @@
 <div>
   <div class='select_style'>
     <label> Model </label>
-    <select  [(ngModel)]="model.type">
-    <option [value]="linear">
+    <select [(ngModel)]="model.type" name="type" #type="ngModel">
+    <option [value]="'linear'">
       Linear
     </option>
-    <option [value]="ridge">
+    <option [value]="'ridge'">
       Ridge
     </option>
-    <option [value]="ridgeCv">
+    <option [value]="'ridgeCv'">
       Ridge CV
     </option>
-    <option [value]="lasso">
+    <option [value]="'lasso'">
       Lasso
     </option>
-    <option [value]="lassoCv">
+    <option [value]="'lassoCv'">
       Lasso CV
     </option>
   </select>
     <span></span>
   </div>
 </div>
-<div style="margin-bottom:100px;" class="un-visible" [class.show]="model.type">
-  <md-grid-list cols="5" rowHeight="60px">
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>Admit Source</label>
-        <select [(ngModel)]="Admit_Source.value">
-        <option *ngFor="let a of Admit_Source" [value]="Admit_Source.value">
+<div style="margin-bottom:100px;" class="un-visible" *ngIf="!res" [class.show]="model.type">
+  <form (ngSubmit)="onSubmit(model.type)" #modelForm="ngForm">
+    <md-grid-list cols="5" rowHeight="70px">
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.AdmitSource">
+          <label>Admit Source</label>
+          <select [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.Admit_Source" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>Primary Insurance:</label>
-        <select [(ngModel)]="model.Admit_Source">
-        <option *ngFor="let a of Primary_Insurance" [value]="Primary_Insurance.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.PrimaryInsurance">
+          <label>Primary Insurance:</label>
+          <select [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.Primary_Insurance" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>Bed Category:</label>
-        <select [(ngModel)]="model.Bed_Category">
-        <option *ngFor="let a of Bed_Category" [value]="Bed_Category.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.generalCareOrder">
+          <label> general care order:</label>
+          <select [(ngModel)]="model.generalCareOrder" required #generalCareOrder="ngModel" name="generalCareOrder">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.general_care_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>icu order:</label>
-        <select>
-        <option *ngFor="let a of icu_order" [value]="icu_order.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.icuOrder">
+          <label>icu order:</label>
+          <select [(ngModel)]="model.icuOrder" required #icuOrder="ngModel" name="icuOrder">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.icu_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label> general care order:</label>
-        <select>
-        <option *ngFor="let a of general_care_order" [value]="general_care_order.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' style="width: 100%;" [class.selected]="model.BedCategory">
+          <label>Bed Category:</label>
+          <select [(ngModel)]="model.BedCategory" required #BedCategory="ngModel" name="BedCategory">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.Bed_Category" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>Admit Unit: </label>
-        <select>
-        <option *ngFor="let a of Admit_Unit" [value]="Admit_Unit.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.AdmitUnit">
+          <label>Admit Unit: </label>
+          <select [(ngModel)]="model.AdmitUnit" required #AdmitUnit="ngModel" name="AdmitUnit">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.Admit_Unit" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label> adm order md dept:</label>
-        <select>
-        <option *ngFor="let a of adm_order_md_dept" [value]="adm_order_md_dept.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.admOrderMdDept">
+          <label> adm order md dept:</label>
+          <select [(ngModel)]="model.admOrderMdDept" required #admOrderMdDept="ngModel" name="admOrderMdDept">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.adm_order_md_dept" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label> stepdown order:</label>
-        <select>
-        <option *ngFor="let a of stepdown_order" [value]="stepdown_order.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.stepdownOrder">
+          <label> stepdown order:</label>
+          <select [(ngModel)]="model.stepdownOrder" required #stepdownOrder="ngModel" name="stepdownOrder">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.stepdown_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label> iso result: </label>
-        <select>
-        <option *ngFor="let a of iso_result" [value]="iso_result.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' [class.selected]="model.attendingChangeOrderMdDept">
+          <label>attending change order md dept:</label>
+          <select [(ngModel)]="model.attendingChangeOrderMdDept" required #attendingChangeOrderMdDept="ngModel" name="attendingChangeOrderMdDept">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.attending_change_order_md_dept" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div class='select_style'>
-        <label>attending change order md dept:</label>
-        <select>
-        <option *ngFor="let a of attending_change_order_md_dept" [value]="attending_change_order_md_dept.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
+          <label> iso result: </label>
+          <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">        
+        <option *ngFor="let a of CELLULITISWOMCCC_model.iso_result" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile colspan="2">
-      <div class='select_style'>
-        <label> Discharge Disposition: </label>
-        <select [(ngModel)]="model.Discharge_Disposition">
-        <option *ngFor="let a of Discharge_Disposition" [value]="Discharge_Disposition.value">
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile colspan="2">
+        <div class='select_style' [class.selected]="model.DischargeDisposition">
+          <label> Discharge Disposition: </label>
+          <select [(ngModel)]="model.DischargeDisposition" required #DischargeDisposition="ngModel" name="DischargeDisposition">
+        <option *ngFor="let a of CELLULITISWOMCCC_model.Discharge_Disposition" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-        <span></span>
-      </div>
-    </md-grid-tile>
-  </md-grid-list>
+          <span></span>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div class='select_style' style="width: 100%;" [class.selected]="model.age">
+          <label> Age: </label>
+          <input type="number" [(ngModel)]="model.age" required #age="ngModel" name="age">
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
+    <div>
+      <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="res">
+  <h1 style="text-align: center;"> Report </h1>
+  <div style="display: inline-block; width: 30%;">
+    <h1> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> {{res}} days</h1>
+  </div>
+  <div style="display: inline-block; width: 70%;">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">{{reportModel.type}} Regression</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let v of variables">
+        <td>{{v}}</td>
+        <td>{{reportModel[v]}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
