@@ -1,3 +1,187 @@
+<<<<<<< HEAD
 <p>
   circulatorydisordersexceptamiwcardcathwomcc works!
 </p>
+=======
+<div style="display: none;">
+  <md-grid-list cols="3">
+    <md-grid-tile>
+      <table *ngIf="CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.linear">
+        <thead>
+          <tr>
+            <th colspan="2">Linear Regression</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let v of variables">
+          <td>{{v}}</td>
+          <td>{{CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.linear[v]}}</td>
+        </tr>
+      </table>
+    </md-grid-tile>
+    <md-grid-tile>
+      <table *ngIf="CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.ridge">
+        <thead>
+          <tr>
+            <th colspan="2"> Ridge Regression</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let v of variables">
+          <td>{{v}}</td>
+          <td>{{CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.ridge[v]}}</td>
+        </tr>
+      </table>
+    </md-grid-tile>
+    <md-grid-tile>
+      <table *ngIf="CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.ridgeCv">
+        <thead>
+          <tr>
+            <th colspan="2"> Ridge Cross validation Regression</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let v of variables">
+          <td>{{v}}</td>
+          <td>{{CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.ridgeCv[v]}}</td>
+        </tr>
+      </table>
+    </md-grid-tile>
+    <md-grid-tile>
+      <table *ngIf="CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.lasso" class="mar-t">
+        <thead>
+          <tr>
+            <th colspan="2"> Lasso Regression</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let v of variables">
+          <td>{{v}}</td>
+          <td>{{CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.lasso[v]}}</td>
+        </tr>
+      </table>
+    </md-grid-tile>
+    <md-grid-tile>
+      <table *ngIf="CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.lassoCv" class="mar-t">
+        <thead>
+          <tr>
+            <th colspan="2"> Lasso Cross validation Regression</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let v of variables">
+          <td>{{v}}</td>
+          <td>{{CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC.lassoCv[v]}}</td>
+        </tr>
+      </table>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+<div>
+  <label> Model </label>
+  <select  class="select-style" [(ngModel)]="model.type">
+    <option [value]="linear">
+      Linear
+    </option>
+    <option [value]="ridge">
+      Ridge
+    </option>
+    <option [value]="ridgeCv">
+      Ridge CV
+    </option>
+    <option [value]="lasso">
+      Lasso
+    </option>
+    <option [value]="lassoCv">
+      Lasso CV
+    </option>
+  </select> 
+</div>
+<div style="margin-bottom:100px;" class="un-visible" [class.show]="model.type">
+  <md-grid-list cols="3" rowHeight="60px">
+    <md-grid-tile>
+      <label>Admit Source</label>
+      <select  [(ngModel)]="Admit_Source.value">
+        <option *ngFor="let a of Admit_Source" [value]="Admit_Source.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label>Primary Insurance:</label>
+      <select  [(ngModel)]="model.Admit_Source">
+        <option *ngFor="let a of Primary_Insurance" [value]="Primary_Insurance.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label>Bed Category:</label>
+      <select  [(ngModel)]="model.Bed_Category">
+        <option *ngFor="let a of Bed_Category" [value]="Bed_Category.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile colspan="2">
+      <label> Discharge Disposition: </label>
+      <select [(ngModel)]="model.Discharge_Disposition">
+        <option *ngFor="let a of Discharge_Disposition" [value]="Discharge_Disposition.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label> iso result: </label>
+      <select>
+        <option *ngFor="let a of iso_result" [value]="iso_result.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label>Admit Unit: </label>
+      <select>
+        <option *ngFor="let a of Admit_Unit" [value]="Admit_Unit.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label> adm order md dept:</label>
+      <select>
+        <option *ngFor="let a of adm_order_md_dept" [value]="adm_order_md_dept.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label>icu order:</label>
+      <select>
+        <option *ngFor="let a of icu_order" [value]="icu_order.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label> stepdown order:</label>
+      <select>
+        <option *ngFor="let a of stepdown_order" [value]="stepdown_order.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label> general care order:</label>
+      <select>
+        <option *ngFor="let a of general_care_order" [value]="general_care_order.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <label>attending change order md dept:</label>
+      <select>
+        <option *ngFor="let a of attending_change_order_md_dept" [value]="attending_change_order_md_dept.value">
+          {{ a.viewValue }}
+        </option>
+      </select>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+>>>>>>> origin/master
