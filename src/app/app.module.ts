@@ -7,13 +7,33 @@ import { AppComponent } from './app.component';
 import { MyHeaderComponent } from './my-header/my-header.component';
 import { MyTabsComponent } from './my-tabs/my-tabs.component';
 import { CELLULITISWOMCCComponent } from './cellulitiswomcc/cellulitiswomcc.component';
+import { CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent } from './circulatorydisordersexceptamiwcardcathwomcc/circulatorydisordersexceptamiwcardcathwomcc.component';
+import { DEPRESSIVENEUROSESComponent } from './depressiveneuroses/depressiveneuroses.component';
+import { ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent } from './esophagitisgastroentmiscdigestdisorderswomcc/esophagitisgastroentmiscdigestdisorderswomcc.component';
+import { HEARTFAILURESHOCKWCCComponent } from './heartfailureshockwcc/heartfailureshockwcc.component';
+import { MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOComponent } from './majorjointreplacementorreattachmentoflowerextremitywo/majorjointreplacementorreattachmentoflowerextremitywo.component';
+import { PSYCHOSESComponent } from './psychoses/psychoses.component';
+import { REDBLOODCELLDISORDERSWOMCCComponent } from './redbloodcelldisorderswomcc/redbloodcelldisorderswomcc.component';
+import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilitationwccmcc.component';
+import { SEIZURESWOMCCComponent } from './seizureswomcc/seizureswomcc.component';
+import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyHeaderComponent,
     MyTabsComponent,
-    CELLULITISWOMCCComponent
+    CELLULITISWOMCCComponent,
+    CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent,
+    DEPRESSIVENEUROSESComponent,
+    ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent,
+    HEARTFAILURESHOCKWCCComponent,
+    MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOComponent,
+    PSYCHOSESComponent,
+    REDBLOODCELLDISORDERSWOMCCComponent,
+    REHABILITATIONWCCMCCComponent,
+    SEIZURESWOMCCComponent,
+    VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent
   ],
   imports: [
     BrowserModule,
