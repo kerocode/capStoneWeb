@@ -8,12 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnInit {
 
   constructor() { }
-<<<<<<< HEAD
 
-  ngOnInit() {
-  }
-
-=======
   lines = [];
   variables = [
     "Admit_Source",
@@ -103,32 +98,31 @@ export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnI
       age: 0.019245568,
     }
   };
-
-  Admit_Source = [{ viewValue: 'CLINIC OR PHYS OFFIC', value: 0 },
+CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCC_model={
+  Admit_Source : [{ viewValue: 'CLINIC OR PHYS OFFIC', value: 0 },
   { viewValue: 'TRANSFER FROM A HOSP', value: 3 }, { viewValue: 'COURT OR LAW ENFORCE', value: 1 },
-  { viewValue: 'HOME /WORK / OTHER', value: 2 }, { viewValue: 'TRANSF FROM A SNF', value: 3 }];
+  { viewValue: 'HOME /WORK / OTHER', value: 2 }, { viewValue: 'TRANSF FROM A SNF', value: 3 }],
 
-  Primary_Insurance = [{ viewValue: 'INDIGENT CARE', value: 4 }, { viewValue: 'MEDICAID MANA', value: 6 }, { viewValue: 'ANTHEM MANAGE', value: 1 },
+  Primary_Insurance : [{ viewValue: 'INDIGENT CARE', value: 4 }, { viewValue: 'MEDICAID MANA', value: 6 }, { viewValue: 'ANTHEM MANAGE', value: 1 },
   { viewValue: 'ANTHEM', value: 0 }, { viewValue: 'COMMERCIAL', value: 2 }, { viewValue: 'HMO/PPO', value: 3 },
   { viewValue: 'SELF PAY', value: 10 }, { viewValue: 'OTHER', value: 9 }, { viewValue: 'MEDICARE', value: 7 },
-  { viewValue: 'MEDICARE MANA', value: 8 }, { viewValue: 'MEDICAID', value: 5 }];
+  { viewValue: 'MEDICARE MANA', value: 8 }, { viewValue: 'MEDICAID', value: 5 }],
 
-  Discharge_Disposition = [
+  Discharge_Disposition : [
     { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 8 },
     { viewValue: 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT', value: 6 },
     { viewValue: 'HOSPICE - HOME', value: 9 },
     { viewValue: '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)', value: 0 },
     { viewValue: 'LEFT ELOPED -W/O NOTICE-AMA', value: 11 },
     { viewValue: 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)', value: 2 },
-	{ viewValue: 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR', value : 7},
+   	{ viewValue: 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR', value : 7},
     { viewValue: 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP', value: 3 },
-	{ viewValue: 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)'value : 5},
+  	{ viewValue: 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)',value : 5},
     { viewValue: 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO', value: 4 },
     { viewValue: 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)', value: 10 },
-    { viewValue: 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC', value: 1 }];
-
-
-  Bed_Category = [
+    { viewValue: 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC', value: 1 }
+    ],
+  Bed_Category : [
     { viewValue: 'ED', value: 2 },
     { viewValue: 'CORRECTION', value: 1 },
     { viewValue: 'RESEARCH', value: 7 },
@@ -136,14 +130,14 @@ export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnI
     { viewValue: '0', value: 0 },
     { viewValue: 'GUM SUITES', value: 3 },
     { viewValue: 'PICU', value: 6 },
-    { viewValue: 'ICU', value: 4 }];
-
-  iso_result = [
+    { viewValue: 'ICU', value: 4 }
+    ],
+  iso_result : [
     { viewValue: 'Isolation', value: 1 },
-    { viewValue: '0', value: 0 }];
-
-  Admit_Unit = [
-    { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 23},
+    { viewValue: '0', value: 0 }
+    ],
+  Admit_Unit : [
+  { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 23},
 	{ viewValue: 'C3A-ACUTE CARE MEDICINE', value: 16},
 	{ viewValue: '9W-CLINICAL TRANSPLANT', value: 10},
 	{ viewValue: 'CSBC-SECURITY CARE', value: 20},
@@ -153,12 +147,12 @@ export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnI
 	{ viewValue: 'C10A-CORONARY ICU', value : 11},
 	{ viewValue: 'C10B-CORONARY ICU', value : 12},
 	{ viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 6},
-	( viewValue: '10CA-CARD/THORASIC SURG PCU', value: 1},
-	( viewValue: '0', value : 0},
-	( viewValue: '10E-CARDIOLOGY', value: 2},
+	{ viewValue: '10CA-CARD/THORASIC SURG PCU', value: 1},
+	{ viewValue: '0', value : 0},
+	{ viewValue: '10E-CARDIOLOGY', value: 2},
 	{ viewValue: 'C11C-NEUROSCIENCE ICU', value: 14},
 	{ viewValue: 'N9-MED-STEPDOWN TELE', value: 25},
-	( viewValue: '9E-SPECIAL SERVICES SUITES', value: 9},
+	{ viewValue: '9E-SPECIAL SERVICES SUITES', value: 9},
 	{ viewValue: '10W-CARDIOTHORACIC SURGERY', value: 3},
 	{ viewValue: 'C7A-ACUTE CARE SURGERY', value: 18},
 	{ viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 24}, 
@@ -168,27 +162,25 @@ export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnI
 	{ viewValue: '7PI-PEDIATRIC ICU (0-21)', value: 7},
 	{ viewValue: 'C10D-CARDIAC SURG ICU', value: 13},
 	{ viewValue: 'C8C-BURN CENTER', value: 19},
-	{ viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 15}];
-
-
-  adm_order_md_dept = [{ viewValue: 'INTERNAL MEDICINE', value: 1 }, 
-  { viewValue: '0', value: 0 }, { viewValue: 'SURGERY', value: 2 }] ; 
-
-  icu_order = [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }];
-
-  stepdown_order = [{ viewValue: 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN', value: 1 }, { viewValue: '0', value: 0 }];
-
-  general_care_order = [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }];
-
-  attending_change_order_md_dept = [
-    { viewValue: 'INTERNAL MEDICINE',value: 2},
+	{ viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 15}
+  ],
+  adm_order_md_dept : [{ viewValue: 'INTERNAL MEDICINE', value: 1 }, 
+  { viewValue: '0', value: 0 }, { viewValue: 'SURGERY', value: 2 }
+  ], 
+  icu_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }],
+  stepdown_order : [{ viewValue: 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN', value: 1 }, { viewValue: '0', value: 0 }],
+  general_care_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }],
+  attending_change_order_md_dept : [
+  { viewValue: 'INTERNAL MEDICINE',value: 2},
 	{ viewValue: '0',value: 0},
 	{ viewValue: 'SURGERY', value: 4},
 	{ viewValue: 'NEUROLOGY', value: 3},
-	{ viewValue: 'EMERGENCY MEDICINE', value: 1}];
+	{ viewValue: 'EMERGENCY MEDICINE', value: 1}
+  ]};
 
   ngOnInit() {
   }
+
   processData(allText) {
     let allTextLines = allText.split(/\r\n|\n/);
     let headers = allTextLines[0].split(',');
@@ -206,5 +198,5 @@ export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnI
     }
     // alert(lines);
   }
->>>>>>> origin/master
+
 }
