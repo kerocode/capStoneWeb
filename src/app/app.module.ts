@@ -35,6 +35,7 @@ import { ClickOutsideDirective } from './click-outside.directive';
     REHABILITATIONWCCMCCComponent,
     SEIZURESWOMCCComponent,
     VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
+
     ClickOutsideDirective
   ],
   imports: [

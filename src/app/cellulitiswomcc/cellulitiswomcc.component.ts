@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+
 export interface Model{
     AdmitSource:number; 
     PrimaryInsurance: number;
@@ -20,7 +22,7 @@ export interface Model{
 })
 export class CELLULITISWOMCCComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MdDialog) { }
   lines = [];
   selectedModel={
     linear:false,
@@ -44,7 +46,7 @@ export class CELLULITISWOMCCComponent implements OnInit {
     "attending_change_order",
     "age"]
   patient = {};
-  res=[{}];
+
   showPrediction=false;
   hide=true;
   reportModel = {};
@@ -239,16 +241,13 @@ export class CELLULITISWOMCCComponent implements OnInit {
     ]
   };
 
-
   ngOnInit() {
 
   }
   clickOutside(event) {
     this.hide = true;
   }
-  openDialog() {
-    this.hide = false;
-  }
+
   predict() {
 
     if (this.selectedModel.lasso){
@@ -336,17 +335,16 @@ export class CELLULITISWOMCCComponent implements OnInit {
           this.prediction.push(linear);
          }
 
-    console.log(this.prediction);
- 
   }
   onSubmit() {
     this.predict();
     this.showPrediction=true;
-    console.log("sdsds"+this.res);
   }
 rePredict(){
   this.showPrediction=false;
+  this.prediction=[];
 }
+
 
   processData(allText) {
     let allTextLines = allText.split(/\r\n|\n/);
@@ -365,4 +363,7 @@ rePredict(){
     }
     // alert(lines);
   }
+
 }
+
+

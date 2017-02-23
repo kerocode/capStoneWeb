@@ -212,7 +212,79 @@ export class PSYCHOSESComponent implements OnInit {
       { viewValue: 'ORTHOPEDIC SURGERY', value: 4}
     ]
   };
+ CELLULITISWOMCCC = {
 
+    "lasso": {
+      Admit_Source: 0.0,
+      Primary_Insurance: 0.0,
+      Discharge_Disposition: 0.22570821,
+      Admit_Unit: -0.046078982,
+      Bed_Category: 0.0,
+      iso_result: 0.0,
+      adm_order_md_dept: 0.0,
+      icu_order: 0.0,
+      stepdown_order: 1.123894067,
+      general_care_order: 0.0,
+      attending_change_order: 0.500119134,
+      age: 0.018114
+    },
+    "lassoCv": {
+      Admit_Source: 0.0,
+      Primary_Insurance: 0.003852594,
+      Discharge_Disposition: 0.288111422,
+      Admit_Unit: -0.038278443,
+      Bed_Category: 0.146495527,
+      iso_result: 0.0,
+      adm_order_md_dept: 0.064409438,
+      icu_order: -0.0664363956,
+      stepdown_order: 3.535184292,
+      general_care_order: 0.0,
+      attending_change_order: 0.835891879,
+      age: 0.021162993
+    },
+    "ridge": {
+      Admit_Source: -0.106467864,
+      Primary_Insurance: 0.01280091,
+      Discharge_Disposition: 0.283654651,
+      Admit_Unit: -0.031259081,
+      Bed_Category: 0.164965099,
+      iso_result: 1.318977526,
+      adm_order_md_dept: 0.549043086,
+      icu_order: -2.038202281,
+      stepdown_order: 3.887738855,
+      general_care_order: -0.851203384,
+      attending_change_order: 1.108034081,
+      age: 0.019260552,
+    },
+    "ridgeCv": {
+      Admit_Source: -0.124383007,
+      Primary_Insurance: 0.013378926,
+      Discharge_Disposition: 0.298273596,
+      Admit_Unit: -0.031471501,
+      Bed_Category: 0.193891418,
+      iso_result: 1.045220709,
+      adm_order_md_dept: 0.533219474,
+      icu_order: -1.682423106,
+      stepdown_order: 3.556066511,
+      general_care_order: -0.672408522,
+      attending_change_order: 1.064959861,
+      age: 0.019489814
+    },
+    "linear": {
+      Admit_Source: -0.105138305,
+      Primary_Insurance: 0.012751563,
+      Discharge_Disposition: 0.0282724902,
+      Admit_Unit: -0.031249579,
+      Bed_Category: 0.163117904,
+      iso_result: 1.337937072,
+      adm_order_md_dept: 0.54970694,
+      icu_order: -2.061237122,
+      stepdown_order: 3.906337039,
+      general_care_order: -0.865106405,
+      attending_change_order: 1.110858859,
+      age: 0.019245568,
+    }
+  };
 
   ngOnInit() {
   }

@@ -97,8 +97,8 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
       age: 0.0098909823,
     }
   };
-
-  Admit_Source = [
+esophagitisgastroentmiscdigestdisorderswomcc_model = {
+  Admit_Source : [
   { viewValue: 'TRANSFER FROM A SNF', value: 5}, 
   { viewValue: 'TRANSFER FROM A HOSP', value: 4},
   { viewValue: 'COURT OR LAW ENFORCE',value: 1},
@@ -107,7 +107,7 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
   { viewValue: 'CLINIC OR PHYS OFFIC', value: 0}
   ],
   
-  Primary_Insurance = [
+  Primary_Insurance : [
   { viewValue: 'INDIGENT CARE', value: 4},
   { viewValue: 'MEDICAID MANA', value: 6},
   { viewValue: 'ANTHEM MANAGE', value: 1},
@@ -121,7 +121,7 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
   { viewValue: 'MEDICAID', value: 5}
   ],
 
-  Discharge_Disposition = [
+  Discharge_Disposition : [
     { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 6},
 	{ viewValue: 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT', value: 4},
 	{ viewValue: 'HOSPICE - HOME', value: 7},
@@ -134,7 +134,7 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
 	{ viewValue: 'LEFT BEFORE CLINICAL EVAL -AMA', value: 9}
   ],
 
-  Bed_Category = [
+  Bed_Category : [
     { viewValue: 'SAME DAY', value: 8},
 	{ viewValue: 'PED MED/SU', value: 5},
 	{ viewValue: 'ED', value: 1},
@@ -146,12 +146,12 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
 	{ viewValue: 'ICU', value: 3}
 	],
 
-  iso_result = [
+  iso_result: [
     { viewValue: 'Isolation', value: 1 },
     { viewValue: '0', value: 0 }
 	],
 
-  Admit_Unit = [
+  Admit_Unit : [
     { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 32},
 	{ viewValue: 'C3A-ACUTE CARE MEDICINE', value: 21},
 	{ viewValue: '9W-CLINICAL TRANSPLANT', value: 17},
@@ -188,9 +188,8 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
 	{ viewValue: 'N4N-PALLIATIVE CARE UNIT', value: 31},
 	{ viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 20}
 	],
-
-  adm_order_md_dept = [
-    { viewValue: 'INTERNAL MEDICINE', value: 4},
+  adm_order_md_dept : [
+  { viewValue: 'INTERNAL MEDICINE', value: 4},
 	{ viewValue: 'RADIOLOGY', value: 10},
 	{ viewValue: 'PEDIATRICS', value: 9},
 	{ viewValue: 'EMERGENCY MEDICINE', value: 3},
@@ -203,14 +202,10 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
 	{ viewValue: 'SURGERY', value: 12},
 	{ viewValue: 'OBSTETRICS - GYNECOL', value: 6},
 	{ viewValue: 'ORTHOPEDIC SURGERY', value: 7}],
-
-  icu_order = [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }],
-
-  stepdown_order = [{ viewValue: 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN', value: 1 }, { viewValue: '0', value: 0 }],
-
-  general_care_order = [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }],
-
-  attending_change_order_md_dept = [
+  icu_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }],
+  stepdown_order :[{ viewValue: 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN', value: 1 }, { viewValue: '0', value: 0 }],
+  general_care_order :[{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }],
+  attending_change_order_md_dept : [
   { viewValue:'INTERNAL MEDICINE', value:2}, 
   { viewValue: 'RADIOLOGY', value: 8},
   { viewValue: 'EMERGENCY MEDICINE', value: 1},
@@ -221,9 +216,8 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
   { viewValue:'OTOLARYNGOLOGY', value:5},
   {viewValue:'SURGERY', value:10}, 
   { viewValue: 'NEUROSURGERY', value:4}, 
-  { viewValue:'PSYCHIATRY', value:7 }];
-
-
+  { viewValue:'PSYCHIATRY', value:7 }]
+};
   ngOnInit() {
   }
   processData(allText) {

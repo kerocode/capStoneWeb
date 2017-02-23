@@ -76,6 +76,15 @@ body{
 .example-h2 {
   margin: 10px;
 }
+.select-style select:focus {
+    outline: none;
+}
+tr:nth-child(1),tr:nth-child(7) { background: hsl(150, 50%, 50%); }
+tr:nth-child(2),tr:nth-child(8) { background: hsl(160, 60%, 50%); }
+tr:nth-child(3),tr:nth-child(9) { background: hsl(170, 70%, 50%); }
+tr:nth-child(4),tr:nth-child(10) { background: hsl(180, 80%, 50%); }
+tr:nth-child(5),tr:nth-child(11) { background: hsl(190, 90%, 50%); }
+tr:nth-child(6),tr:nth-child(12) { background: hsl(200, 99%, 50%); }
 
 .example-section {
   display: flex;
@@ -86,4 +95,24 @@ body{
 
 .example-margin {
   margin: 0 10px;
+}
+
+table {
+  border-spacing: 0.2rem;
+}
+td ,th{
+  padding: 0.4rem;
+  color: #fff;
+}
+th{
+  color: #000;
+}
+
+.mar-t{
+  margin-top: 30px;
+}
+.block-in{
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 2px;
 }
