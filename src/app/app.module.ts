@@ -17,6 +17,7 @@ import { REDBLOODCELLDISORDERSWOMCCComponent } from './redbloodcelldisorderswomc
 import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilitationwccmcc.component';
 import { SEIZURESWOMCCComponent } from './seizureswomcc/seizureswomcc.component';
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldelive
     REDBLOODCELLDISORDERSWOMCCComponent,
     REHABILITATIONWCCMCCComponent,
     SEIZURESWOMCCComponent,
-    VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent
+    VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
