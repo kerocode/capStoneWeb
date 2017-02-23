@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
+export interface Model{
+    AdmitSource:number; 
+    PrimaryInsurance: number;
+    DischargeDisposition: number; 
+    AdmitUnit:number;
+    BedCategory: number; 
+    isoResult:number; 
+    admOrderMdDept:number;
+    icuOrder:number;
+    stepdownOrder:number; 
+    generalCareOrder: number;
+    attendingChangeOrder: number;
+    age: number;
+}
 @Component({
   selector: 'app-cellulitiswomcc',
   templateUrl: './cellulitiswomcc.component.html',
@@ -9,6 +22,14 @@ export class CELLULITISWOMCCComponent implements OnInit {
 
   constructor() { }
   lines = [];
+  selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
+  prediction=[];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
@@ -23,13 +44,12 @@ export class CELLULITISWOMCCComponent implements OnInit {
     "attending_change_order",
     "age"]
   patient = {};
-  res ;
-  reportModel={};
-  model = {
-    type: null, AdmitSource: 0, PrimaryInsurance: 0, DischargeDisposition: 0, AdmitUnit: 0,
-    BedCategory: 0, isoResult: 0, admOrderMdDept: 0, icuOrder: 0, stepdownOrder: 0, generalCareOrder: 0,
-    attendingChangeOrder: 0, age: 0
-  };
+  res=[{}];
+  showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,admOrderMdDept:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,attendingChangeOrder:0,BedCategory:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
   CELLULITISWOMCCC = {
     "lasso": {
       Admit_Source: -0.0,
@@ -221,19 +241,30 @@ export class CELLULITISWOMCCComponent implements OnInit {
 
 
   ngOnInit() {
+
+  }
+  clickOutside(event) {
+    this.hide = true;
+  }
+  openDialog() {
+    this.hide = false;
   }
   predict() {
-    let results;
-    switch (this.model.type) {
-      case "lasso":
-        results = (this.CELLULITISWOMCCC.lasso.Admit_Source * this.model.AdmitSource) + (this.CELLULITISWOMCCC.lasso.adm_order_md_dept * this.model.admOrderMdDept) +
+
+    if (this.selectedModel.lasso){
+      let lasso={};
+        lasso["results"] = Math.round((this.CELLULITISWOMCCC.lasso.Admit_Source * this.model.AdmitSource) + (this.CELLULITISWOMCCC.lasso.adm_order_md_dept * this.model.admOrderMdDept) +
           (this.CELLULITISWOMCCC.lasso.Admit_Unit * this.model.AdmitUnit) + (this.CELLULITISWOMCCC.lasso.age * this.model.age) + (this.CELLULITISWOMCCC.lasso.attending_change_order * this.model.attendingChangeOrder) +
           (this.CELLULITISWOMCCC.lasso.Bed_Category * this.model.BedCategory) + (this.CELLULITISWOMCCC.lasso.Discharge_Disposition * this.model.DischargeDisposition) +
           (this.CELLULITISWOMCCC.lasso.general_care_order * this.model.generalCareOrder) + (this.CELLULITISWOMCCC.lasso.icu_order * this.model.icuOrder) + (this.CELLULITISWOMCCC.lasso.iso_result * this.model.isoResult) +
-          (this.CELLULITISWOMCCC.lasso.Primary_Insurance * this.model.PrimaryInsurance) + (this.CELLULITISWOMCCC.lasso.stepdown_order * this.model.stepdownOrder);
-        break;
-      case "lassoCv":
-        results = (this.CELLULITISWOMCCC.lassoCv.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.lasso.Primary_Insurance * this.model.PrimaryInsurance) + (this.CELLULITISWOMCCC.lasso.stepdown_order * this.model.stepdownOrder));
+    lasso["model"]=this.CELLULITISWOMCCC.lasso; 
+    lasso["type"]="Lasso";
+    this.prediction.push(lasso);
+    } 
+       if (this.selectedModel.lassoCv){
+         let lassoCv={};
+        lassoCv["results"]= Math.round((this.CELLULITISWOMCCC.lassoCv.Admit_Source * this.model.AdmitSource) +
           (this.CELLULITISWOMCCC.lassoCv.adm_order_md_dept * this.model.admOrderMdDept) +
           (this.CELLULITISWOMCCC.lassoCv.Admit_Unit * this.model.AdmitUnit) +
           (this.CELLULITISWOMCCC.lassoCv.age * this.model.age) +
@@ -244,10 +275,14 @@ export class CELLULITISWOMCCComponent implements OnInit {
           (this.CELLULITISWOMCCC.lassoCv.icu_order * this.model.icuOrder) +
           (this.CELLULITISWOMCCC.lassoCv.iso_result * this.model.isoResult) +
           (this.CELLULITISWOMCCC.lassoCv.Primary_Insurance * this.model.PrimaryInsurance) +
-          (this.CELLULITISWOMCCC.lassoCv.stepdown_order * this.model.stepdownOrder);
-        break;
-      case "ridge":
-        results = (this.CELLULITISWOMCCC.ridge.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.lassoCv.stepdown_order * this.model.stepdownOrder));
+         lassoCv["model"]=this.CELLULITISWOMCCC.lassoCv;  
+        lassoCv["type"]="Lasso Cross Validation";
+         this.prediction.push(lassoCv);
+        } 
+       if (this.selectedModel.ridge){
+        let ridge={};
+        ridge["results"] = Math.round((this.CELLULITISWOMCCC.ridge.Admit_Source * this.model.AdmitSource) +
           (this.CELLULITISWOMCCC.ridge.adm_order_md_dept * this.model.admOrderMdDept) +
           (this.CELLULITISWOMCCC.ridge.Admit_Unit * this.model.AdmitUnit) +
           (this.CELLULITISWOMCCC.ridge.age * this.model.age) +
@@ -258,10 +293,15 @@ export class CELLULITISWOMCCComponent implements OnInit {
           (this.CELLULITISWOMCCC.ridge.icu_order * this.model.icuOrder) +
           (this.CELLULITISWOMCCC.ridge.iso_result * this.model.isoResult) +
           (this.CELLULITISWOMCCC.ridge.Primary_Insurance * this.model.PrimaryInsurance) +
-          (this.CELLULITISWOMCCC.ridge.stepdown_order * this.model.stepdownOrder);
-        break;
-      case "ridgeCv":
-        results = (this.CELLULITISWOMCCC.ridgeCv.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.ridge.stepdown_order * this.model.stepdownOrder));
+          ridge["model"]=this.CELLULITISWOMCCC.ridge;
+                    ridge["type"]="Ridge";
+          this.prediction.push(ridge);
+
+        } 
+        if (this.selectedModel.ridgeCv){
+         let ridgeCv={}; 
+        ridgeCv["results"] = Math.round((this.CELLULITISWOMCCC.ridgeCv.Admit_Source * this.model.AdmitSource) +
           (this.CELLULITISWOMCCC.ridgeCv.adm_order_md_dept * this.model.admOrderMdDept) +
           (this.CELLULITISWOMCCC.ridgeCv.Admit_Unit * this.model.AdmitUnit) +
           (this.CELLULITISWOMCCC.ridgeCv.age * this.model.age) +
@@ -272,10 +312,14 @@ export class CELLULITISWOMCCComponent implements OnInit {
           (this.CELLULITISWOMCCC.ridgeCv.icu_order * this.model.icuOrder) +
           (this.CELLULITISWOMCCC.ridgeCv.iso_result * this.model.isoResult) +
           (this.CELLULITISWOMCCC.ridgeCv.Primary_Insurance * this.model.PrimaryInsurance) +
-          (this.CELLULITISWOMCCC.ridgeCv.stepdown_order * this.model.stepdownOrder);
-        break;
-      case "linear":
-        results = (this.CELLULITISWOMCCC.linear.Admit_Source * this.model.AdmitSource) +
+          (this.CELLULITISWOMCCC.ridgeCv.stepdown_order * this.model.stepdownOrder));
+          ridgeCv["model"]=this.CELLULITISWOMCCC.ridgeCv;
+          ridgeCv["type"]="Ridge Cross Validation";
+          this.prediction.push(ridgeCv);
+          }
+        if (this.selectedModel.linear){
+          let linear={};
+        linear["results"] =Math.round ((this.CELLULITISWOMCCC.linear.Admit_Source * this.model.AdmitSource) +
           (this.CELLULITISWOMCCC.linear.adm_order_md_dept * this.model.admOrderMdDept) +
           (this.CELLULITISWOMCCC.linear.Admit_Unit * this.model.AdmitUnit) +
           (this.CELLULITISWOMCCC.linear.age * this.model.age) +
@@ -286,24 +330,24 @@ export class CELLULITISWOMCCComponent implements OnInit {
           (this.CELLULITISWOMCCC.linear.icu_order * this.model.icuOrder) +
           (this.CELLULITISWOMCCC.linear.iso_result * this.model.isoResult) +
           (this.CELLULITISWOMCCC.linear.Primary_Insurance * this.model.PrimaryInsurance) +
-          (this.CELLULITISWOMCCC.linear.stepdown_order * this.model.stepdownOrder);
-        break;
-      default:
-        results = 0;
-        break;
-    }
-    return Math.round(results);
+          (this.CELLULITISWOMCCC.linear.stepdown_order * this.model.stepdownOrder));
+          linear["model"]=this.CELLULITISWOMCCC.linear;
+          linear["type"]="Linear";
+          this.prediction.push(linear);
+         }
+
+    console.log(this.prediction);
+ 
   }
   onSubmit() {
-    this.res = this.predict();
-    this.reportModel =  this.CELLULITISWOMCCC[this.model.type];
-    this.reportModel['type']= this.model.type;
-    this.model = {
-      type: null, AdmitSource: 0, PrimaryInsurance: 0, DischargeDisposition: 0, AdmitUnit: 0,
-      BedCategory: 0, isoResult: 0, admOrderMdDept: 0, icuOrder: 0, stepdownOrder: 0, generalCareOrder: 0,
-      attendingChangeOrder: 0, age: 0
-    };
+    this.predict();
+    this.showPrediction=true;
+    console.log("sdsds"+this.res);
   }
+rePredict(){
+  this.showPrediction=false;
+}
+
   processData(allText) {
     let allTextLines = allText.split(/\r\n|\n/);
     let headers = allTextLines[0].split(',');
