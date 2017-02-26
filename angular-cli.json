@@ -18,7 +18,8 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "indigo-pink.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
