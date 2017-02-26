@@ -1,5 +1,5 @@
+
     <div  id="openModal" class="modalDialog" >
- 
         <div>
           <a href="#close" title="Close" class="close">X</a>
           <md-grid-list cols="2">
@@ -87,6 +87,9 @@
         </div>
     </div>
 <div>
+
+
+<div *ngIf="!showPrediction">
   <section class="example-section">
     <md-checkbox class="example-margin" [(ngModel)]="selectedModel.linear">Linear</md-checkbox>
     <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridge">Ridge</md-checkbox>
@@ -203,7 +206,7 @@
         <md-grid-tile>
           <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
             <label> iso result: </label>
-            <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">        
+            <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">
         <option *ngFor="let a of CELLULITISWOMCCC_model.iso_result" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
