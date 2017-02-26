@@ -1,20 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
-export interface Model{
-    AdmitSource:number; 
-    PrimaryInsurance: number;
-    DischargeDisposition: number; 
-    AdmitUnit:number;
-    BedCategory: number; 
-    isoResult:number; 
-    admOrderMdDept:number;
-    icuOrder:number;
-    stepdownOrder:number; 
-    generalCareOrder: number;
-    attendingChangeOrder: number;
-    age: number;
-}
 @Component({
   selector: 'app-cellulitiswomcc',
   templateUrl: './cellulitiswomcc.component.html',
@@ -22,7 +9,7 @@ export interface Model{
 })
 export class CELLULITISWOMCCComponent implements OnInit {
 
-  constructor(public dialog: MdDialog) { }
+  constructor() { }
   lines = [];
   selectedModel={
     linear:false,

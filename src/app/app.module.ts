@@ -18,6 +18,7 @@ import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilita
 import { SEIZURESWOMCCComponent } from './seizureswomcc/seizureswomcc.component';
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { ViewModalComponent } from './view-modal/view-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { ClickOutsideDirective } from './click-outside.directive';
     SEIZURESWOMCCComponent,
     VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
 
-    ClickOutsideDirective
+    ClickOutsideDirective,
+
+    ViewModalComponent
   ],
   imports: [
     BrowserModule,

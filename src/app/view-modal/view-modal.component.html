@@ -1,10 +1,10 @@
 
-    <!--<div  id="openModal" class="modalDialog" >
+    <div  id="openModal" class="modalDialog" >
         <div>
           <a href="#close" title="Close" class="close">X</a>
           <md-grid-list cols="2">
             <md-grid-tile>
-              <table *ngIf="CELLULITISWOMCCC.linear">
+              <table *ngIf="calculatedModal.linear">
                 <thead>
                   <tr>
                     <th colspan="2">Linear Regression</th>
@@ -12,7 +12,7 @@
                 </thead>
                 <tr *ngFor="let v of variables">
                   <td>{{v}}</td>
-                  <td>{{CELLULITISWOMCCC.linear[v]}}</td>
+                  <td>{{calculatedModal.linear[v]}}</td>
                 </tr>
               </table>
             </md-grid-tile>
@@ -20,7 +20,7 @@
               <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png">
             </md-grid-tile>
             <md-grid-tile>
-              <table *ngIf="CELLULITISWOMCCC.ridge">
+              <table *ngIf="calculatedModal.ridge">
                 <thead>
                   <tr>
                     <th colspan="2"> Ridge Regression</th>
@@ -28,7 +28,7 @@
                 </thead>
                 <tr *ngFor="let v of variables">
                   <td>{{v}}</td>
-                  <td>{{CELLULITISWOMCCC.ridge[v]}}</td>
+                  <td>{{calculatedModal.ridge[v]}}</td>
                 </tr>
               </table>
             </md-grid-tile>
@@ -36,7 +36,7 @@
               <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png">
             </md-grid-tile>
             <md-grid-tile>
-              <table *ngIf="CELLULITISWOMCCC.ridgeCv">
+              <table *ngIf="calculatedModal.ridgeCv">
                 <thead>
                   <tr>
                     <th colspan="2"> Ridge Cross validation Regression</th>
@@ -44,7 +44,7 @@
                 </thead>
                 <tr *ngFor="let v of variables">
                   <td>{{v}}</td>
-                  <td>{{CELLULITISWOMCCC.ridgeCv[v]}}</td>
+                  <td>{{calculatedModal.ridgeCv[v]}}</td>
                 </tr>
               </table>
             </md-grid-tile>
@@ -52,7 +52,7 @@
               <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png">
             </md-grid-tile>
             <md-grid-tile>
-              <table *ngIf="CELLULITISWOMCCC.lasso" class="mar-t">
+              <table *ngIf="calculatedModal.lasso" class="mar-t">
                 <thead>
                   <tr>
                     <th colspan="2"> Lasso Regression</th>
@@ -60,7 +60,7 @@
                 </thead>
                 <tr *ngFor="let v of variables">
                   <td>{{v}}</td>
-                  <td>{{CELLULITISWOMCCC.lasso[v]}}</td>
+                  <td>{{calculatedModal.lasso[v]}}</td>
                 </tr>
               </table>
             </md-grid-tile>
@@ -68,7 +68,7 @@
               <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png">
             </md-grid-tile>
             <md-grid-tile>
-              <table *ngIf="CELLULITISWOMCCC.lassoCv" class="mar-t">
+              <table *ngIf="calculatedModal.lassoCv" class="mar-t">
                 <thead>
                   <tr>
                     <th colspan="2"> Lasso Cross validation Regression</th>
@@ -76,7 +76,7 @@
                 </thead>
                 <tr *ngFor="let v of variables">
                   <td>{{v}}</td>
-                  <td>{{CELLULITISWOMCCC.lassoCv[v]}}</td>
+                  <td>{{calculatedModal.lassoCv[v]}}</td>
                 </tr>
               </table>
             </md-grid-tile>
@@ -97,7 +97,8 @@
     <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
     <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
     <a md-raised-button class="md-primary" style="float:right; margin: 10px;" href="#openModal" style="text-align: center;margin:0px auto;display: block; font-size:18px;"> Models </a>
-
+    <!-- Modal Trigger -->
+    <!-- Modal Structure -->
   </section>
 
   <div style="margin-bottom:100px;">
@@ -107,7 +108,7 @@
           <div class='select_style' [class.selected]="model.AdmitSource">
             <label>Admit Source</label>
             <select [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.Admit_Source" [ngValue]="a.value">
+        <option *ngFor="let a of options.Admit_Source" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -118,7 +119,7 @@
           <div class='select_style' [class.selected]="model.PrimaryInsurance">
             <label>Primary Insurance:</label>
             <select [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.Primary_Insurance" [ngValue]="a.value">
+        <option *ngFor="let a of options.Primary_Insurance" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -129,7 +130,7 @@
           <div class='select_style' [class.selected]="model.generalCareOrder">
             <label> general care order:</label>
             <select [(ngModel)]="model.generalCareOrder" required #generalCareOrder="ngModel" name="generalCareOrder">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.general_care_order" [ngValue]="a.value">
+        <option *ngFor="let a of options.general_care_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -140,7 +141,7 @@
           <div class='select_style' [class.selected]="model.icuOrder">
             <label>icu order:</label>
             <select [(ngModel)]="model.icuOrder" required #icuOrder="ngModel" name="icuOrder">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.icu_order" [value]="a.value">
+        <option *ngFor="let a of options.icu_order" [value]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -151,7 +152,7 @@
           <div class='select_style' style="width: 100%;" [class.selected]="model.BedCategory">
             <label>Bed Category:</label>
             <select [(ngModel)]="model.BedCategory" required #BedCategory="ngModel" name="BedCategory">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.Bed_Category" [value]="a.value">
+        <option *ngFor="let a of options.Bed_Category" [value]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -162,7 +163,7 @@
           <div class='select_style' [class.selected]="model.AdmitUnit">
             <label>Admit Unit: </label>
             <select [(ngModel)]="model.AdmitUnit" required #AdmitUnit="ngModel" name="AdmitUnit">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.Admit_Unit" [value]="a.value">
+        <option *ngFor="let a of options.Admit_Unit" [value]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -173,7 +174,7 @@
           <div class='select_style' [class.selected]="model.admOrderMdDept">
             <label> adm order md dept:</label>
             <select [(ngModel)]="model.admOrderMdDept" required #admOrderMdDept="ngModel" name="admOrderMdDept">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.adm_order_md_dept" [ngValue]="a.value">
+        <option *ngFor="let a of options.adm_order_md_dept" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -184,7 +185,7 @@
           <div class='select_style' [class.selected]="model.stepdownOrder">
             <label> stepdown order:</label>
             <select [(ngModel)]="model.stepdownOrder" required #stepdownOrder="ngModel" name="stepdownOrder">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.stepdown_order" [ngValue]="a.value">
+        <option *ngFor="let a of options.stepdown_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -195,7 +196,7 @@
           <div class='select_style' [class.selected]="model.attendingChangeOrderMdDept">
             <label>attending change order md dept:</label>
             <select [(ngModel)]="model.attendingChangeOrderMdDept" required #attendingChangeOrderMdDept="ngModel" name="attendingChangeOrderMdDept">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.attending_change_order_md_dept" [ngValue]="a.value">
+        <option *ngFor="let a of options.attending_change_order_md_dept" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -206,7 +207,7 @@
           <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
             <label> iso result: </label>
             <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.iso_result" [ngValue]="a.value">
+        <option *ngFor="let a of options.iso_result" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -217,7 +218,7 @@
           <div class='select_style' [class.selected]="model.DischargeDisposition">
             <label> Discharge Disposition: </label>
             <select [(ngModel)]="model.DischargeDisposition" required #DischargeDisposition="ngModel" name="DischargeDisposition">
-        <option *ngFor="let a of CELLULITISWOMCCC_model.Discharge_Disposition" [ngValue]="a.value">
+        <option *ngFor="let a of options.Discharge_Disposition" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
@@ -244,8 +245,8 @@
       <md-grid-tile *ngFor="let r of prediction;">
         <div>
           <div>
-            <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> {{r.results}} {{r.results==1 ?
-              'day':'days'}}
+            <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> 
+            {{r.results}} {{r.results==1 ? 'day':'days'}}
             </h4>
           </div>
           <table>
@@ -266,6 +267,4 @@
   <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" (click)="rePredict()">
     Re-predict</button>
 
-</div>-->
-
-<app-view-modal [calculatedModal]="CELLULITISWOMCCC" [options]="CELLULITISWOMCCC_model"></app-view-modal>
+</div>
