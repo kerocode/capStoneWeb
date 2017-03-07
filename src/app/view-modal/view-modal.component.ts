@@ -10,8 +10,8 @@ export class ViewModalComponent implements OnInit {
   @Input() calculatedModal;
   @Input() options;
   model: Model = {
-    AdmitSource: 0, AdmitUnit: 0, admOrderMdDept: 0, DischargeDisposition: 0, icuOrder: 0, PrimaryInsurance: 0,
-    age: 0, attendingChangeOrder: 0, BedCategory: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
+    AdmitSource: 0, AdmitUnit: 0, DischargeDisposition: 0, icuOrder: 0, PrimaryInsurance: 0,
+    age: 0,  BedCategory: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
   };
   showPrediction = false;
   constructor() { }
@@ -30,11 +30,8 @@ export class ViewModalComponent implements OnInit {
     "Admit_Unit",
     "Bed_Category",
     "iso_result",
-    "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
-    "general_care_order",
-    "attending_change_order",
     "age"];
   ngOnInit() {
   }
@@ -42,10 +39,8 @@ export class ViewModalComponent implements OnInit {
     if (this.selectedModel.lasso) {
       let lasso = {};
       lasso["results"] = Math.round((this.calculatedModal.lasso.Admit_Source * this.model.AdmitSource) + (
-        this.calculatedModal.lasso.adm_order_md_dept * this.model.admOrderMdDept) +
         (this.calculatedModal.lasso.Admit_Unit * this.model.AdmitUnit) +
         (this.calculatedModal.lasso.age * this.model.age) +
-        (this.calculatedModal.lasso.attending_change_order * this.model.attendingChangeOrder) +
         (this.calculatedModal.lasso.Bed_Category * this.model.BedCategory) +
         (this.calculatedModal.lasso.Discharge_Disposition * this.model.DischargeDisposition) +
         (this.calculatedModal.lasso.general_care_order * this.model.generalCareOrder) +
@@ -60,10 +55,8 @@ export class ViewModalComponent implements OnInit {
     if (this.selectedModel.lassoCv) {
       let lassoCv = {};
       lassoCv["results"] = Math.round((this.calculatedModal.lassoCv.Admit_Source * this.model.AdmitSource) +
-        (this.calculatedModal.lassoCv.adm_order_md_dept * this.model.admOrderMdDept) +
         (this.calculatedModal.lassoCv.Admit_Unit * this.model.AdmitUnit) +
         (this.calculatedModal.lassoCv.age * this.model.age) +
-        (this.calculatedModal.lassoCv.attending_change_order * this.model.attendingChangeOrder) +
         (this.calculatedModal.lassoCv.Bed_Category * this.model.BedCategory) +
         (this.calculatedModal.lassoCv.Discharge_Disposition * this.model.DischargeDisposition) +
         (this.calculatedModal.lassoCv.general_care_order * this.model.generalCareOrder) +
@@ -78,10 +71,8 @@ export class ViewModalComponent implements OnInit {
     if (this.selectedModel.ridge) {
       let ridge = {};
       ridge["results"] = Math.round((this.calculatedModal.ridge.Admit_Source * this.model.AdmitSource) +
-        (this.calculatedModal.ridge.adm_order_md_dept * this.model.admOrderMdDept) +
         (this.calculatedModal.ridge.Admit_Unit * this.model.AdmitUnit) +
         (this.calculatedModal.ridge.age * this.model.age) +
-        (this.calculatedModal.ridge.attending_change_order * this.model.attendingChangeOrder) +
         (this.calculatedModal.ridge.Bed_Category * this.model.BedCategory) +
         (this.calculatedModal.ridge.Discharge_Disposition * this.model.DischargeDisposition) +
         (this.calculatedModal.ridge.general_care_order * this.model.generalCareOrder) +
@@ -97,10 +88,8 @@ export class ViewModalComponent implements OnInit {
     if (this.selectedModel.ridgeCv) {
       let ridgeCv = {};
       ridgeCv["results"] = Math.round((this.calculatedModal.ridgeCv.Admit_Source * this.model.AdmitSource) +
-        (this.calculatedModal.ridgeCv.adm_order_md_dept * this.model.admOrderMdDept) +
         (this.calculatedModal.ridgeCv.Admit_Unit * this.model.AdmitUnit) +
         (this.calculatedModal.ridgeCv.age * this.model.age) +
-        (this.calculatedModal.ridgeCv.attending_change_order * this.model.attendingChangeOrder) +
         (this.calculatedModal.ridgeCv.Bed_Category * this.model.BedCategory) +
         (this.calculatedModal.ridgeCv.Discharge_Disposition * this.model.DischargeDisposition) +
         (this.calculatedModal.ridgeCv.general_care_order * this.model.generalCareOrder) +
@@ -115,10 +104,8 @@ export class ViewModalComponent implements OnInit {
     if (this.selectedModel.linear) {
       let linear = {};
       linear["results"] = Math.round((this.calculatedModal.linear.Admit_Source * this.model.AdmitSource) +
-        (this.calculatedModal.linear.adm_order_md_dept * this.model.admOrderMdDept) +
         (this.calculatedModal.linear.Admit_Unit * this.model.AdmitUnit) +
         (this.calculatedModal.linear.age * this.model.age) +
-        (this.calculatedModal.linear.attending_change_order * this.model.attendingChangeOrder) +
         (this.calculatedModal.linear.Bed_Category * this.model.BedCategory) +
         (this.calculatedModal.linear.Discharge_Disposition * this.model.DischargeDisposition) +
         (this.calculatedModal.linear.general_care_order * this.model.generalCareOrder) +

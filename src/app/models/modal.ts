@@ -5,10 +5,8 @@ export interface Model{
     AdmitUnit:number;
     BedCategory: number; 
     isoResult:number; 
-    admOrderMdDept:number;
     icuOrder:number;
     stepdownOrder:number; 
     generalCareOrder: number;
-    attendingChangeOrder: number;
     age: number;
 }
