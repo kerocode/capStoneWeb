@@ -15,7 +15,6 @@ import { MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOComponent } from '
 import { PSYCHOSESComponent } from './psychoses/psychoses.component';
 import { REDBLOODCELLDISORDERSWOMCCComponent } from './redbloodcelldisorderswomcc/redbloodcelldisorderswomcc.component';
 import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilitationwccmcc.component';
-import { SEIZURESWOMCCComponent } from './seizureswomcc/seizureswomcc.component';
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { ViewModalComponent } from './view-modal/view-modal.component';
@@ -34,7 +33,6 @@ import { ViewModalComponent } from './view-modal/view-modal.component';
     PSYCHOSESComponent,
     REDBLOODCELLDISORDERSWOMCCComponent,
     REHABILITATIONWCCMCCComponent,
-    SEIZURESWOMCCComponent,
     VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
 
     ClickOutsideDirective,

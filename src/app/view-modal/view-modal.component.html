@@ -1,270 +1,239 @@
-
-    <div  id="openModal" class="modalDialog" >
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <md-grid-list cols="2">
-            <md-grid-tile>
-              <table *ngIf="calculatedModal.linear">
-                <thead>
-                  <tr>
-                    <th colspan="2">Linear Regression</th>
-                  </tr>
-                </thead>
-                <tr *ngFor="let v of variables">
-                  <td>{{v}}</td>
-                  <td>{{calculatedModal.linear[v]}}</td>
-                </tr>
-              </table>
-            </md-grid-tile>
-            <md-grid-tile>
-              <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png">
-            </md-grid-tile>
-            <md-grid-tile>
-              <table *ngIf="calculatedModal.ridge">
-                <thead>
-                  <tr>
-                    <th colspan="2"> Ridge Regression</th>
-                  </tr>
-                </thead>
-                <tr *ngFor="let v of variables">
-                  <td>{{v}}</td>
-                  <td>{{calculatedModal.ridge[v]}}</td>
-                </tr>
-              </table>
-            </md-grid-tile>
-            <md-grid-tile>
-              <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png">
-            </md-grid-tile>
-            <md-grid-tile>
-              <table *ngIf="calculatedModal.ridgeCv">
-                <thead>
-                  <tr>
-                    <th colspan="2"> Ridge Cross validation Regression</th>
-                  </tr>
-                </thead>
-                <tr *ngFor="let v of variables">
-                  <td>{{v}}</td>
-                  <td>{{calculatedModal.ridgeCv[v]}}</td>
-                </tr>
-              </table>
-            </md-grid-tile>
-            <md-grid-tile>
-              <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png">
-            </md-grid-tile>
-            <md-grid-tile>
-              <table *ngIf="calculatedModal.lasso" class="mar-t">
-                <thead>
-                  <tr>
-                    <th colspan="2"> Lasso Regression</th>
-                  </tr>
-                </thead>
-                <tr *ngFor="let v of variables">
-                  <td>{{v}}</td>
-                  <td>{{calculatedModal.lasso[v]}}</td>
-                </tr>
-              </table>
-            </md-grid-tile>
-            <md-grid-tile>
-              <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png">
-            </md-grid-tile>
-            <md-grid-tile>
-              <table *ngIf="calculatedModal.lassoCv" class="mar-t">
-                <thead>
-                  <tr>
-                    <th colspan="2"> Lasso Cross validation Regression</th>
-                  </tr>
-                </thead>
-                <tr *ngFor="let v of variables">
-                  <td>{{v}}</td>
-                  <td>{{calculatedModal.lassoCv[v]}}</td>
-                </tr>
-              </table>
-            </md-grid-tile>
-            <md-grid-tile>
-              <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv1.png">
-            </md-grid-tile>
-          </md-grid-list>
-        </div>
-    </div>
+<div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <md-grid-list cols="2">
+      <md-grid-tile>
+        <table *ngIf="calculatedModal.linear">
+          <thead>
+            <tr>
+              <th colspan="2">Linear Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.linear[v]}}</td>
+          </tr>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table *ngIf="calculatedModal.ridge">
+          <thead>
+            <tr>
+              <th colspan="2"> Ridge Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.ridge[v]}}</td>
+          </tr>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table *ngIf="calculatedModal.ridgeCv">
+          <thead>
+            <tr>
+              <th colspan="2"> Ridge Cross validation Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.ridgeCv[v]}}</td>
+          </tr>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table *ngIf="calculatedModal.lasso" class="mar-t">
+          <thead>
+            <tr>
+              <th colspan="2"> Lasso Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.lasso[v]}}</td>
+          </tr>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table *ngIf="calculatedModal.lassoCv" class="mar-t">
+          <thead>
+            <tr>
+              <th colspan="2"> Lasso Cross validation Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.lassoCv[v]}}</td>
+          </tr>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv1.png">
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+</div>
 <div>
 
 
-<div *ngIf="!showPrediction">
-  <section class="example-section">
-    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.linear">Linear</md-checkbox>
-    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridge">Ridge</md-checkbox>
-    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridgeCv">Ridge Cross Validation </md-checkbox>
-    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
-    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
-    <a md-raised-button class="md-primary" style="float:right; margin: 10px;" href="#openModal" style="text-align: center;margin:0px auto;display: block; font-size:18px;"> Models </a>
-    <!-- Modal Trigger -->
-    <!-- Modal Structure -->
-  </section>
+  <div *ngIf="!showPrediction">
+    <section class="example-section">
+      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.linear">Linear</md-checkbox>
+      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridge">Ridge</md-checkbox>
+      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridgeCv">Ridge Cross Validation </md-checkbox>
+      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
+      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
+      <a md-raised-button class="md-primary" style="float:right; margin: 10px;" href="#openModal" style="text-align: center;margin:0px auto;display: block; font-size:18px;"> Models </a>
+      <!-- Modal Trigger -->
+      <!-- Modal Structure -->
+    </section>
 
-  <div style="margin-bottom:100px;">
-    <form (ngSubmit)="onSubmit()" #modelForm="ngForm">
-      <md-grid-list cols="5" rowHeight="70px">
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.AdmitSource">
-            <label>Admit Source</label>
-            <select [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
+    <div style="margin-bottom:100px;">
+      <form (ngSubmit)="onSubmit()" #modelForm="ngForm">
+        <md-grid-list cols="5" rowHeight="70px">
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.AdmitSource">
+              <label>Admit Source</label>
+              <select [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
         <option *ngFor="let a of options.Admit_Source" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.PrimaryInsurance">
-            <label>Primary Insurance:</label>
-            <select [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.PrimaryInsurance">
+              <label>Primary Insurance:</label>
+              <select [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
         <option *ngFor="let a of options.Primary_Insurance" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.generalCareOrder">
-            <label> general care order:</label>
-            <select [(ngModel)]="model.generalCareOrder" required #generalCareOrder="ngModel" name="generalCareOrder">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.generalCareOrder">
+              <label> general care order:</label>
+              <select [(ngModel)]="model.generalCareOrder" required #generalCareOrder="ngModel" name="generalCareOrder">
         <option *ngFor="let a of options.general_care_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.icuOrder">
-            <label>icu order:</label>
-            <select [(ngModel)]="model.icuOrder" required #icuOrder="ngModel" name="icuOrder">
-        <option *ngFor="let a of options.icu_order" [value]="a.value">
-          {{ a.viewValue }}
-        </option>
-      </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' style="width: 100%;" [class.selected]="model.BedCategory">
-            <label>Bed Category:</label>
-            <select [(ngModel)]="model.BedCategory" required #BedCategory="ngModel" name="BedCategory">
-        <option *ngFor="let a of options.Bed_Category" [value]="a.value">
-          {{ a.viewValue }}
-        </option>
-      </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.AdmitUnit">
-            <label>Admit Unit: </label>
-            <select [(ngModel)]="model.AdmitUnit" required #AdmitUnit="ngModel" name="AdmitUnit">
-        <option *ngFor="let a of options.Admit_Unit" [value]="a.value">
-          {{ a.viewValue }}
-        </option>
-      </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.admOrderMdDept">
-            <label> adm order md dept:</label>
-            <select [(ngModel)]="model.admOrderMdDept" required #admOrderMdDept="ngModel" name="admOrderMdDept">
-        <option *ngFor="let a of options.adm_order_md_dept" [ngValue]="a.value">
-          {{ a.viewValue }}
-        </option>
-      </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.stepdownOrder">
-            <label> stepdown order:</label>
-            <select [(ngModel)]="model.stepdownOrder" required #stepdownOrder="ngModel" name="stepdownOrder">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.stepdownOrder">
+              <label> stepdown order:</label>
+              <select [(ngModel)]="model.stepdownOrder" required #stepdownOrder="ngModel" name="stepdownOrder">
         <option *ngFor="let a of options.stepdown_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' [class.selected]="model.attendingChangeOrderMdDept">
-            <label>attending change order md dept:</label>
-            <select [(ngModel)]="model.attendingChangeOrderMdDept" required #attendingChangeOrderMdDept="ngModel" name="attendingChangeOrderMdDept">
-        <option *ngFor="let a of options.attending_change_order_md_dept" [ngValue]="a.value">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.icuOrder">
+              <label>icu order:</label>
+              <select [(ngModel)]="model.icuOrder" required #icuOrder="ngModel" name="icuOrder">
+        <option *ngFor="let a of options.icu_order" [value]="a.value">
+          {{ a.viewValue }}
+        </option>
+              </select>
+              <span></span>
+            </div>
+          </md-grid-tile>
+
+          <md-grid-tile>
+            <div class='select_style' [class.selected]="model.AdmitUnit">
+              <label>Admit Unit: </label>
+              <select [(ngModel)]="model.AdmitUnit" required #AdmitUnit="ngModel" name="AdmitUnit">
+        <option *ngFor="let a of options.Admit_Unit" [value]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
-            <label> iso result: </label>
-            <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
+              <label> iso result: </label>
+              <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">
         <option *ngFor="let a of options.iso_result" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile colspan="2">
-          <div class='select_style' [class.selected]="model.DischargeDisposition">
-            <label> Discharge Disposition: </label>
-            <select [(ngModel)]="model.DischargeDisposition" required #DischargeDisposition="ngModel" name="DischargeDisposition">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile colspan="2">
+            <div class='select_style' [class.selected]="model.DischargeDisposition">
+              <label> Discharge Disposition: </label>
+              <select [(ngModel)]="model.DischargeDisposition" required #DischargeDisposition="ngModel" name="DischargeDisposition">
         <option *ngFor="let a of options.Discharge_Disposition" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
       </select>
-            <span></span>
-          </div>
-        </md-grid-tile>
-        <md-grid-tile>
-          <div class='select_style' style="width: 100%;" [class.selected]="model.age">
-            <label> Age: </label>
-            <input type="number" [(ngModel)]="model.age" required #age="ngModel" name="age">
+              <span></span>
+            </div>
+          </md-grid-tile>
+          <md-grid-tile>
+            <div class='select_style' style="width: 100%;" [class.selected]="model.age">
+              <label> Age: </label>
+              <input type="number" [(ngModel)]="model.age" required #age="ngModel" name="age">
+            </div>
+          </md-grid-tile>
+        </md-grid-list>
+        <div>
+          <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="showPrediction">
+    <h1 style="text-align: center;"> Report </h1>
+    <div>
+      <md-grid-list cols="2">
+        <md-grid-tile *ngFor="let r of prediction;">
+          <div>
+            <div>
+              <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> {{r.results}} {{r.results==1
+                ? 'day':'days'}}
+              </h4>
+              <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
+              <h5> Variance: {{r.model['variance']}}</h5>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">{{r.type}} </th>
+                </tr>
+              </thead>
+              <tr *ngFor="let v of variables">
+                <td>{{v}}</td>
+                <td>{{r.model[v]}}</td>
+              </tr>
+            </table>
           </div>
         </md-grid-tile>
       </md-grid-list>
-      <div>
-        <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
-      </div>
-    </form>
-  </div>
-</div>
-<div *ngIf="showPrediction">
-  <h1 style="text-align: center;"> Report </h1>
-  <div>
-    <md-grid-list cols="2">
-      <md-grid-tile *ngFor="let r of prediction;">
-        <div>
-          <div>
-            <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> 
-            {{r.results}} {{r.results==1 ? 'day':'days'}}
-            </h4>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th colspan="2">{{r.type}} </th>
-              </tr>
-            </thead>
-            <tr *ngFor="let v of variables">
-              <td>{{v}}</td>
-              <td>{{r.model[v]}}</td>
-            </tr>
-          </table>
-        </div>
-      </md-grid-tile>
-    </md-grid-list>
-  </div>
-  <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" (click)="rePredict()">
+    </div>
+    <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" (click)="rePredict()">
     Re-predict</button>
 
-</div>
+  </div>

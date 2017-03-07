@@ -36,7 +36,7 @@ export class CELLULITISWOMCCComponent implements OnInit {
   hide=true;
   reportModel = {};
   model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
-              age:0,BedCategory:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
   CELLULITISWOMCCC = {
     "lasso": {
       Admit_Source: -0.000000,

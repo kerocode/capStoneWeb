@@ -3,7 +3,6 @@ export interface Model{
     PrimaryInsurance: number;
     DischargeDisposition: number; 
     AdmitUnit:number;
-    BedCategory: number; 
     isoResult:number; 
     icuOrder:number;
     stepdownOrder:number; 
