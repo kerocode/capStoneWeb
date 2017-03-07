@@ -1,0 +1,10 @@
+,0,1
+0,Admit_Source,0.218527133023
+1,Primary_Insurance,0.0668936996843
+2,Discharge_Disposition,0.0498555514501
+3,Admit_Unit,0.299410940153
+4,Bed_Category,-0.576181896206
+5,iso_result,-0.110207219555
+6,stepdown_order,-0.251808770363
+7,general_care_order,0.241527029899
+8,age,0.0245096405309

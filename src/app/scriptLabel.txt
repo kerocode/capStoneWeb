@@ -1,0 +1,206 @@
+PSYCHOSES_column.csv
+Admit_Source
+{'TRANSFER FROM A SNF': 5, 'TRANSFER FROM A HOSP': 4, 'COURT OR LAW ENFORCE': 1, 'HOME /WORK / OTHER': 2, 'TRANSF FROM ANOTH HC': 3, 'CLINIC OR PHYS OFFIC': 0}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICAID': 5, 'MEDICARE MANA': 8}
+Discharge_Disposition
+{'DISCH TRANFERRED WITH VCUHS-D/C': 11, 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 9, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 7, 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)': 6, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 3, 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR': 8, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 4, 'DISCH ADMITTED AS AN IP TO THIS HOSPITAL': 10, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 5, 'HOSPICE - HOME': 12, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 13, 'z DISCH /TRANS TO NOT DEFINED HLTH CR INST': 14, 'DISCH /TRANS TO FED HLTH CARE FACILITY-VA': 2, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 1}
+Bed_Category
+{'PSY-VTC': 5, 'PED MED/SU': 3, 'PICU': 4, 'CORRECTION': 0, 'MED/SURG': 2, 'PSYCH': 6, 'ICU': 1}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'VA TREATMENT CTR-SEAS ACUTE': 18, 'C10A-CORONARY ICU': 5, 'N5DH-DIGESTIVE HLTH MEDICINE': 13, 'N3-DUAL DIAGNOSIS/MEDICAL PSY': 9, 'N4-GENERAL PSYCHIATRY': 11, 'VA TREATMENT CTR(E) ACUTE': 17, '4TCU-TRANSITIONAL CARE UNIT': 2, 'C3A-ACUTE CARE MEDICINE': 7, 'N3EC-N 3 ELECTROCONVULSIV THER': 10, '11W-NEUROSURGERY': 1, 'CSBC-SECURITY CARE': 8, 'C11C-NEUROSCIENCE ICU': 6, '7C-ACUTE CARE PEDIATRICS': 3, 'N4N-PALLIATIVE CARE UNIT': 12, '11EM-EPILEPSY MONITORING': 0, 'VA TREATMENT CTR (B) ACUTE': 16, 'NGCS-N GROUND CRISIS STABILIZ': 15, '7PCU-PED PROGRESSIVE CARE': 4, 'N9-MED-STEPDOWN TELE': 14}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_column.csv
+Admit_Source
+{'CLINIC OR PHYS OFFIC': 0, 'HOME /WORK / OTHER': 1, 'TRANSF FROM ANOTH HC': 2}
+Primary_Insurance
+{'INDIGENT CARE': 3, 'MEDICAID MANA': 5, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'HMO/PPO': 2, 'SELF PAY': 8, 'OTHER': 7, 'MEDICAID': 4, 'MEDICARE': 6}
+Discharge_Disposition
+{'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 1, 'HOSPICE - HOME': 3, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 2}
+Bed_Category
+{'L&D': 1, 'GUM SUITES': 0}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'9E-SPECIAL SERVICES SUITES': 1, '6LD-LABOR AND DELIVERY ROOM': 0}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+REHABILITATIONWCCMCC_column.csv
+Admit_Source
+{'TRANSFER FROM A HOSP': 3, 'HOME /WORK / OTHER': 1, 'CLINIC OR PHYS OFFIC': 0, 'TRANSF FROM ANOTH HC': 2}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICARE MANA': 8, 'MEDICAID': 5}
+Discharge_Disposition
+{'*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 8, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 6, 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)': 5, 'DISCH TRANFERRED WITH VCUHS-D/C': 10, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 2, 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR': 7, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 3, 'z DISCH /TRANS TO NOT DEFINED HLTH CR INST': 12, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 4, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 11, 'DISCH ADMITTED AS AN IP TO THIS HOSPITAL': 9, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 1}
+Bed_Category
+{'RESEARCH': 1, 'PSYCH': 0, 'RHAB': 2}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N4-GENERAL PSYCHIATRY': 3, 'N8-GENERAL CLINICAL RESEAR CTR': 4, 'N1-REHABILITATIVE MEDICINE': 0, 'N3-DUAL DIAGNOSIS/MEDICAL PSY': 2, 'N2-REHAB MED-BRAIN INJURY': 1}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_column.csv
+Admit_Source
+{'TRANSFER FROM A SNF': 5, 'TRANSFER FROM A HOSP': 4, 'COURT OR LAW ENFORCE': 1, 'HOME /WORK / OTHER': 2, 'TRANSF FROM ANOTH HC': 3, 'CLINIC OR PHYS OFFIC': 0}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICARE MANA': 8, 'MEDICAID': 5}
+Discharge_Disposition
+{'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 6, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 4, 'HOSPICE - HOME': 7, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 1, 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR': 5, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 2, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 3, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 8, 'LEFT BEFORE CLINICAL EVAL -AMA': 9}
+Bed_Category
+{'SAME DAY': 8, 'PED MED/SU': 5, 'ED': 1, 'CORRECTION': 0, 'RESEARCH': 7, 'MED/SURG': 4, 'GUM SUITES': 2, 'PICU': 6, 'ICU': 3}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N5DH-DIGESTIVE HLTH MEDICINE': 29, 'C3A-ACUTE CARE MEDICINE': 19, '9W-CLINICAL TRANSPLANT': 15, '11E-ORTHOPEDICS': 3, '3CCL-CARDIAC CATH LAB': 6, '7PCU-PED PROGRESSIVE CARE': 11, '9C-TRAUMA - GENERAL SURGERY': 13, 'C10A-CORONARY ICU': 16, 'C10B-CORONARY ICU': 17, '4TCU-TRANSITIONAL CARE UNIT': 7, '10CA-CARD/THORASIC SURG PCU': 0, 'GB5-GATEWAY BLDG 5TH FLOOR': 25, '10E-CARDIOLOGY': 1, '7CW-PEDS MAIN 7 CENTRAL WEST': 9, 'N10A-BONE MARROW TRANSPLANT': 26, 'C9A-SURGICAL TRAUMA ICU': 21, '7CE-PEDS-SAM DAY SUITES': 8, 'N9-MED-STEPDOWN TELE': 31, '8W-WOMENS CARE UNIT': 12, '9E-SPECIAL SERVICES SUITES': 14, '10W-CARDIOTHORACIC SURGERY': 2, '11W-NEUROSURGERY': 5, 'N8-GENERAL CLINICAL RESEAR CTR': 30, 'GB3-GATEWAY BLDG 3RD FLOOR': 24, 'C7A-ACUTE CARE SURGERY': 20, 'ED-CLINICAL DECISION UNIT(ORN)': 23, '7E-GENERAL CARE PEDS': 10, 'N10B-BONE MARROW TRANSPLANT': 27, '11EM-EPILEPSY MONITORING': 4, 'CSBC-SECURITY CARE': 22, 'N4N-PALLIATIVE CARE UNIT': 28, 'C2A-ACUTE CARE ONCOLOGY': 18}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWO_column.csv
+Admit_Source
+{'TRANSFER FROM A HOSP': 2, 'CLINIC OR PHYS OFFIC': 0, 'HOME /WORK / OTHER': 1}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICARE MANA': 8, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICAID': 5, 'MEDICAID MANA': 6}
+Discharge_Disposition
+{'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 4, 'HOSPICE - HOME': 5, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'z DISCH /TRANS TO COURT/LAW ENFRC W/ACUTE IP R': 6, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 1, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 2, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 3}
+Bed_Category
+{'SAME DAY': 5, 'CORRECTION': 0, 'MED/SURG': 3, 'GUM SUITES': 1, 'OR': 4, 'ICU': 2}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'9C-TRAUMA - GENERAL SURGERY': 6, "GB5P-CHILDREN'S PERIOP": 14, 'C3A-ACUTE CARE MEDICINE': 8, '11CA-JOINT RESTORATION': 0, '11E-ORTHOPEDICS': 1, '8W-WOMENS CARE UNIT': 5, 'C8B-BURN CENTER': 9, '4TCU-TRANSITIONAL CARE UNIT': 3, '5ORC-OPERATING ROOM CENTRAL': 4, '9E-SPECIAL SERVICES SUITES': 7, 'GB5-GATEWAY BLDG 5TH FLOOR': 13, 'CSBC-SECURITY CARE': 12, 'C9B-SURGICAL TRAUMA ICU': 10, 'N4N-PALLIATIVE CARE UNIT': 16, '11W-NEUROSURGERY': 2, 'C9C-SURGICAL TRAUMA ICU': 11, 'N10A-BONE MARROW TRANSPLANT': 15}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+DEPRESSIVENEUROSES_column.csv
+Admit_Source
+{'CLINIC OR PHYS OFFIC': 0, 'TRANSFER FROM A HOSP': 3, 'COURT OR LAW ENFORCE': 1, 'HOME /WORK / OTHER': 2}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICARE MANA': 8, 'MEDICAID': 5}
+Discharge_Disposition
+{'EXPIRED IN THIS FACILITY': 9, 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 7, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 5, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 2, 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR': 6, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 3, 'z DISCH /TRANS TO NOT DEFINED HLTH CR INST': 11, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 4, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 10, 'DISCH ADMITTED AS AN IP TO THIS HOSPITAL': 8, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 1}
+Bed_Category
+{'MED/SURG': 0, 'PSY-VTC': 1, 'PSYCH': 2}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N3-DUAL DIAGNOSIS/MEDICAL PSY': 2, 'N4-GENERAL PSYCHIATRY': 3, 'VA TREATMENT CTR(E) ACUTE': 6, '10W-CARDIOTHORACIC SURGERY': 0, '11E-ORTHOPEDICS': 1, 'VA TREATMENT CTR (B) ACUTE': 5, 'NGCS-N GROUND CRISIS STABILIZ': 4}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+CELLULITISWOMCC_column.csv
+Admit_Source
+{'CLINIC OR PHYS OFFIC': 0, 'TRANSFER FROM A HOSP': 4, 'COURT OR LAW ENFORCE': 1, 'HOME /WORK / OTHER': 2, 'TRANSF FROM ANOTH HC': 3}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICARE MANA': 8, 'MEDICAID': 5}
+Discharge_Disposition
+{'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 7, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 6, 'HOSPICE - HOME': 8, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'LEFT ELOPED -W/O NOTICE-AMA': 11, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 3, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 4, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 5, 'DISCH /TRANS TO CANCER CTR OR CHILD HOSP': 1, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 10, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 2, 'HOSPICE - MEDICAL FAC (CERT) PROVIDE HOSPICE C': 9}
+Bed_Category
+{'SAME DAY': 8, 'PED MED/SU': 6, 'ED': 1, 'CORRECTION': 0, 'RESEARCH': 7, 'MED/SURG': 4, 'GUM SUITES': 2, 'OR': 5, 'ICU': 3}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'C3A-ACUTE CARE MEDICINE': 19, '5ORC-OPERATING ROOM CENTRAL': 8, '9W-CLINICAL TRANSPLANT': 16, 'N5DH-DIGESTIVE HLTH MEDICINE': 29, '11W-NEUROSURGERY': 6, '11E-ORTHOPEDICS': 4, '9C-TRAUMA - GENERAL SURGERY': 14, 'C8B-BURN CENTER': 22, '5PAC-POST ANESTHESIA CARE UNIT': 9, '4TCU-TRANSITIONAL CARE UNIT': 7, '10CA-CARD/THORASIC SURG PCU': 1, 'GB5-GATEWAY BLDG 5TH FLOOR': 26, '10E-CARDIOLOGY': 2, '11EM-EPILEPSY MONITORING': 5, '7CE-PEDS-SAM DAY SUITES': 10, 'N9-MED-STEPDOWN TELE': 31, '8W-WOMENS CARE UNIT': 13, '9E-SPECIAL SERVICES SUITES': 15, '7CW-PEDS MAIN 7 CENTRAL WEST': 11, 'C5A-OR SURGERY': 20, 'C7A-ACUTE CARE SURGERY': 21, 'N8-GENERAL CLINICAL RESEAR CTR': 30, '10C CICU/CMICU': 0, '10W-CARDIOTHORACIC SURGERY': 3, 'ED-CLINICAL DECISION UNIT(ORN)': 25, '7E-GENERAL CARE PEDS': 12, 'N10B-BONE MARROW TRANSPLANT': 27, 'CSBC-SECURITY CARE': 24, 'N4N-PALLIATIVE CARE UNIT': 28, 'C10D-CARDIAC SURG ICU': 17, 'C8C-BURN CENTER': 23, 'C2A-ACUTE CARE ONCOLOGY': 18}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+REDBLOODCELLDISORDERSWOMCC_column.csv
+Admit_Source
+{'COURT OR LAW ENFORCE': 1, 'TRANSFER FROM A SNF': 4, 'TRANSFER FROM A HOSP': 3, 'HOME /WORK / OTHER': 2, 'CLINIC OR PHYS OFFIC': 0}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICARE MANA': 8, 'MEDICAID': 5}
+Discharge_Disposition
+{'HOSPICE - MEDICAL FAC (CERT) PROVIDE HOSPICE C': 7, 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 5, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 4, 'HOSPICE - HOME': 6, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 2, 'DISCH /TRANS TO CANCER CTR OR CHILD HOSP': 1, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 8, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 3}
+Bed_Category
+{'SAME DAY': 8, 'PED MED/SU': 5, 'ED': 1, 'CORRECTION': 0, 'RESEARCH': 7, 'MED/SURG': 3, 'PICU': 6, 'OR': 4, 'ICU': 2}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N5DH-DIGESTIVE HLTH MEDICINE': 31, 'C9D-SURGICAL TRAUMA ICU': 24, 'C3A-ACUTE CARE MEDICINE': 20, '9W-CLINICAL TRANSPLANT': 16, '11E-ORTHOPEDICS': 4, '7C-ACUTE CARE PEDIATRICS': 8, '7PCU-PED PROGRESSIVE CARE': 12, '9C-TRAUMA - GENERAL SURGERY': 15, '4TCU-TRANSITIONAL CARE UNIT': 7, '10CA-CARD/THORASIC SURG PCU': 0, 'GB5-GATEWAY BLDG 5TH FLOOR': 27, '10E-CARDIOLOGY': 1, '11EM-EPILEPSY MONITORING': 5, 'C9C-SURGICAL TRAUMA ICU': 23, 'N10A-BONE MARROW TRANSPLANT': 28, '7CE-PEDS-SAM DAY SUITES': 9, 'N9-MED-STEPDOWN TELE': 33, '8W-WOMENS CARE UNIT': 14, '10W-CARDIOTHORACIC SURGERY': 2, '7CW-PEDS MAIN 7 CENTRAL WEST': 10, '11W-NEUROSURGERY': 6, 'N8-GENERAL CLINICAL RESEAR CTR': 32, 'C4B-MEDICAL RESP ICU': 21, '11CA-JOINT RESTORATION': 3, 'C7A-ACUTE CARE SURGERY': 22, 'ED-CLINICAL DECISION UNIT(ORN)': 26, '7E-GENERAL CARE PEDS': 11, 'A7PO-AMB SURGERY-PREOP': 17, 'N10B-BONE MARROW TRANSPLANT': 29, 'CSBC-SECURITY CARE': 25, '7PI-PEDIATRIC ICU (0-21)': 13, 'N4N-PALLIATIVE CARE UNIT': 30, 'C10D-CARDIAC SURG ICU': 18, 'C2A-ACUTE CARE ONCOLOGY': 19}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_column.csv
+Admit_Source
+{'COURT OR LAW ENFORCE': 1, 'TRANSFER FROM A SNF': 4, 'TRANSFER FROM A HOSP': 3, 'CLINIC OR PHYS OFFIC': 0, 'HOME /WORK / OTHER': 2}
+Primary_Insurance
+{'INDIGENT CARE': 4, 'MEDICAID MANA': 6, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'COMMERCIAL': 2, 'HMO/PPO': 3, 'SELF PAY': 10, 'OTHER': 9, 'MEDICARE': 7, 'MEDICAID': 5, 'MEDICARE MANA': 8}
+Discharge_Disposition
+{'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 7, 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT': 6, 'HOSPICE - HOME': 8, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 1, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 2, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 3, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 4, 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)': 5, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 9, 'LEFT ELOPED -W/O NOTICE-AMA': 10}
+Bed_Category
+{'ED': 1, 'CORRECTION': 0, 'RESEARCH': 5, 'MED/SURG': 4, 'GUM SUITES': 2, 'ICU': 3}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N5DH-DIGESTIVE HLTH MEDICINE': 21, 'C3A-ACUTE CARE MEDICINE': 14, '9W-CLINICAL TRANSPLANT': 8, 'CSBC-SECURITY CARE': 18, '3CCL-CARDIAC CATH LAB': 4, '11W-NEUROSURGERY': 3, '9C-TRAUMA - GENERAL SURGERY': 6, 'C10A-CORONARY ICU': 9, 'C10B-CORONARY ICU': 10, '4TCU-TRANSITIONAL CARE UNIT': 5, '10CA-CARD/THORASIC SURG PCU': 0, '10E-CARDIOLOGY': 1, 'C11C-NEUROSCIENCE ICU': 12, 'N9-MED-STEPDOWN TELE': 23, '9E-SPECIAL SERVICES SUITES': 7, '10W-CARDIOTHORACIC SURGERY': 2, 'C7A-ACUTE CARE SURGERY': 16, 'N8-GENERAL CLINICAL RESEAR CTR': 22, 'GB3-GATEWAY BLDG 3RD FLOOR': 20, 'C4B-MEDICAL RESP ICU': 15, 'ED-CLINICAL DECISION UNIT(ORN)': 19, 'C10D-CARDIAC SURG ICU': 11, 'C8C-BURN CENTER': 17, 'C2A-ACUTE CARE ONCOLOGY': 13}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{nan: 0, 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
+HEARTFAILURESHOCKWCC_column.csv
+Admit_Source
+{'TRANSFER FROM A SNF': 5, 'TRANSFER FROM A HOSP': 4, 'COURT OR LAW ENFORCE': 1, 'HOME /WORK / OTHER': 2, 'TRANSF FROM ANOTH HC': 3, 'CLINIC OR PHYS OFFIC': 0}
+Primary_Insurance
+{'INDIGENT CARE': 3, 'MEDICAID MANA': 5, 'ANTHEM MANAGE': 1, 'ANTHEM': 0, 'HMO/PPO': 2, 'SELF PAY': 9, 'OTHER': 8, 'MEDICAID': 4, 'MEDICARE MANA': 7, 'MEDICARE': 6}
+Discharge_Disposition
+{'EXPIRED IN THIS FACILITY': 8, 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE': 7, 'HOSPICE - HOME': 9, '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)': 0, 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)': 3, 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR': 6, 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP': 4, 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO': 5, 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)': 11, 'DISCH /TRANS TO FED HLTH CARE FACILITY-VA': 2, 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC': 1, 'HOSPICE - MEDICAL FAC (CERT) PROVIDE HOSPICE C': 10}
+Bed_Category
+{'MED/SURG': 3, 'ED': 1, 'CORRECTION': 0, 'ICU': 2}
+iso_result
+{nan: 0, 'Isolation': 1}
+Admit_Unit
+{'N5DH-DIGESTIVE HLTH MEDICINE': 23, 'C3A-ACUTE CARE MEDICINE': 13, '9W-CLINICAL TRANSPLANT': 7, 'CSBC-SECURITY CARE': 17, '11W-NEUROSURGERY': 3, '9C-TRAUMA - GENERAL SURGERY': 6, 'C10A-CORONARY ICU': 8, 'C10C-CARDIAC SURG ICU': 10, '4TCU-TRANSITIONAL CARE UNIT': 4, '10CA-CARD/THORASIC SURG PCU': 0, '10E-CARDIOLOGY': 1, 'N10A-BONE MARROW TRANSPLANT': 20, 'C2A-ACUTE CARE ONCOLOGY': 12, 'C4C-MEDICAL RESP ICU': 14, '8W-WOMENS CARE UNIT': 5, '10W-CARDIOTHORACIC SURGERY': 2, 'C7A-ACUTE CARE SURGERY': 15, 'GB3-GATEWAY BLDG 3RD FLOOR': 19, 'ED-CLINICAL DECISION UNIT(ORN)': 18, 'N10B-BONE MARROW TRANSPLANT': 21, 'C10B-CORONARY ICU': 9, 'C9B-SURGICAL TRAUMA ICU': 16, 'N4N-PALLIATIVE CARE UNIT': 22, 'C10D-CARDIAC SURG ICU': 11, 'N9-MED-STEPDOWN TELE': 24}
+icu_order
+{nan: 0, 'LEVEL OF CARE - INTENSIVE': 1}
+stepdown_order
+{'LEVEL OF CARE - INTERMEDIATE/STEPDOWN': 1, nan: 0}
+general_care_order
+{nan: 0, 'LEVEL OF CARE - GENERAL': 1}
++-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*+-*
+
