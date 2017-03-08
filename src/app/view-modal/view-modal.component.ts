@@ -11,7 +11,7 @@ export class ViewModalComponent implements OnInit {
   @Input() options;
   model: Model = {
     AdmitSource: 0, AdmitUnit: 0, DischargeDisposition: 0, icuOrder: 0, PrimaryInsurance: 0,
-    age: 0,  BedCategory: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
+    age: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
   };
   showPrediction = false;
   constructor() { }

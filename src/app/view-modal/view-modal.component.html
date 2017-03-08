@@ -128,7 +128,7 @@
           <md-grid-tile>
             <div class='select_style' [class.selected]="model.generalCareOrder">
               <label> general care order:</label>
-              <select [(ngModel)]="model.generalCareOrder" required #generalCareOrder="ngModel" name="generalCareOrder">
+              <select [(ngModel)]="model.generalCareOrder" [required]="model.icuOrder==0 && model.stepdownOrder==0" #generalCareOrder="ngModel" name="generalCareOrder">
         <option *ngFor="let a of options.general_care_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
@@ -139,7 +139,7 @@
           <md-grid-tile>
             <div class='select_style' [class.selected]="model.stepdownOrder">
               <label> stepdown order:</label>
-              <select [(ngModel)]="model.stepdownOrder" required #stepdownOrder="ngModel" name="stepdownOrder">
+              <select [(ngModel)]="model.stepdownOrder" [required]="model.icuOrder==0 && model.generalCareOrder==0" #stepdownOrder="ngModel" name="stepdownOrder">
         <option *ngFor="let a of options.stepdown_order" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
@@ -150,7 +150,7 @@
           <md-grid-tile>
             <div class='select_style' [class.selected]="model.icuOrder">
               <label>icu order:</label>
-              <select [(ngModel)]="model.icuOrder" required #icuOrder="ngModel" name="icuOrder">
+              <select [(ngModel)]="model.icuOrder" [required]="model.stepdownOrder==0 && model.generalCareOrder==0" #icuOrder="ngModel" name="icuOrder">
         <option *ngFor="let a of options.icu_order" [value]="a.value">
           {{ a.viewValue }}
         </option>
@@ -173,7 +173,7 @@
           <md-grid-tile>
             <div class='select_style' style="width: 100%;" [class.selected]="model.isoResult">
               <label> iso result: </label>
-              <select [(ngModel)]="model.isoResult" #isoResult="ngModel" name="isoResult">
+              <select [(ngModel)]="model.isoResult"  #isoResult="ngModel" name="isoResult">
         <option *ngFor="let a of options.iso_result" [ngValue]="a.value">
           {{ a.viewValue }}
         </option>
@@ -195,7 +195,7 @@
           <md-grid-tile>
             <div class='select_style' style="width: 100%;" [class.selected]="model.age">
               <label> Age: </label>
-              <input type="number" [(ngModel)]="model.age" required #age="ngModel" name="age">
+              <input type="number" min="18" [(ngModel)]="model.age" required #age="ngModel" name="age">
             </div>
           </md-grid-tile>
         </md-grid-list>
@@ -208,7 +208,7 @@
   <div *ngIf="showPrediction">
     <h1 style="text-align: center;"> Report </h1>
     <div>
-      <md-grid-list cols="2">
+      <md-grid-list cols="2" rowHeight="550px">
         <md-grid-tile *ngFor="let r of prediction;">
           <div>
             <div>
