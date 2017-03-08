@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
 @Component({
   selector: 'app-redbloodcelldisorderswomcc',
@@ -9,92 +11,96 @@ export class REDBLOODCELLDISORDERSWOMCCComponent implements OnInit {
 
   constructor() { }
   lines = [];
+    selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
+  prediction=[];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
     "Discharge_Disposition",
     "Admit_Unit",
-    "Bed_Category",
     "iso_result",
-    "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
     "general_care_order",
-    "attending_change_order",
     "age"]
   patient = {};
-  model = {};
+  showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
   REDBLOODCELLDISORDERSWOMCCC = {
 
     "lasso": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0706185989013,
-      Discharge_Disposition: 0.0,
-      Admit_Unit: 0.0373924752677,
-      Bed_Category: -0.341713299841,
-      iso_result: -0.0,
-      adm_order_md_dept: -0.0650785273238,
-      icu_order: 0.0,
-      stepdown_order: -0.0,
-      general_care_order: 0.0,
-      attending_change_order: 0.0,
-      age: -0.00241042199541
+          Admit_Source:  0.000000,
+      Primary_Insurance:  0.207920,
+  Discharge_Disposition:  0.000000,
+             Admit_Unit:  0.027257,
+             iso_result: -0.000000,
+              icu_order:  0.000000,
+         stepdown_order: -0.000000,
+     general_care_order:  0.000000,
+                    age: -0.053422,
+      meanSquareError: 21.46,
+      variance: 0.05
     },
     "lassoCv": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.142283894839,
-      Discharge_Disposition: 0.0392953228378,
-      Admit_Unit: 0.0298684050494,
-      Bed_Category: -0.660977263774,
-      iso_result: -0.0,
-      adm_order_md_dept: 0.141470315191,
-      icu_order: -0.0,
-      stepdown_order: -0.0,
-      general_care_order: 0.0,
-      attending_change_order: 0.480496403343,
-      age: -0.0165697224856
+               Admit_Source:  0.000000,
+      Primary_Insurance:  0.000000,
+  Discharge_Disposition:  0.000000,
+             Admit_Unit:  0.000000,
+             iso_result: -0.000000,
+              icu_order:  0.000000,
+         stepdown_order: -0.000000,
+     general_care_order:  0.000000,
+                    age: -0.031004,
+      meanSquareError: 22.09,
+      variance: 0.03
     },
     "ridge": {
-      Admit_Source: 0.182295516783,
-      Primary_Insurance: 0.174969190909,
-      Discharge_Disposition: 0.109810950735,
-      Admit_Unit: 0.0351353221079,
-      Bed_Category: -0.708686627592,
-      iso_result: -0.344449397629,
-      adm_order_md_dept: -0.130664270723,
-      icu_order: -1.01361352345,
-      stepdown_order: 0.319867705165,
-      general_care_order: 2.07516781449,
-      attending_change_order: 0.675340353534,
-      age: -0.0187346197623,
+               Admit_Source:  0.247618,
+      Primary_Insurance:  0.297438,
+  Discharge_Disposition:  0.118538,
+             Admit_Unit:  0.024883,
+             iso_result: -0.862450,
+              icu_order: -0.058723,
+         stepdown_order:  0.667182,
+     general_care_order:  2.171707,
+                    age: -0.060027,
+      meanSquareError: 20.94,
+      variance: 0.08
     },
     "ridgeCv": {
-      Admit_Source: 0.177108893466,
-      Primary_Insurance: 0.169982921445,
-      Discharge_Disposition: 0.108795372064,
-      Admit_Unit: 0.0338015926419,
-      Bed_Category: -0.704673424245,
-      iso_result: -0.307090227961,
-      adm_order_md_dept: -0.134156029196,
-      icu_order: -0.468860197838,
-      stepdown_order: 0.13143084453,
-      general_care_order: 1.41269410654,
-      attending_change_order: 0.637805956645,
-      age: -0.0186979403689
+            Admit_Source:  0.252495,
+      Primary_Insurance:  0.294633,
+  Discharge_Disposition:  0.119959,
+             Admit_Unit:  0.024589,
+             iso_result: -0.676737,
+              icu_order: -0.006612,
+         stepdown_order:  0.323569,
+     general_care_order:  1.315755,
+                    age: -0.060098,
+      meanSquareError: 21.46,
+      variance: 0.05
     },
     "linear": {
-      Admit_Source: 0.182776891412,
-      Primary_Insurance: 0.175475789787,
-      Discharge_Disposition: 0.10991913208,
-      Admit_Unit: 0.0352611968707,
-      Bed_Category: -0.708725756879,
-      iso_result: -0.344420633777,
-      adm_order_md_dept: -0.130373293464,
-      icu_order: -1.07642906387,
-      stepdown_order: 0.335817248541,
-      general_care_order: 2.12936325081,
-      attending_change_order: 0.679118725239,
-      age: -0.0187377460916,
+                Admit_Source:  0.246484,
+      Primary_Insurance:  0.297649,
+  Discharge_Disposition:  0.118347,
+             Admit_Unit:  0.024910,
+             iso_result: -0.874739,
+              icu_order: -0.068991,
+         stepdown_order:  0.699953,
+     general_care_order:  2.250819,
+                    age: -0.060019,
+      meanSquareError: 20.94,
+      variance: 0.08
     }
   };
   
@@ -133,75 +139,46 @@ export class REDBLOODCELLDISORDERSWOMCCComponent implements OnInit {
       { viewValue: 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO', value: 3}
     ],
 
-    Bed_Category: [
-      { viewValue: 'SAME DAY', value: 9},
-      { viewValue: 'PED MED/SU', value: 6},
-      { viewValue: 'ED', value: 2},
-      { viewValue: 'CORRECTION', value: 1},
-      { viewValue: 'RESEARCH', value: 8},
-      { viewValue: 'MED/SURG', value: 4},
-      { viewValue: '0', value: 0},
-      { viewValue: 'PICU', value: 7},
-      { viewValue: 'OR', value: 5},
-      { viewValue: 'ICU', value: 3}
-    ],
-
     iso_result: [
       { viewValue: 'Isolation', value: 1 },
       { viewValue: '0', value: 0 }
     ],
 
     Admit_Unit: [
-      { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 33},
-      { viewValue: 'C9D-SURGICAL TRAUMA ICU', value: 26},
-      { viewValue: 'C3A-ACUTE CARE MEDICINE', value: 21},
-      { viewValue: '9W-CLINICAL TRANSPLANT', value: 17},
-      { viewValue: '11E-ORTHOPEDICS', value: 5},
-      { viewValue: '7C-ACUTE CARE PEDIATRICS', value: 9},
-      { viewValue: '7PCU-PED PROGRESSIVE CARE', value: 13},
-      { viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 16},
-      { viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 8},
-      { viewValue: '10CA-CARD/THORASIC SURG PCU', value: 1},
-      { viewValue: 'GB5-GATEWAY BLDG 5TH FLOOR', value: 29},
-      { viewValue: '0', value: 0},
-      { viewValue: '10E-CARDIOLOGY', value: 2},
-      { viewValue: '11EM-EPILEPSY MONITORING', value: 6},
-      { viewValue: 'C9C-SURGICAL TRAUMA ICU', value: 25},
-      { viewValue: 'N10A-BONE MARROW TRANSPLANT', value: 30},
-      { viewValue: 'C4D-MEDICAL RESP ICU', value: 23},
-      { viewValue: '7CE-PEDS-SAM DAY SUITES', value: 10},
-      { viewValue: 'N9-MED-STEPDOWN TELE', value: 35},
-      { viewValue: '8W-WOMENS CARE UNIT', value: 15},
-      { viewValue: '7CW-PEDS MAIN 7 CENTRAL WEST', value: 11},
-      { viewValue: '11W-NEUROSURGERY', value: 7},
-      { viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 34},
-      { viewValue: 'C4B-MEDICAL RESP ICU', value: 22},
-      { viewValue: '11CA-JOINT RESTORATION', value: 4},
-      { viewValue: 'C7A-ACUTE CARE SURGERY', value: 24},
-      { viewValue: 'ED-CLINICAL DECISION UNIT(ORN)', value: 28},
-      { viewValue: '7E-GENERAL CARE PEDS', value: 12},
-      { viewValue: 'A7PO-AMB SURGERY-PREOP', value: 18},
-      { viewValue: 'N10B-BONE MARROW TRANSPLANT', value: 31},
-      { viewValue: 'CSBC-SECURITY CARE', value: 27}, 
-      { viewValue: '7PI-PEDIATRIC ICU (0-21)', value: 14},
-      { viewValue: 'N4N-PALLIATIVE CARE UNIT', value: 32},
-      { viewValue: 'C10D-CARDIAC SURG ICU', value: 19},
-      { viewValue: '10W-CARDIOTHORACIC SURGERY', value: 3},
-      { viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 20}
-    ],
-
-    adm_order_md_dept: [
-      { viewValue: 'INTERNAL MEDICINE', value: 3},
-      { viewValue: 'RADIOLOGY', value: 9},
-      { viewValue: 'PEDIATRICS', value: 8},
-      { viewValue: 'EMERGENCY MEDICINE', value: 2},
-      { viewValue: 'ANESTHESIOLOGY', value: 1},
-      { viewValue: 'OPHTHALMOLOGY', value: 6},
-      { viewValue: '0', value: 0},
-      { viewValue: 'NEUROSURGERY', value: 4},
-      { viewValue: 'SURGERY', value: 10},
-      { viewValue: 'OBSTETRICS - GYNECOL', value: 5},
-      { viewValue: 'ORTHOPEDIC SURGERY', value: 7}
+      { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 31},
+      { viewValue: 'C9D-SURGICAL TRAUMA ICU', value: 24},
+      { viewValue: 'C3A-ACUTE CARE MEDICINE', value: 20},
+      { viewValue: '9W-CLINICAL TRANSPLANT', value: 16},
+      { viewValue: '11E-ORTHOPEDICS', value: 4},
+      { viewValue: '7C-ACUTE CARE PEDIATRICS', value: 8},
+      { viewValue: '7PCU-PED PROGRESSIVE CARE', value: 12},
+      { viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 15},
+      { viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 7},
+      { viewValue: '10CA-CARD/THORASIC SURG PCU', value: 0},
+      { viewValue: 'GB5-GATEWAY BLDG 5TH FLOOR', value: 27},
+      { viewValue: '10E-CARDIOLOGY', value: 1},
+      { viewValue: '11EM-EPILEPSY MONITORING', value: 5},
+      { viewValue: 'C9C-SURGICAL TRAUMA ICU', value: 23},
+      { viewValue: 'N10A-BONE MARROW TRANSPLANT', value: 28},
+      { viewValue: '7CE-PEDS-SAM DAY SUITES', value: 9},
+      { viewValue: 'N9-MED-STEPDOWN TELE', value: 33},
+      { viewValue: '8W-WOMENS CARE UNIT', value: 14},
+      { viewValue: '7CW-PEDS MAIN 7 CENTRAL WEST', value: 10},
+      { viewValue: '11W-NEUROSURGERY', value: 6},
+      { viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 32},
+      { viewValue: 'C4B-MEDICAL RESP ICU', value: 21},
+      { viewValue: '11CA-JOINT RESTORATION', value: 3},
+      { viewValue: 'C7A-ACUTE CARE SURGERY', value: 22},
+      { viewValue: 'ED-CLINICAL DECISION UNIT(ORN)', value: 26},
+      { viewValue: '7E-GENERAL CARE PEDS', value: 11},
+      { viewValue: 'A7PO-AMB SURGERY-PREOP', value: 17},
+      { viewValue: 'N10B-BONE MARROW TRANSPLANT', value: 29},
+      { viewValue: 'CSBC-SECURITY CARE', value: 25}, 
+      { viewValue: '7PI-PEDIATRIC ICU (0-21)', value: 13},
+      { viewValue: 'N4N-PALLIATIVE CARE UNIT', value: 30},
+      { viewValue: 'C10D-CARDIAC SURG ICU', value: 18},
+      { viewValue: '10W-CARDIOTHORACIC SURGERY', value: 2},
+      { viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 19}
     ],
 
     icu_order: [
@@ -218,20 +195,6 @@ export class REDBLOODCELLDISORDERSWOMCCComponent implements OnInit {
       { viewValue: '0', value: 0 },
       { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }
     ],
-
-    attending_change_order_md_dept: [
-      { viewValue: 'INTERNAL MEDICINE', value: 3},
-      { viewValue: 'RADIOLOGY', value: 9},
-      { viewValue: 'PEDIATRICS', value: 8},
-      { viewValue: 'EMERGENCY MEDICINE', value: 2},
-      { viewValue: 'ANESTHESIOLOGY', value: 1},
-      { viewValue: 'OPHTHALMOLOGY', value: 6},
-      { viewValue: '0', value: 0},
-      { viewValue: 'NEUROSURGERY', value: 4},
-      { viewValue: 'SURGERY', value: 10},
-      { viewValue: 'OBSTETRICS - GYNECOL', value: 5},
-      { viewValue: 'ORTHOPEDIC SURGERY', value: 7}      
-    ]
   };
 
 

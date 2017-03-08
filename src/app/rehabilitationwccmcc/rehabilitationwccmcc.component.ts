@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
 @Component({
   selector: 'app-rehabilitationwccmcc',
@@ -9,12 +11,19 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
 
    constructor() { }
   lines = [];
+  selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
+  prediction=[];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
     "Discharge_Disposition",
     "Admit_Unit",
-    "Bed_Category",
     "iso_result",
     "adm_order_md_dept",
     "icu_order",
@@ -23,78 +32,77 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
     "attending_change_order",
     "age"]
   patient = {};
-  model = {};
+  showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
   REHABILITATIONWCCMCCC = {
 
     "lasso": {
-      Admit_Source: 0.0,
-      Primary_Insurance: -0.242494969082,
-      Discharge_Disposition: 0.317689532226,
-      Admit_Unit: -0.0,
-      Bed_Category: -0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: 0.0,
-      icu_order: -0.0,
-      stepdown_order: -0.0,
-      general_care_order: 0.0,
-      attending_change_order: -0.0,
-      age: -0.0676245363897
+            Admit_Source:  0.000000,
+      Primary_Insurance: -0.249450,
+  Discharge_Disposition:  0.310182,
+             Admit_Unit: -0.000000,
+             iso_result:  0.000000,
+              icu_order: -0.000000,
+         stepdown_order: -0.000000,
+     general_care_order:  0.000000,
+                    age: -0.061009,
+      meanSquareError:106.69,
+      variance:0.03
     },
     "lassoCv": {
-      Admit_Source: 0.0,
-      Primary_Insurance: -0.160349306705,
-      Discharge_Disposition: 0.265484695768,
-      Admit_Unit: -0.0,
-      Bed_Category: -0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: 0.0,
-      icu_order: -0.0,
-      stepdown_order: -0.0,
-      general_care_order: 0.0,
-      attending_change_order: 0.0,
-      age: -0.0661643429638
+               Admit_Source:  0.000000,
+      Primary_Insurance: -0.158386,
+  Discharge_Disposition:  0.250436,
+             Admit_Unit: -0.000000,
+             iso_result:  0.000000,
+              icu_order: -0.000000,
+         stepdown_order: -0.000000,
+     general_care_order:  0.000000,
+                    age: -0.061266,
+       meanSquareError:106.91,
+      variance:0.02
     },
     "ridge": {
-      Admit_Source: 0.451766742069,
-      Primary_Insurance: -0.3005829579,
-      Discharge_Disposition: 0.402140098657,
-      Admit_Unit: -0.223258027733,
-      Bed_Category: -1.71868480911,
-      iso_result: 1.08832462248,
-      adm_order_md_dept: 1.9592948437,
-      icu_order: -5.56379184561,
-      stepdown_order: -3.66574810184,
-      general_care_order: 0.434542387846,
-      attending_change_order: 0.543879969103,
-      age: -0.0755847903339,
+                Admit_Source:  0.334189,
+      Primary_Insurance: -0.332293,
+  Discharge_Disposition:  0.393711,
+             Admit_Unit: -0.156896,
+             iso_result:  1.205928,
+              icu_order: -4.874864,
+         stepdown_order: -2.850425,
+     general_care_order:  3.858551,
+                    age: -0.062205,
+      meanSquareError:105.29,
+      variance:0.04
     },
     "ridgeCv": {
-      Admit_Source: 0.417569681539,
-      Primary_Insurance:- 0.296164190846,
-      Discharge_Disposition: 0.385886408217,
-      Admit_Unit: -0.318900831472,
-      Bed_Category: -1.52929177522,
-      iso_result: 0.972421861523,
-      adm_order_md_dept: 1.73629637591,
-      icu_order: -3.3798321534,
-      stepdown_order: -1.82550047362,
-      general_care_order: 0.470531330726,
-      attending_change_order: 0.306725887601,
-      age: -0.0751017398837
+               Admit_Source:  0.264763,
+      Primary_Insurance: -0.337614,
+  Discharge_Disposition:  0.378679,
+             Admit_Unit: -0.473947,
+             iso_result:  1.096269,
+              icu_order: -3.173228,
+         stepdown_order: -1.521878,
+     general_care_order:  1.694049,
+                    age: -0.062832,
+      meanSquareError:105.46,
+      variance:0.04
     },
     "linear": {
-      Admit_Source: 0.454743877878,
-      Primary_Insurance: -0.301139069571,
-      Discharge_Disposition: 0.403743021483,
-      Admit_Unit: -0.21705851035,
-      Bed_Category: -1.73044396499,
-      iso_result: 1.09687240766,
-      adm_order_md_dept: 1.98364856576,
-      icu_order: -5.7645774392,
-      stepdown_order: -3.86674835039,
-      general_care_order: 0.369724430049,
-      attending_change_order: 0.567318577926,
-      age: -0.0756273425777,
+           Admit_Source:  0.341908,
+      Primary_Insurance: -0.331420,
+  Discharge_Disposition:  0.394981,
+             Admit_Unit: -0.119009,
+             iso_result:  1.212631,
+              icu_order: -5.005231,
+         stepdown_order: -2.990685,
+     general_care_order:  4.220564,
+                    age: -0.062146,
+      meanSquareError:105.29,
+      variance:0.04
     }
   };
 
@@ -121,26 +129,18 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
 
     Discharge_Disposition: [
       { viewValue: '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)', value: 0},
-      { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 9},
+      { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 8},
       { viewValue: 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT', value: 6},
       { viewValue: 'DISCH /TRANS TO LONG TERM CARE HOSP (CERT)', value: 5},
-      { viewValue: 'DISCH TRANFERRED WITH VCUHS-D/C', value: 11},
+      { viewValue: 'DISCH TRANFERRED WITH VCUHS-D/C', value: 10},
       { viewValue: 'DISCH /TRANS TO HOME HLTH CARE (AGENCY)', value: 2},
       { viewValue: 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CAR', value: 7},
       { viewValue: 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP', value: 3},
-      { viewValue: 'z DISCH /TRANS TO NOT DEFINED HLTH CR INST', value: 13},
+      { viewValue: 'z DISCH /TRANS TO NOT DEFINED HLTH CR INST', value: 12},
       { viewValue: 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO', value: 4},
-      { viewValue: 'DISCH /TRANS TO SHORT TERM GEN HOSP FOR IP CARE', value: 8},
-      { viewValue: 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)', value: 12},
-      { viewValue: 'DISCH ADMITTED AS AN IP TO THIS HOSPITAL', value: 10},
+      { viewValue: 'LEFT AGAINST MEDICAL ADVICE OR DISC CARE (AMA)', value: 11},
+      { viewValue: 'DISCH ADMITTED AS AN IP TO THIS HOSPITAL', value: 9},
       { viewValue: 'DISCH /TRANS TO CUSTODIAL/SUPPT CARE FAC', value: 1}
-    ],
-
-    Bed_Category: [
-      { viewValue: 'PSYCH', value: 1 },
-      { viewValue: 'RESEARCH', value: 2 },
-      { viewValue: '0', value: 0 },
-      { viewValue: 'REHAB', value: 3 },
     ],
 
     iso_result: [
@@ -149,21 +149,11 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
     ],
 
     Admit_Unit: [
-      { viewValue: 'N1-REHABILITATIVE MEDICINE', value: 1},
-      { viewValue: 'N3-DUAL DIAGNOSIS/MEDICAL PSY', value: 3},
-      { viewValue: 'N4-GENERAL PSYCHIATRY', value: 4},
-      { viewValue: '0', value: 0},
-      { viewValue: 'N2-REHAB MED-BRAIN INJURY', value: 2},
-      { viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 5}
-    ],
-
-    adm_order_md_dept: [
-      { viewValue: 'INTERNAL MEDICINE', value: 2},
-      { viewValue: 'REHAB MEDICINE', value: 5},
-      { viewValue: 'ANESTHESIOLOGY', value: 1},
-      { viewValue: '0', value: 0},
-      { viewValue: 'NEUROSURGERY', value: 3},
-      { viewValue: 'ORTHOPEDIC SURGERY', value: 4}
+      { viewValue: 'N1-REHABILITATIVE MEDICINE', value: 0},
+      { viewValue: 'N3-DUAL DIAGNOSIS/MEDICAL PSY', value: 2},
+      { viewValue: 'N4-GENERAL PSYCHIATRY', value: 3},
+      { viewValue: 'N2-REHAB MED-BRAIN INJURY', value: 1},
+      { viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 4}
     ],
 
     icu_order: [
@@ -180,16 +170,6 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
       { viewValue: '0', value: 0 },
       { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }
     ],
-
-    attending_change_order_md_dept: [
-      { viewValue: 'INTERNAL MEDICINE', value: 1},
-      { viewValue: 'OTOLARYNGOLOGY', value: 4},
-      { viewValue: 'REHAB MEDICINE', value: 5},
-      { viewValue: '0', value: 0},
-      { viewValue: 'NEUROSURGERY', value: 3},
-      { viewValue: 'NEUROLOGY', value: 2},
-      { viewValue: 'SURGERY', value: 6}
-    ]
   };
 
   ngOnInit() {

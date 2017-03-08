@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
 @Component({
   selector: 'app-circulatorydisordersexceptamiwcardcathwomcc',
@@ -8,100 +10,107 @@ import { Component, OnInit } from '@angular/core';
 export class CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent implements OnInit {
 
   constructor() { }
-
+selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
   lines = [];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
     "Discharge_Disposition",
     "Admit_Unit",
-    "Bed_Category",
     "iso_result",
-    "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
     "general_care_order",
-    "attending_change_order",
     "age"]
     patient={};
-    model={};
+    showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
+ //   model={};
   CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCC = {
 
     "lasso": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0,
-      Discharge_Disposition: 0.22570821,
-      Admit_Unit: -0.046078982,
-      Bed_Category: 0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: 0.0,
-      icu_order: 0.0,
-      stepdown_order: 1.123894067,
-      general_care_order: 0.0,
-      attending_change_order: 0.500119134,
-      age: 0.018114
+       Admit_Source: -0.000000,
+      Primary_Insurance: -0.000000,
+  Discharge_Disposition:  0.340742,
+             Admit_Unit: -0.044409,
+           Bed_Category:  0.000000,
+             iso_result:  0.000000,
+              icu_order: -0.000000,
+         stepdown_order:  1.503236,
+     general_care_order: -0.000000,
+                    age:  0.017103,
+       meanSquareError:15.15,
+      variance:0.15
     },
     "lassoCv": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.003852594,
-      Discharge_Disposition: 0.288111422,
-      Admit_Unit: -0.038278443,
-      Bed_Category: 0.146495527,
-      iso_result: 0.0,
-      adm_order_md_dept: 0.064409438,
-      icu_order: -0.0664363956,
-      stepdown_order: 3.535184292,
-      general_care_order: 0.0,
-      attending_change_order: 0.835891879,
-      age: 0.021162993
+      Admit_Source: -0.000000,
+      Primary_Insurance: -0.000000,
+  Discharge_Disposition:  0.455563,
+             Admit_Unit: -0.030539,
+           Bed_Category:  0.239400,
+             iso_result:  0.000000,
+              icu_order: -0.000000,
+         stepdown_order:  3.999374,
+     general_care_order: -0.000000,
+                    age:  0.023378,
+       meanSquareError:13.47,
+      variance:0.25
     },
     "ridge": {
-      Admit_Source: -0.106467864,
-      Primary_Insurance: 0.01280091,
-      Discharge_Disposition: 0.283654651,
-      Admit_Unit: -0.031259081,
-      Bed_Category: 0.164965099,
-      iso_result: 1.318977526,
-      adm_order_md_dept: 0.549043086,
-      icu_order: -2.038202281,
-      stepdown_order: 3.887738855,
-      general_care_order: -0.851203384,
-      attending_change_order: 1.108034081,
-      age: 0.019260552,
+       Admit_Source: -0.041933,
+      Primary_Insurance: -0.015087,
+  Discharge_Disposition:  0.480336,
+            Admit_Unit: -0.024369,
+           Bed_Category:  0.323288,
+             iso_result:  1.311050,
+              icu_order: -0.522034,
+         stepdown_order:  4.465348,
+    general_care_order: -0.638917,
+                    age:  0.024783,
+                    meanSquareError:13.27,
+      variance:0.26
     },
     "ridgeCv": {
-      Admit_Source: -0.124383007,
-      Primary_Insurance: 0.013378926,
-      Discharge_Disposition: 0.298273596,
-      Admit_Unit: -0.031471501,
-      Bed_Category: 0.193891418,
-      iso_result: 1.045220709,
-      adm_order_md_dept: 0.533219474,
-      icu_order: -1.682423106,
-      stepdown_order: 3.556066511,
-      general_care_order: -0.672408522,
-      attending_change_order: 1.064959861,
-      age: 0.019489814
+      Admit_Source: -0.053669,
+      Primary_Insurance: -0.015551,
+  Discharge_Disposition:  0.495889,
+            Admit_Unit: -0.023653,
+          Bed_Category:  0.343394,
+             iso_result:  1.029262,
+              icu_order: -0.414766,
+         stepdown_order:  4.042957,
+     general_care_order: -0.608794,
+                    age:  0.024345,
+                     meanSquareError:13.31,
+      variance:0.25
     },
     "linear": {
-      Admit_Source: -0.105138305,
-      Primary_Insurance: 0.012751563,
-      Discharge_Disposition: 0.0282724902,
-      Admit_Unit: -0.031249579,
-      Bed_Category: 0.163117904,
-      iso_result: 1.337937072,
-      adm_order_md_dept: 0.54970694,
-      icu_order: -2.061237122,
-      stepdown_order: 3.906337039,
-      general_care_order: -0.865106405,
-      attending_change_order: 1.110858859,
-      age: 0.019245568,
+      Admit_Source: -0.041127,
+      Primary_Insurance: -0.015066,
+      Discharge_Disposition: 0.479361,
+      Admit_Unit: -0.024419,
+      iso_result:1.330838,
+      icu_order: -0.528823,
+      stepdown_order: 4.490073,
+      general_care_order: -0.639939,
+      age: 0.024806,
+      meanSquareError:13.27,
+      variance:0.26
     }
   };
 CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCC_model={
   Admit_Source : [{ viewValue: 'CLINIC OR PHYS OFFIC', value: 0 },
   { viewValue: 'TRANSFER FROM A HOSP', value: 3 }, { viewValue: 'COURT OR LAW ENFORCE', value: 1 },
-  { viewValue: 'HOME /WORK / OTHER', value: 2 }, { viewValue: 'TRANSF FROM A SNF', value: 3 }],
+  { viewValue: 'HOME /WORK / OTHER', value: 2 }, { viewValue: 'TRANSF FROM A SNF', value: 4 }],
 
   Primary_Insurance : [{ viewValue: 'INDIGENT CARE', value: 4 }, { viewValue: 'MEDICAID MANA', value: 6 }, { viewValue: 'ANTHEM MANAGE', value: 1 },
   { viewValue: 'ANTHEM', value: 0 }, { viewValue: 'COMMERCIAL', value: 2 }, { viewValue: 'HMO/PPO', value: 3 },
@@ -109,7 +118,7 @@ CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCC_model={
   { viewValue: 'MEDICARE MANA', value: 8 }, { viewValue: 'MEDICAID', value: 5 }],
 
   Discharge_Disposition : [
-    { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value: 8 },
+    { viewValue: 'DISCH /TRANS TO SNF MCR CERT OF SKILL CARE', value:7},
     { viewValue: 'DISCH /TRANS TO PSYCH HOSP/PSY UNIT', value: 6 },
     { viewValue: 'HOSPICE - HOME', value: 9 },
     { viewValue: '*DISCHARGED TO HOME OR SELF CARE (ROUTINE)', value: 0 },
@@ -137,46 +146,36 @@ CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCC_model={
     { viewValue: '0', value: 0 }
     ],
   Admit_Unit : [
-  { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 23},
-	{ viewValue: 'C3A-ACUTE CARE MEDICINE', value: 16},
-	{ viewValue: '9W-CLINICAL TRANSPLANT', value: 10},
-	{ viewValue: 'CSBC-SECURITY CARE', value: 20},
-	{ viewValue: '3CCL-CARDIAC CATH LAB', value: 5},
-	{ viewValue: '11W-NEUROSURGERY', value: 4},
-	{ viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 8},
-	{ viewValue: 'C10A-CORONARY ICU', value : 11},
-	{ viewValue: 'C10B-CORONARY ICU', value : 12},
-	{ viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 6},
-	{ viewValue: '10CA-CARD/THORASIC SURG PCU', value: 1},
-	{ viewValue: '0', value : 0},
-	{ viewValue: '10E-CARDIOLOGY', value: 2},
-	{ viewValue: 'C11C-NEUROSCIENCE ICU', value: 14},
-	{ viewValue: 'N9-MED-STEPDOWN TELE', value: 25},
-	{ viewValue: '9E-SPECIAL SERVICES SUITES', value: 9},
-	{ viewValue: '10W-CARDIOTHORACIC SURGERY', value: 3},
-	{ viewValue: 'C7A-ACUTE CARE SURGERY', value: 18},
-	{ viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 24}, 
-	{ viewValue: 'GB3-GATEWAY BLDG 3RD FLOOR', value: 22},
-	{ viewValue: 'C4B-MEDICAL RESP ICU', value: 17},
-	{ viewValue: 'ED-CLINICAL DECISION UNIT(ORN)', value: 21},
-	{ viewValue: '7PI-PEDIATRIC ICU (0-21)', value: 7},
-	{ viewValue: 'C10D-CARDIAC SURG ICU', value: 13},
-	{ viewValue: 'C8C-BURN CENTER', value: 19},
-	{ viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 15}
+  { viewValue: 'N5DH-DIGESTIVE HLTH MEDICINE', value: 21},
+	{ viewValue: 'C3A-ACUTE CARE MEDICINE', value: 14},
+	{ viewValue: '9W-CLINICAL TRANSPLANT', value: 8},
+	{ viewValue: 'CSBC-SECURITY CARE', value: 18},
+	{ viewValue: '3CCL-CARDIAC CATH LAB', value: 4},
+	{ viewValue: '11W-NEUROSURGERY', value: 3},
+	{ viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 6},
+	{ viewValue: 'C10A-CORONARY ICU', value : 9},
+	{ viewValue: 'C10B-CORONARY ICU', value : 10},
+	{ viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 5},
+	{ viewValue: '10CA-CARD/THORASIC SURG PCU', value: 0},
+	{ viewValue: '10E-CARDIOLOGY', value: 1},
+	{ viewValue: 'C11C-NEUROSCIENCE ICU', value: 12},
+	{ viewValue: 'N9-MED-STEPDOWN TELE', value: 23},
+	{ viewValue: '9E-SPECIAL SERVICES SUITES', value: 7},
+	{ viewValue: '10W-CARDIOTHORACIC SURGERY', value: 2},
+	{ viewValue: 'C7A-ACUTE CARE SURGERY', value: 16},
+	{ viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 22}, 
+	{ viewValue: 'GB3-GATEWAY BLDG 3RD FLOOR', value: 20},
+	{ viewValue: 'C4B-MEDICAL RESP ICU', value: 15},
+	{ viewValue: 'ED-CLINICAL DECISION UNIT(ORN)', value: 19},
+	{ viewValue: 'C10D-CARDIAC SURG ICU', value: 11},
+	{ viewValue: 'C8C-BURN CENTER', value: 17},
+	{ viewValue: 'C2A-ACUTE CARE ONCOLOGY', value: 13}
   ],
-  adm_order_md_dept : [{ viewValue: 'INTERNAL MEDICINE', value: 1 }, 
-  { viewValue: '0', value: 0 }, { viewValue: 'SURGERY', value: 2 }
-  ], 
+ 
   icu_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }],
   stepdown_order : [{ viewValue: 'LEVEL OF CARE - INTERMEDIATE/STEPDOWN', value: 1 }, { viewValue: '0', value: 0 }],
-  general_care_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }],
-  attending_change_order_md_dept : [
-  { viewValue: 'INTERNAL MEDICINE',value: 2},
-	{ viewValue: '0',value: 0},
-	{ viewValue: 'SURGERY', value: 4},
-	{ viewValue: 'NEUROLOGY', value: 3},
-	{ viewValue: 'EMERGENCY MEDICINE', value: 1}
-  ]};
+  general_care_order : [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }]
+};
 
   ngOnInit() {
   }

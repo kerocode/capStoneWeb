@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
 @Component({
   selector: 'app-majorjointreplacementorreattachmentoflowerextremitywo',
@@ -9,92 +11,96 @@ export class MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOComponent impl
 
   constructor() { }
   lines = [];
+   selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
+  prediction=[];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
     "Discharge_Disposition",
     "Admit_Unit",
-    "Bed_Category",
     "iso_result",
-    "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
     "general_care_order",
-    "attending_change_order",
     "age"]
     patient={};
-    model={};
+    showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
  MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOC = {
 
     "lasso": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0370008013155,
-      Discharge_Disposition: 0.0,
-      Admit_Unit: -0.170182620217,
-      Bed_Category: -0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: -0.00133577091685,
-      icu_order: 0.0,
-      stepdown_order: 0.0,
-      general_care_order: -0.0,
-      attending_change_order: 0.0,
-      age: 0.00794177909124
+           Admit_Source:  0.000000,
+      Primary_Insurance:  0.041895,
+  Discharge_Disposition:  0.000000,
+             Admit_Unit: -0.201459,
+             iso_result:  0.000000,
+              icu_order:  0.000000,
+         stepdown_order:  0.000000,
+     general_care_order: -0.000000,
+                    age:  0.005660,
+         meanSquareError:3.54,
+                variance:0.13
     },
     "lassoCv": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0739779814189,
-      Discharge_Disposition: 0.299542270252,
-      Admit_Unit: -0.12403635664,
-      Bed_Category: -0.0785327902099,
-      iso_result: 0.0,
-      adm_order_md_dept: -0.100558995163,
-      icu_order: 0.0,
-      stepdown_order: 0.547800799234,
-      general_care_order: 0.0,
-      attending_change_order: 0.347488956041,
-      age: -0.00124200828941
+               Admit_Source:  0.000000,
+      Primary_Insurance:  0.076663,
+  Discharge_Disposition:  0.265316,
+             Admit_Unit: -0.100358,
+             iso_result:  0.000000,
+              icu_order:  0.000000,
+         stepdown_order:  0.631999,
+     general_care_order:  0.000000,
+                    age: -0.003644,
+         meanSquareError:2.98,
+                variance:0.27
     },
     "ridge": {
-      Admit_Source: 0.430995008026,
-      Primary_Insurance: 0.07712557538,
-      Discharge_Disposition: 0.312209009272,
-      Admit_Unit: -0.052368766484,
-      Bed_Category: -0.364424221827,
-      iso_result: 0.130382685736,
-      adm_order_md_dept: -0.0920973523899,
-      icu_order: 1.74747644481,
-      stepdown_order: 1.60552006264,
-      general_care_order: 0.670220254427,
-      attending_change_order: 0.361404046626,
-      age: -0.00847502343264,
+           Admit_Source: -0.713658,
+      Primary_Insurance:  0.079857,
+  Discharge_Disposition:  0.286834,
+             Admit_Unit:  0.004255,
+             iso_result:  0.051707,
+              icu_order:  1.715156,
+        stepdown_order:  1.673416,
+    general_care_order:  0.632437,
+                    age: -0.011368,
+         meanSquareError:2.74,
+                variance:0.33
     },
     "ridgeCv": {
-      Admit_Source: 0.355686618744,
-      Primary_Insurance: 0.0785727557436,
-      Discharge_Disposition: 0.326917645021,
-      Admit_Unit: -0.0498412821985,
-      Bed_Category: -0.386193288063,
-      iso_result: 0.131183861079,
-      adm_order_md_dept: -0.0983372609258,
-      icu_order: 1.10020934138,
-      stepdown_order: 1.42814130012,
-      general_care_order: 0.161468935226,
-      attending_change_order: 0.376557969153,
-      age: -0.00757154019738
+               Admit_Source: -0.126588,
+      Primary_Insurance:  0.082280,
+  Discharge_Disposition:  0.296699,
+             Admit_Unit: -0.024255,
+             iso_result:  0.074803,
+              icu_order:  1.055107,
+         stepdown_order:  1.498598,
+     general_care_order:  0.151487,
+                    age: -0.010450,
+   meanSquareError:2.76,
+                variance:0.32
     },
     "linear": {
-      Admit_Source: 0.431100132239,
-      Primary_Insurance: 0.0770698531561,
-      Discharge_Disposition: 0.31095553542,
-      Admit_Unit: -0.0527687138766,
-      Bed_Category: -0.361846485519,
-      iso_result: 0.128949887194,
-      adm_order_md_dept: -0.0918322407852,
-      icu_order: 1.80933350781,
-      stepdown_order: 1.61514748527,
-      general_care_order: 0.786603655454,
-      attending_change_order: 0.360022636866,
-      age: -0.00852827659764,
+           Admit_Source: -0.792804,
+      Primary_Insurance:  0.079672,
+  Discharge_Disposition:  0.286421,
+             Admit_Unit:  0.006480,
+             iso_result:  0.048151,
+              icu_order:  1.786357,
+         stepdown_order:  1.681240,
+     general_care_order:  0.741075,
+                    age: -0.011425,
+      meanSquareError:2.74,
+                variance:0.33
     }
   };
 MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOC_model={
@@ -127,49 +133,29 @@ MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOC_model={
     { viewValue: 'DISCH /TRANS TO IRF INCLD REHAB UNIT OF HOSP', value: 2},
     { viewValue: 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO', value: 3}
   ],  
-
-  Bed_Category : [
-    { viewValue: 'SAME DAY', value: 6},
-    { viewValue: 'CORRECTION', value: 1},
-    { viewValue: 'MED/SURG', value: 4},
-    { viewValue: '0', value: 0},
-    { viewValue: 'GUM SUITES', value: 2},
-    { viewValue: 'OR', value: 5},
-    { viewValue: 'ICU', value: 3}
-  ],
   iso_result : [
     { viewValue: 'Isolation', value: 1 },
     { viewValue: '0', value: 0 }
   ],
   Admit_Unit : [
-    { viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 7},
-    { viewValue: "GB5P-CHILDREN'S PERIOP", value: 15},
-    { viewValue: 'C3A-ACUTE CARE MEDICINE', value: 9},
-    { viewValue: '11CA-JOINT RESTORATION', value: 1},
-    { viewValue: '11E-ORTHOPEDICS', value: 2},
-    { viewValue: '8W-WOMENS CARE UNIT', value: 6},
-    { viewValue: 'C8B-BURN CENTER', value: 10},
-    { viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 4},
-    { viewValue: '5ORC-OPERATING ROOM CENTRAL', value: 5},
-    { viewValue: '9E-SPECIAL SERVICES SUITES', value: 8},
-    { viewValue: 'GB5-GATEWAY BLDG 5TH FLOOR', value: 14},
-    { viewValue: 'CSBC-SECURITY CARE', value: 13},
-    { viewValue: '0', value: 0},
-    { viewValue: 'C9B-SURGICAL TRAUMA ICU', value: 11},
-    { viewValue: 'N4N-PALLIATIVE CARE UNIT', value: 17},
-    { viewValue: '11W-NEUROSURGERY', value: 3},
-    { viewValue: 'C9C-SURGICAL TRAUMA ICU', value: 12},
-    { viewValue: 'N10A-BONE MARROW TRANSPLANT', value: 16}
+    { viewValue: '9C-TRAUMA - GENERAL SURGERY', value: 6},
+    { viewValue: "GB5P-CHILDREN'S PERIOP", value: 14},
+    { viewValue: 'C3A-ACUTE CARE MEDICINE', value: 8},
+    { viewValue: '11CA-JOINT RESTORATION', value: 0},
+    { viewValue: '11E-ORTHOPEDICS', value: 1},
+    { viewValue: '8W-WOMENS CARE UNIT', value: 5},
+    { viewValue: 'C8B-BURN CENTER', value: 9},
+    { viewValue: '4TCU-TRANSITIONAL CARE UNIT', value: 3},
+    { viewValue: '5ORC-OPERATING ROOM CENTRAL', value: 4},
+    { viewValue: '9E-SPECIAL SERVICES SUITES', value: 7},
+    { viewValue: 'GB5-GATEWAY BLDG 5TH FLOOR', value: 13},
+    { viewValue: 'CSBC-SECURITY CARE', value: 12},
+    { viewValue: 'C9B-SURGICAL TRAUMA ICU', value: 10},
+    { viewValue: 'N4N-PALLIATIVE CARE UNIT', value: 16},
+    { viewValue: '11W-NEUROSURGERY', value: 2},
+    { viewValue: 'C9C-SURGICAL TRAUMA ICU', value: 11},
+    { viewValue: 'N10A-BONE MARROW TRANSPLANT', value: 15}
   ],
-  adm_order_md_dept : [
-    { viewValue: 'INTERNAL MEDICINE', value: 3},
-    { viewValue: 'RADIOLOGY', value: 6},
-    { viewValue: 'EMERGENCY MEDICINE', value: 2},
-    { viewValue: 'ANESTHESIOLOGY', value: 1},
-    { viewValue: '0', value: 0},
-    { viewValue: 'OBSTETRICS - GYNECOL', value: 4},
-    { viewValue: 'ORTHOPEDIC SURGERY', value: 5}
-  ], 
   icu_order : [
     { viewValue: '0', value: 0 }, 
     { viewValue: 'LEVEL OF CARE - INTENSIVE', value: 1 }
@@ -181,15 +167,8 @@ MAJORJOINTREPLACEMENTORREATTACHMENTOFLOWEREXTREMITYWOC_model={
   general_care_order : [
     { viewValue: '0', value: 0 },
     { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }
-  ],
-  attending_change_order_md_dept : [
-    { viewValue: 'INTERNAL MEDICINE', value: 2},
-    { viewValue: 'OBSTETRICS - GYNECO', value: 3},
-    { viewValue: 'ANESTHESIOLOGY', value: 1},
-    { viewValue: '0', value: 0},
-    { viewValue: 'SURGERY', value: 5},
-    { viewValue: 'ORTHOPEDIC SURGERY', value: 4}
-  ]};
+  ]
+};
 
   ngOnInit() {
   }

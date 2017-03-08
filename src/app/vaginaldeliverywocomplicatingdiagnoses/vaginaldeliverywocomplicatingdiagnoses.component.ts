@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { Model } from '../models/modal';
 
 @Component({
   selector: 'app-vaginaldeliverywocomplicatingdiagnoses',
@@ -9,92 +11,91 @@ export class VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent implements OnInit {
 
  constructor() { }
   lines = [];
+  selectedModel={
+    linear:false,
+    ridge:false,
+    ridgeCv:false,
+    lasso:false,
+    lassoCv:false
+  }
+  prediction=[];
   variables = [
     "Admit_Source",
     "Primary_Insurance",
     "Discharge_Disposition",
     "Admit_Unit",
-    "Bed_Category",
     "iso_result",
-    "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
     "general_care_order",
-    "attending_change_order",
     "age"]
   patient = {};
-  model = {};
+ showPrediction=false;
+  hide=true;
+  reportModel = {};
+  model:Model={AdmitSource:0,AdmitUnit:0,DischargeDisposition:0,icuOrder:0,PrimaryInsurance:0,
+              age:0,generalCareOrder:0,stepdownOrder:0,isoResult:0};
   VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESC = {
 
     "lasso": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0,
-      Discharge_Disposition: 0.00392774096402,
-      Admit_Unit: -0.0,
-      Bed_Category: -0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: -0.0,
-      icu_order: -0.0,
-      stepdown_order: 0.0,
-      general_care_order: 0.0,
-      attending_change_order: -0.0,
-      age: -0.0
+           Admit_Source:  0.0,
+      Primary_Insurance:  0.0,
+  Discharge_Disposition:  0.0,
+             Admit_Unit: -0.0,
+             iso_result:  0.0,
+              icu_order: -0.0,
+     general_care_order:  0.0,
+                    age: -0.0,
+         meanSquareError: 0.57,
+         variance: 0.00
     },
     "lassoCv": {
-      Admit_Source: 0.0,
-      Primary_Insurance: 0.0,
-      Discharge_Disposition: 0.0,
-      Admit_Unit: -0.0,
-      Bed_Category: -0.0,
-      iso_result: 0.0,
-      adm_order_md_dept: -0.0,
-      icu_order: -0.0,
-      stepdown_order: 0.0,
-      general_care_order: 0.0,
-      attending_change_order: -0.0,
-      age: -0.0103131745052
+           Admit_Source:  0.000000,
+      Primary_Insurance:  0.000000,
+  Discharge_Disposition:  0.000000,
+             Admit_Unit: -0.000000,
+             iso_result:  0.000000,
+              icu_order: -0.000000,
+     general_care_order:  0.000000,
+                    age: -0.010952,
+         meanSquareError: 0.56,
+         variance: 0.01
     },
     "ridge": {
-      Admit_Source: 0.414777421281,
-      Primary_Insurance: 0.0158495861727,
-      Discharge_Disposition: 0.00931226977403,
-      Admit_Unit: -0.143904942377,
-      Bed_Category: -0.0282347427845,
-      iso_result: 0.426392169926,
-      adm_order_md_dept: -0.0138907031739,
-      icu_order: -0.206590188797,
-      stepdown_order: 0.0,
-      general_care_order: 0.0356205556628,
-      attending_change_order: -0.196836391818,
-      age: -0.0117137313879,
+           Admit_Source:  0.415613,
+      Primary_Insurance:  0.018153,
+  Discharge_Disposition:  0.008917,
+             Admit_Unit: -0.053507,
+             iso_result:  0.420060,
+              icu_order: -0.191765,
+     general_care_order:  0.042626,
+                    age: -0.012450,
+         meanSquareError: 0.56,
+         variance: 0.02
     },
     "ridgeCv": {
-      Admit_Source: 0.168404545261,
-      Primary_Insurance: 0.0160383257976,
-      Discharge_Disposition: 0.00866023842177,
-      Admit_Unit: -0.0791705086384,
-      Bed_Category: -0.0188606324928,
-      iso_result: 0.187791266584,
-      adm_order_md_dept: -0.0125777848205,
-      icu_order: -0.0556616710421,
-      stepdown_order: 0.0,
-      general_care_order: 0.0336725277513,
-      attending_change_order: -0.153098136441,
-      age: -0.0118800592775
+           Admit_Source:  0.168747,
+      Primary_Insurance:  0.018072,
+  Discharge_Disposition:  0.008219,
+             Admit_Unit: -0.017124,
+             iso_result:  0.184914,
+              icu_order: -0.052888,
+     general_care_order:  0.035715,
+                    age: -0.012649,
+         meanSquareError: 0.56,
+         variance: 0.01
     },
     "linear": {
-      Admit_Source: 0.449348421238,
-      Primary_Insurance: 0.0158327297588,
-      Discharge_Disposition: 0.00935080781341,
-      Admit_Unit: -0.150416168882,
-      Bed_Category: -0.0288729829576,
-      iso_result: 0.456980842915,
-      adm_order_md_dept: -0.0141763890045,
-      icu_order: -0.246496058657,
-      stepdown_order: 0.000000000000000318423414082,
-      general_care_order: 0.0278090761231,
-      attending_change_order: -0.199833112254,
-      age: -0.011693669007,
+        Admit_Source:  0.450285,
+      Primary_Insurance:  0.018160,
+  Discharge_Disposition:  0.008954,
+             Admit_Unit: -0.060234,
+             iso_result:  0.450171,
+              icu_order: -0.227903,
+     general_care_order:  0.036225,
+                    age: -0.012426,
+         meanSquareError: 0.56,
+         variance: 0.02
     }
   };
 
@@ -124,31 +125,14 @@ export class VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent implements OnInit {
       { viewValue: 'DISCH /TRANS TO LAW ENFORCEMENT/JAIL/DETENS/CO', value: 2}
     ],
 
-    Bed_Category: [
-      { viewValue: 'L&D', value: 2 },
-      { viewValue: 'MED/SURG', value: 3 },
-      { viewValue: '0', value: 0 },
-      { viewValue: 'GUM SUITES', value: 1 },
-    ],
-
     iso_result: [
       { viewValue: 'Isolation', value: 1 },
       { viewValue: '0', value: 0 }
     ],
 
     Admit_Unit: [
-      { viewValue: '0', value: 0},
-      { viewValue: '8W-WOMENS CARE UNIT', value: 2},
-      { viewValue: '6LD-LABOR AND DELIVERY ROOM', value: 1},
-      { viewValue: '9E-SPECIAL SERVICES SUITES', value: 3}
-    ],
-
-    adm_order_md_dept: [
-      { viewValue: 'INTERNAL MEDICINE', value: 3},
-      { viewValue: '0', value: 0},
-      { viewValue: 'OBSTETRICS - GYNECOL', value: 4},
-      { viewValue: 'ANESTHESIOLOGY', value: 1},
-      { viewValue: 'EMERGENCY MEDICINE', value: 2}
+      { viewValue: '6LD-LABOR AND DELIVERY ROOM', value: 0},
+      { viewValue: '9E-SPECIAL SERVICES SUITES', value: 1}
     ],
 
     icu_order: [
@@ -165,12 +149,6 @@ export class VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent implements OnInit {
       { viewValue: '0', value: 0 },
       { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }
     ],
-
-    attending_change_order_md_dept: [
-      { viewValue: 'ANESTHESIOLOGY', value: 1 },
-      { viewValue: 'OBSTETRICS - GYNECO', value: 2 },
-      { viewValue: '0', value: 0 }
-    ]
   };
 
 
