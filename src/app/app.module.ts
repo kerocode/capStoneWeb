@@ -18,6 +18,7 @@ import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilita
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { ViewModalComponent } from './view-modal/view-modal.component';
+import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { ViewModalComponent } from './view-modal/view-modal.component';
 
     ClickOutsideDirective,
 
-    ViewModalComponent
+    ViewModalComponent,
+
+    WholeDatasetComponent
   ],
   imports: [
     BrowserModule,

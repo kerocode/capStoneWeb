@@ -1,0 +1,11 @@
+,0,1
+0,Admit_Source,-0.160365855652
+1,Primary_Insurance,-0.0566424523322
+2,Discharge_Disposition,0.355314025919
+3,MS_DRG_Description,0.00152783687435
+4,Admit_Unit,0.00974345629945
+5,iso_result,3.56343618624
+6,icu_order,4.78083997074
+7,stepdown_order,3.67795808226
+8,general_care_order,1.21674209542
+9,age,-0.0118937009272
