@@ -19,6 +19,7 @@ import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldelive
 import { ClickOutsideDirective } from './click-outside.directive';
 import { ViewModalComponent } from './view-modal/view-modal.component';
 import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,11 @@ import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
 
     ViewModalComponent,
 
-    WholeDatasetComponent
+    WholeDatasetComponent,
+
+    FooterComponent
+
+  
   ],
   imports: [
     BrowserModule,

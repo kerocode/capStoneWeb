@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-
-
-body{
-    margin: 0px;
-    padding: 0px;
+body {
+  padding-top: 5rem;
 }
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
 .md-elevation-z6 {
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
-.select_style {
+.label-style{
+        color: #2196F3;
+}
+/*.select_style {
     background: #FFF;
     overflow: hidden;
     display: inline-block;
@@ -51,7 +56,7 @@ body{
 .a-selected{
     background: #E3F2FD;
     color: #2196F3;
-}
+}*/
 
 .example-h2 {
   margin: 10px;
@@ -68,9 +73,11 @@ tr:nth-child(6),tr:nth-child(12) { background: hsl(200, 99%, 50%); }
 
 .example-section {
   display: flex;
+  background-color: #ededed;
   align-content: center;
   align-items: center;
   height: 60px;
+  margin: 0px;
 }
 
 .example-margin {
@@ -96,7 +103,7 @@ th{
   margin-left: 2px;
   margin-right: 2px;
 }
-.modalDialog {
+/*.modalDialog {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -144,4 +151,4 @@ th{
 	box-shadow: 1px 1px 3px #000;
 }
 
-.close:hover { background: #00d9ff; }
+.close:hover { background: #00d9ff; }*/
