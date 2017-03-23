@@ -116,7 +116,7 @@
               <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
               <h5> Variance: {{r.model['variance']}}</h5>
             </div>
-            <table>
+            <table  class="table table-hover table-bordered">
               <thead>
                 <tr>
                   <th colspan="2">{{r.type}} </th>
@@ -146,7 +146,7 @@
       <div class="modal-body">
         <md-grid-list cols="2">
           <md-grid-tile>
-            <table *ngIf="calculatedModal.linear">
+            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.linear">
               <thead>
                 <tr>
                   <th colspan="2">Linear Regression</th>
@@ -162,7 +162,7 @@
             <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png">
           </md-grid-tile>
           <md-grid-tile>
-            <table *ngIf="calculatedModal.ridge">
+            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.ridge">
               <thead>
                 <tr>
                   <th colspan="2"> Ridge Regression</th>
@@ -178,7 +178,7 @@
             <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png">
           </md-grid-tile>
           <md-grid-tile>
-            <table *ngIf="calculatedModal.ridgeCv">
+            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.ridgeCv">
               <thead>
                 <tr>
                   <th colspan="2"> Ridge Cross validation Regression</th>
@@ -194,7 +194,7 @@
             <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png">
           </md-grid-tile>
           <md-grid-tile>
-            <table *ngIf="calculatedModal.lasso" class="mar-t">
+            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.lasso" class="mar-t">
               <thead>
                 <tr>
                   <th colspan="2"> Lasso Regression</th>
@@ -210,7 +210,7 @@
             <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png">
           </md-grid-tile>
           <md-grid-tile>
-            <table *ngIf="calculatedModal.lassoCv" class="mar-t">
+            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.lassoCv" class="mar-t">
               <thead>
                 <tr>
                   <th colspan="2"> Lasso Cross validation Regression</th>

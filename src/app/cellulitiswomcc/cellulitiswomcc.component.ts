@@ -18,6 +18,33 @@ export class CELLULITISWOMCCComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+  images={
+    "linear":{
+      bar:'CELLULITISWOMCC_linearReg.csv1.png',
+      line:'CELLULITISWOMCC_linearReg.csv2.png',
+      dot:'CELLULITISWOMCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'CELLULITISWOMCC_ridge.csv1.png',
+      line:'CELLULITISWOMCC_ridge.csv2.png',
+      dot:'CELLULITISWOMCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'CELLULITISWOMCC_ridgecv.csv1.png',
+      line:'CELLULITISWOMCC_ridgecv.csv2.png',
+      dot:'CELLULITISWOMCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'CELLULITISWOMCC_lasso.csv1.png',
+      line:'CELLULITISWOMCC_lasso.csv2.png',
+      dot:'CELLULITISWOMCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'CELLULITISWOMCC_lassocv.csv1.png',
+      line:'CELLULITISWOMCC_lassocv.csv2.png',
+      dot:'CELLULITISWOMCC_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",
