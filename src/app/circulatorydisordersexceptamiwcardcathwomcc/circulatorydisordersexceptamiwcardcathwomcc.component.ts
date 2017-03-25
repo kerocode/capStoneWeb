@@ -17,6 +17,33 @@ selectedModel={
     lasso:false,
     lassoCv:false
   }
+    images={
+    "linear":{
+      bar:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png',
+      line:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv2.png',
+      dot:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png',
+      line:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv2.png',
+      dot:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png',
+      line:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv2.png',
+      dot:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png',
+      line:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv2.png',
+      dot:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv1.png',
+      line:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv2.png',
+      dot:'CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv3.png',
+    }
+  }
   lines = [];
   variables = [
     "Admit_Source",

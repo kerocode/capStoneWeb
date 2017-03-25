@@ -19,6 +19,33 @@ export class PSYCHOSESComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+  images={
+    "linear":{
+      bar:'PSYCHOSES_linearReg.csv1.png',
+      line:'PSYCHOSES_linearReg.csv2.png',
+      dot:'PSYCHOSES_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'PSYCHOSES_ridge.csv1.png',
+      line:'PSYCHOSES_ridge.csv2.png',
+      dot:'PSYCHOSES_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'PSYCHOSES_ridgecv.csv1.png',
+      line:'PSYCHOSES_ridgecv.csv2.png',
+      dot:'PSYCHOSES_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'PSYCHOSES_lasso.csv1.png',
+      line:'PSYCHOSES_lasso.csv2.png',
+      dot:'PSYCHOSES_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'PSYCHOSES_lassocv.csv1.png',
+      line:'PSYCHOSES_lassocv.csv2.png',
+      dot:'PSYCHOSES_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",

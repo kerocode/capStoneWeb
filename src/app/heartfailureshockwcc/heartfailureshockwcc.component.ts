@@ -18,6 +18,33 @@ export class HEARTFAILURESHOCKWCCComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+  images={
+    "linear":{
+      bar:'HEARTFAILURESHOCKWCC_linearReg.csv1.png',
+      line:'HEARTFAILURESHOCKWCC_linearReg.csv2.png',
+      dot:'HEARTFAILURESHOCKWCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'HEARTFAILURESHOCKWCC_ridge.csv1.png',
+      line:'HEARTFAILURESHOCKWCC_ridge.csv2.png',
+      dot:'HEARTFAILURESHOCKWCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'HEARTFAILURESHOCKWCC_ridgecv.csv1.png',
+      line:'HEARTFAILURESHOCKWCC_ridgecv.csv2.png',
+      dot:'HEARTFAILURESHOCKWCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'HEARTFAILURESHOCKWCC_lasso.csv1.png',
+      line:'HEARTFAILURESHOCKWCC_lasso.csv2.png',
+      dot:'HEARTFAILURESHOCKWCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'HEARTFAILURESHOCKWCC_lassocv.csv1.png',
+      line:'HEARTFAILURESHOCKWCC_lassocv.csv2.png',
+      dot:'HEARTFAILURESHOCKWCC_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",

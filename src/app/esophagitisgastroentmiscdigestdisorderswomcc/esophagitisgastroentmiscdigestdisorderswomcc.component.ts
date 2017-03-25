@@ -18,6 +18,33 @@ export class ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCCComponent implements On
     lasso:false,
     lassoCv:false
   }
+   images={
+    "linear":{
+      bar:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_linearReg.csv1.png',
+      line:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_linearReg.csv2.png',
+      dot:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridge.csv1.png',
+      line:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridge.csv2.png',
+      dot:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridgecv.csv1.png',
+      line:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridgecv.csv2.png',
+      dot:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lasso.csv1.png',
+      line:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lasso.csv2.png',
+      dot:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lassocv.csv1.png',
+      line:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lassocv.csv2.png',
+      dot:'ESOPHAGITISGASTROENTMISCDIGESTDISORDERSWOMCC_lassocv.csv3.png',
+    }
+  }
    prediction=[];
   variables = [
     "Admit_Source",

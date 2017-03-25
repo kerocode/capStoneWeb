@@ -18,6 +18,33 @@ export class REDBLOODCELLDISORDERSWOMCCComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+  images={
+    "linear":{
+      bar:'REDBLOODCELLDISORDERSWOMCC_linearReg.csv1.png',
+      line:'REDBLOODCELLDISORDERSWOMCC_linearReg.csv2.png',
+      dot:'REDBLOODCELLDISORDERSWOMCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'REDBLOODCELLDISORDERSWOMCC_ridge.csv1.png',
+      line:'REDBLOODCELLDISORDERSWOMCC_ridge.csv2.png',
+      dot:'REDBLOODCELLDISORDERSWOMCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'REDBLOODCELLDISORDERSWOMCC_ridgecv.csv1.png',
+      line:'REDBLOODCELLDISORDERSWOMCC_ridgecv.csv2.png',
+      dot:'REDBLOODCELLDISORDERSWOMCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'REDBLOODCELLDISORDERSWOMCC_lasso.csv1.png',
+      line:'REDBLOODCELLDISORDERSWOMCC_lasso.csv2.png',
+      dot:'REDBLOODCELLDISORDERSWOMCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'REDBLOODCELLDISORDERSWOMCC_lassocv.csv1.png',
+      line:'REDBLOODCELLDISORDERSWOMCC_lassocv.csv2.png',
+      dot:'REDBLOODCELLDISORDERSWOMCC_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",

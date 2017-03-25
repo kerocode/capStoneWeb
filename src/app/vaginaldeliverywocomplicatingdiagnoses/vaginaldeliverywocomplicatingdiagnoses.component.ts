@@ -18,6 +18,33 @@ export class VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+  images={
+    "linear":{
+      bar:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_linearReg.csv1.png',
+      line:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_linearReg.csv2.png',
+      dot:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridge.csv1.png',
+      line:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridge.csv2.png',
+      dot:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridgecv.csv1.png',
+      line:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridgecv.csv2.png',
+      dot:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lasso.csv1.png',
+      line:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lasso.csv2.png',
+      dot:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lassocv.csv1.png',
+      line:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lassocv.csv2.png',
+      dot:'VAGINALDELIVERYWOCOMPLICATINGDIAGNOSES_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",

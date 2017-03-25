@@ -18,6 +18,33 @@ export class REHABILITATIONWCCMCCComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+   images={
+    "linear":{
+      bar:'REHABILITATIONWCCMCC_linearReg.csv1.png',
+      line:'REHABILITATIONWCCMCC_linearReg.csv2.png',
+      dot:'REHABILITATIONWCCMCC_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'REHABILITATIONWCCMCC_ridge.csv1.png',
+      line:'REHABILITATIONWCCMCC_ridge.csv2.png',
+      dot:'REHABILITATIONWCCMCC_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'REHABILITATIONWCCMCC_ridgecv.csv1.png',
+      line:'REHABILITATIONWCCMCC_ridgecv.csv2.png',
+      dot:'REHABILITATIONWCCMCC_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'REHABILITATIONWCCMCC_lasso.csv1.png',
+      line:'REHABILITATIONWCCMCC_lasso.csv2.png',
+      dot:'REHABILITATIONWCCMCC_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'REHABILITATIONWCCMCC_lassocv.csv1.png',
+      line:'REHABILITATIONWCCMCC_lassocv.csv2.png',
+      dot:'REHABILITATIONWCCMCC_lassocv.csv3.png',
+    }
+  }
   prediction=[];
   variables = [
     "Admit_Source",

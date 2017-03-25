@@ -19,6 +19,33 @@ export class DEPRESSIVENEUROSESComponent implements OnInit {
     lasso:false,
     lassoCv:false
   }
+   images={
+    "linear":{
+      bar:'DEPRESSIVENEUROSES_linearReg.csv1.png',
+      line:'DEPRESSIVENEUROSES_linearReg.csv2.png',
+      dot:'DEPRESSIVENEUROSES_linearReg.csv3.png',
+    },
+    "ridge":{
+      bar:'DEPRESSIVENEUROSES_ridge.csv1.png',
+      line:'DEPRESSIVENEUROSES_ridge.csv2.png',
+      dot:'DEPRESSIVENEUROSES_ridge.csv3.png',
+    },
+    "ridgeCv":{
+      bar:'DEPRESSIVENEUROSES_ridgecv.csv1.png',
+      line:'DEPRESSIVENEUROSES_ridgecv.csv2.png',
+      dot:'DEPRESSIVENEUROSES_ridgecv.csv3.png',
+    },
+    "lesso":{
+      bar:'DEPRESSIVENEUROSES_lasso.csv1.png',
+      line:'DEPRESSIVENEUROSES_lasso.csv2.png',
+      dot:'DEPRESSIVENEUROSES_lasso.csv3.png',
+    },
+    "lessoCv":{
+      bar:'DEPRESSIVENEUROSES_lassocv.csv1.png',
+      line:'DEPRESSIVENEUROSES_lassocv.csv2.png',
+      dot:'DEPRESSIVENEUROSES_lassocv.csv3.png',
+    }
+  }
    prediction=[];
   variables = [
     "Admit_Source",
