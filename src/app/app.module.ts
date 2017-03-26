@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
@@ -17,10 +18,17 @@ import { REDBLOODCELLDISORDERSWOMCCComponent } from './redbloodcelldisorderswomc
 import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilitationwccmcc.component';
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
 import { ClickOutsideDirective } from './click-outside.directive';
-import { ViewModalComponent } from './view-modal/view-modal.component';
+import { ViewModalComponent, DialogComponent } from './view-modal/view-modal.component';
 import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { PredictionComponent } from './prediction/prediction.component';
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'prediction', component: MyTabsComponent },
 
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,23 +44,23 @@ import { FooterComponent } from './footer/footer.component';
     REDBLOODCELLDISORDERSWOMCCComponent,
     REHABILITATIONWCCMCCComponent,
     VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
+    DialogComponent,
 
     ClickOutsideDirective,
-
     ViewModalComponent,
-
     WholeDatasetComponent,
-
-    FooterComponent
-
-  
+    FooterComponent,
+    HomeComponent,
+    PredictionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
+  entryComponents: [DialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

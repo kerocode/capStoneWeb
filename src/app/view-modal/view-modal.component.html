@@ -7,7 +7,7 @@
       <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
       <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
       <button md-raised-button style="display:block; position: absolute; right:10px;   background-color:rgb(248, 184, 0); font-size:18px;"
-        data-toggle="modal" data-target="#exampleModalLong"> Models </button>
+        (click)="openDialog()"> Models </button>
       <!-- Modal Trigger -->
       <!-- Modal Structure -->
       
@@ -134,99 +134,3 @@
     <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" (click)="rePredict()">
     Re-predict</button>
   </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <md-grid-list cols="2">
-          <md-grid-tile>
-            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.linear">
-              <thead>
-                <tr>
-                  <th colspan="2">Linear Regression</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{calculatedModal.linear[v]}}</td>
-              </tr>
-            </table>
-          </md-grid-tile>
-          <md-grid-tile>
-            <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_linearReg.csv1.png">
-          </md-grid-tile>
-          <md-grid-tile>
-            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.ridge">
-              <thead>
-                <tr>
-                  <th colspan="2"> Ridge Regression</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{calculatedModal.ridge[v]}}</td>
-              </tr>
-            </table>
-          </md-grid-tile>
-          <md-grid-tile>
-            <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridge.csv1.png">
-          </md-grid-tile>
-          <md-grid-tile>
-            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.ridgeCv">
-              <thead>
-                <tr>
-                  <th colspan="2"> Ridge Cross validation Regression</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{calculatedModal.ridgeCv[v]}}</td>
-              </tr>
-            </table>
-          </md-grid-tile>
-          <md-grid-tile>
-            <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_ridgecv.csv1.png">
-          </md-grid-tile>
-          <md-grid-tile>
-            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.lasso" class="mar-t">
-              <thead>
-                <tr>
-                  <th colspan="2"> Lasso Regression</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{calculatedModal.lasso[v]}}</td>
-              </tr>
-            </table>
-          </md-grid-tile>
-          <md-grid-tile>
-            <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lasso.csv1.png">
-          </md-grid-tile>
-          <md-grid-tile>
-            <table  class="table table-hover table-bordered" *ngIf="calculatedModal.lassoCv" class="mar-t">
-              <thead>
-                <tr>
-                  <th colspan="2"> Lasso Cross validation Regression</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{calculatedModal.lassoCv[v]}}</td>
-              </tr>
-            </table>
-          </md-grid-tile>
-          <md-grid-tile>
-            <img src="assets/img/CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCC_lassocv.csv1.png">
-          </md-grid-tile>
-        </md-grid-list>
-      </div>
-    </div>
-  </div>
-</div>

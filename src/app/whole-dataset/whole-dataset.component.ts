@@ -28,9 +28,9 @@ export class WholeDatasetComponent implements OnInit {
     "adm_order_md_dept",
     "icu_order",
     "stepdown_order",
-    "general_care_order",
-    "attending_change_order",
-    "age"]
+    'general_care_order',
+    'attending_change_order',
+    'age']
   patient = {};
   showPrediction = false;
   hide = true;
@@ -41,7 +41,7 @@ export class WholeDatasetComponent implements OnInit {
   };
   WHOLEDATASETC = {
 
-    "lasso": {
+    'lasso': {
       Admit_Source: -0.000000,
       Primary_Insurance: -0.000000,
       Discharge_Disposition: 0.417251,
@@ -54,7 +54,7 @@ export class WholeDatasetComponent implements OnInit {
       meanSquareError: 77.73,
       variance: 0.11
     },
-    "lassoCv": {
+    'lassoCv': {
       Admit_Source: -0.083267,
       Primary_Insurance: -0.045593,
       Discharge_Disposition: 0.364699,
@@ -67,7 +67,7 @@ export class WholeDatasetComponent implements OnInit {
       meanSquareError: 74.17,
       variance: 0.15
     },
-    "ridge": {
+    'ridge': {
       Admit_Source: -0.160650,
       Primary_Insurance: -0.056620,
       Discharge_Disposition: 0.355109,
@@ -80,7 +80,7 @@ export class WholeDatasetComponent implements OnInit {
       meanSquareError: 73.86,
       variance: 0.15
     },
-    "ridgeCv": {
+    'ridgeCv': {
       Admit_Source: -0.160366,
       Primary_Insurance: -0.056642,
       Discharge_Disposition: 0.355314,
@@ -93,7 +93,7 @@ export class WholeDatasetComponent implements OnInit {
       meanSquareError: 73.86,
       variance: 0.15
     },
-    "linear": {
+    'linear': {
       Admit_Source: -0.160665,
       Primary_Insurance: -0.056618,
       Discharge_Disposition: 0.355098,
@@ -218,7 +218,7 @@ export class WholeDatasetComponent implements OnInit {
       { viewValue: 'N8-GENERAL CLINICAL RESEAR CTR', value: 68 },
       { viewValue: 'C11A-NEUROSCIENCE ICU', value: 33 },
       { viewValue: 'VA TREATMENT CTR (B) ACUTE', value: 71 },
-      { viewValue: "8E-WOMEN'S HEALTH CARE", value: 21 },
+      { viewValue: '8E-WOMEN\'S HEALTH CARE', value: 21 },
       { viewValue: '10C CICU/CMICU', value: 1 },
       { viewValue: 'GB3-GATEWAY BLDG 3RD FLOOR', value: 53 },
       { viewValue: 'C4B-MEDICAL RESP ICU', value: 40 },
@@ -229,7 +229,7 @@ export class WholeDatasetComponent implements OnInit {
       { viewValue: 'N4-GENERAL PSYCHIATRY', value: 63 },
       { viewValue: 'C9A-SURGICAL TRAUMA ICU', value: 47 },
       { viewValue: 'A7PO-AMB SURGERY-PREOP', value: 27 },
-      { viewValue: "GB5P-CHILDREN'S PERIOP", value: 55 },
+      { viewValue: 'GB5P-CHILDREN\'S PERIOP', value: 55 },
       { viewValue: 'N10B-BONE MARROW TRANSPLANT', value: 58 },
       { viewValue: 'C4A-MEDICAL RESP ICU', value: 39 },
       { viewValue: 'C10C-CARDIAC SURG ICU', value: 31 },
@@ -271,7 +271,7 @@ export class WholeDatasetComponent implements OnInit {
 
         let tarr = [];
         for (var j = 0; j < headers.length; j++) {
-          tarr.push(headers[j] + ":" + data[j]);
+          tarr.push(headers[j] + ':' + data[j]);
         }
         this.lines.push(tarr);
       }
