@@ -17,11 +17,11 @@ import { PSYCHOSESComponent } from './psychoses/psychoses.component';
 import { REDBLOODCELLDISORDERSWOMCCComponent } from './redbloodcelldisorderswomcc/redbloodcelldisorderswomcc.component';
 import { REHABILITATIONWCCMCCComponent } from './rehabilitationwccmcc/rehabilitationwccmcc.component';
 import { VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent } from './vaginaldeliverywocomplicatingdiagnoses/vaginaldeliverywocomplicatingdiagnoses.component';
-import { ClickOutsideDirective } from './click-outside.directive';
 import { ViewModalComponent, DialogComponent } from './view-modal/view-modal.component';
 import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PredictionComponent } from './prediction/prediction.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,8 +45,6 @@ const appRoutes: Routes = [
     REHABILITATIONWCCMCCComponent,
     VAGINALDELIVERYWOCOMPLICATINGDIAGNOSESComponent,
     DialogComponent,
-
-    ClickOutsideDirective,
     ViewModalComponent,
     WholeDatasetComponent,
     FooterComponent,
@@ -57,7 +55,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(appRoutes)
   ],
   entryComponents: [DialogComponent],

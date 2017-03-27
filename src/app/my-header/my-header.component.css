@@ -1,4 +1,12 @@
-.bg-inverse{
-        /*background: rgba(0,0,0,0.95);*/
-        background-color: #060d54 !important;
+.bg-inverse {
+  /*background: rgba(0,0,0,0.95);*/
+  background-color: #060d54 !important;
+}
+
+ul.navbar-nav {
+  list-style: none;
+}
+
+ul.navbar-nav li {
+  display: inline;
 }
