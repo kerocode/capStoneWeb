@@ -25,7 +25,7 @@
               </select>
           </div>-->
           <div fxFlex="20" class="one">
-            <md-select placeholder="Admit Source" [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
+            <md-select placeholder="Admit Source" [(ngModel)]="model.AdmitSource" required name="AdmitSource" >
               <md-option *ngFor="let a of options.Admit_Source" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -41,7 +41,7 @@
                </select>
         </div>-->
           <div fxFlex="20"  class="two">
-            <md-select placeholder="Primary Insurance" [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
+            <md-select placeholder="Primary Insurance" [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" >
               <md-option *ngFor="let a of options.Primary_Insurance" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -58,7 +58,7 @@
         </div>-->
           <div fxFlex="20" class="three">
             <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" [required]="model.icuOrder==0 && model.stepdownOrder==0"
-              #generalCareOrder="ngModel" id="generalCareOrder" name="generalCareOrder">
+              id="generalCareOrder" name="generalCareOrder">
               <md-option *ngFor="let a of options.general_care_order" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -75,7 +75,7 @@
         </div>-->
           <div fxFlex="20"  class="four">
             <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" [required]="model.icuOrder==0 && model.generalCareOrder==0"
-              #stepdownOrder="ngModel" id="stepdownOrder" name="stepdownOrder">
+              id="stepdownOrder" name="stepdownOrder">
               <md-option *ngFor="let a of options.stepdown_order" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -92,7 +92,7 @@
         </div>-->
           <div fxFlex="20"  class="five">
             <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" [required]="model.stepdownOrder==0 && model.generalCareOrder==0"
-              #icuOrder="ngModel" id="icuOrder" name="icuOrder">
+              id="icuOrder" name="icuOrder">
               <md-option *ngFor="let a of options.icu_order" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -109,7 +109,7 @@
               </select>
           </div>-->
           <div fxFlex="20" class="one">
-            <md-select placeholder="Admit Unit"  style="width: 90%;"  [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required #AdmitUnit="ngModel"
+            <md-select placeholder="Admit Unit"  style="width: 90%;"  [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required 
               name="AdmitUnit">
               <md-option *ngFor="let a of options.Admit_Unit" [value]="a.value">
                 {{ a.viewValue }}
@@ -125,7 +125,7 @@
               </select>
           </div>-->
           <div fxFlex="20" class="two">
-            <md-select placeholder="ISO Result" style="width: 90%;" [(ngModel)]="model.isoResult" id="isoResult" required #isoResult="ngModel" name="isoResult">
+            <md-select placeholder="ISO Result" style="width: 90%;" [(ngModel)]="model.isoResult" id="isoResult" required  name="isoResult">
               <md-option *ngFor="let a of options.iso_result" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -142,7 +142,7 @@
           </div>-->
           <div fxFlex="40"  class="three">
             <md-select placeholder="Discharge Disposition" style="width: 90%;"  [(ngModel)]="model.DischargeDisposition" name="DischargeDisposition" id="DischargeDisposition"
-              required #DischargeDisposition="ngModel">
+              required >
               <md-option *ngFor="let a of options.Discharge_Disposition" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -150,7 +150,7 @@
           </div>
           <div fxFlex="20"  class="four">
             <md-input-container style="margin-top: -10px;">
-              <input mdInput placeholder="Age" style="width: 90%;"  [(ngModel)]="model.age" id="age" required #age="ngModel" name="age">
+              <input mdInput placeholder="Age" style="width: 90%;"  [(ngModel)]="model.age" id="age" required  name="age">
             </md-input-container>
           </div>
         </div>
@@ -174,7 +174,7 @@
             <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
             <h5> Variance: {{r.model['variance']}}</h5>
           </div>
-          <table class="table table-hover table-bordered">
+          <table>
             <thead>
               <tr>
                 <th colspan="2">{{r.type}} </th>

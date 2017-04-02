@@ -27,16 +27,24 @@ body {
 .select-style select:focus {
   outline: none;
 }
+
 .example-spacer {
   flex: 1 1 auto;
 }
+
 table {
   border-collapse: collapse;
   text-align: left;
   width: 100%;
 }
-.table{margin-top: -80px;}
-.mat-grid-tile .mat-figure {padding: 5px!important;}
+
+.table {
+  margin-top: -80px;
+}
+
+.mat-grid-tile .mat-figure {
+  padding: 5px!important;
+}
 
 table td,
 table th {
@@ -46,7 +54,8 @@ table th {
 table tr:hover {
   background-color: #E1EEF4;
 }
- table thead th {
+
+table thead th {
   background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #094C99), color-stop(1, #094C99));
   background: -moz-linear-gradient( center top, #094C99 5%, #094C99 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#094C99', endColorstr='#094C99');
@@ -57,40 +66,31 @@ table tr:hover {
   border-left: 1px solid #0070A8;
 }
 
-
-
- table tbody td {
+table tbody td {
   color: #00557F;
   border-left: 1px solid #c7c9ca;
+  border-right: 1px solid #c7c9ca;
   border-bottom: 1px solid #c7c9ca;
   font-size: 14px;
   font-weight: normal;
 }
 
- table tbody .alt td {
+table tbody .alt td {
   background: #E1EEf4;
   color: #00557F;
 }
 
- table tbody td:first-child {
-  border-left: none;
-}
-
- table tbody tr:last-child td {
-  border-bottom: none;
-}
-
- table tfoot td div {
+table tfoot td div {
   border-top: 1px solid #059905;
   background: #E1EEf4;
 }
 
- table tfoot td {
+table tfoot td {
   padding: 0;
   font-size: 14px
 }
 
- table tfoot td div {
+table tfoot td div {
   padding: 2px;
 }
 
@@ -101,11 +101,11 @@ table tfoot td ul {
   text-align: right;
 }
 
- table tfoot li {
+table tfoot li {
   display: inline;
 }
 
- table tfoot li a {
+table tfoot li a {
   text-decoration: none;
   display: inline-block;
   padding: 2px 8px;
@@ -120,9 +120,6 @@ table tfoot td ul {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
   background-color: #006699;
 }
-
-
-
 
 .example-margin {
   margin: 0 10px;
@@ -141,6 +138,11 @@ app-root {
 
 router-outlet {
   flex: 1
+}
+
+app-home {
+  display: flex;
+  flex-direction: column;
 }
 
 .example-section {

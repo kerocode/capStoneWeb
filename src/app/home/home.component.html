@@ -1,3 +1,83 @@
-<p>
-  home works!
-</p>
+<div class="container" style="padding: 10px;">
+  <div class="row">
+    <div fxFlex="70">
+      <div class="row">
+        <h3>
+          what is regression analysis ?
+        </h3>
+        <p>
+          In statistical modeling, regression analysis is a statistical process for estimating the relationships among variables. It
+          includes many techniques for modeling and analyzing several variables, when the focus is on the relationship between
+          a dependent variable and one or more independent variables (or 'predictors').
+        </p>
+      </div>
+      <div class="row">
+        <h3>How regression analysis is used in forecasting ?</h3>
+        <p>
+          Regression analysis is widely used for prediction and forecasting, where its use has substantial overlap with the field of
+          machine learning. Regression analysis is also used to understand which among the independent variables is related
+          to the dependent variable, and to explore the forms of these relationships.
+        </p>
+      </div>
+    </div>
+    <div fxFlex="30">
+      <img height="220" src="assets/img/Linear_regression.png">
+    </div>
+  </div>
+  <div class="row">
+    <h3>
+      What is a linear regression model ?
+    </h3>
+    <p>
+      In statistics, linear regression is an approach for modeling the relationship between a scalar dependent variable y and one
+      or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called
+      simple linear regression.
+      <br> It is represented by an equation Y=a+b*X + e, where a is intercept, b is slope of the line and e is error term.
+      This equation can be used to predict the value of target variable based on given predictor variable(s).
+    </p>
+  </div>
+  <div class="row">
+    <h3>How do regressions work ?</h3>
+    <p>
+      A regression models the past relationship between variables to predict their future behavior. ... When one independent variable
+      is used in a regression, it is called a simple regression; when two or more independent variables are used, it is called
+      a multiple regression. Regression models can be either linear or nonlinear.
+    </p>
+  </div>
+  <div class="row">
+    <h3> what is Ridge Regression ? </h3>
+    <p>
+      Ridge Regression is a technique used when the data suffers from multicollinearity ( independent variables are highly correlated).
+      In multicollinearity, even though the least squares estimates (OLS) are unbiased, their variances are large which deviates
+      the observed value far from the true value. By adding a degree of bias to the regression estimates, ridge regression
+      reduces the standard errors.
+      <br> Above, we saw the equation for linear regression. Remember? It can be represented as:
+      <br> y=a+ b*x
+      <br> This equation also has an error term. The complete equation becomes:
+    </p>
+    <pre class="pre">
+
+  y=a+b*x+e (error term),  [error term is the value needed to correct for a prediction error between the observed and predicted value]
+<br>
+=> y=a+y= a+ b1x1+ b2x2+....+e, for multiple independent variables.
+    </pre>
+    <p>In a linear equation, prediction errors can be decomposed into two sub components. First is due to the biased and second
+      is due to the variance. Prediction error can occur due to any one of these two or both components. Here, we’ll discuss
+      about the error caused due to variance.</p>
+  </div>
+  <div class="row">
+    <h3> what is Lasso Regression ? </h3>
+    <p>
+      Similar to Ridge Regression, Lasso (Least Absolute Shrinkage and Selection Operator) also penalizes the absolute size of
+      the regression coefficients. In addition, it is capable of reducing the variability and improving the accuracy of linear
+      regression models.
+    </p>
+
+    <p>
+      Lasso regression differs from ridge regression in a way that it uses absolute values in the penalty function, instead of
+      squares. This leads to penalizing (or equivalently constraining the sum of the absolute values of the estimates) values
+      which causes some of the parameter estimates to turn out exactly zero. Larger the penalty applied, further the estimates
+      get shrunk towards absolute zero. This results to variable selection out of given n variables.
+    </p>
+  </div>
+</div>

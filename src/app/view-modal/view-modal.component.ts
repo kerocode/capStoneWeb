@@ -22,6 +22,7 @@ export class DialogComponent {
   images: Images;
   calculatedModal = {};
   variables = [];
+  graph = '1';
   constructor(public dialogRef: MdDialogRef<DialogComponent>) {
   }
   closeDialog(){
@@ -42,8 +43,8 @@ export class ViewModalComponent implements OnInit {
   calc2Cols = '2 2 calc(10em + 10px);';
   calc3Cols = '3 3 calc(15em + 20px);';
   model: Model = {
-    AdmitSource: 0, AdmitUnit: 0, DischargeDisposition: 0, icuOrder: 0, PrimaryInsurance: 0,
-    age: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
+    AdmitSource: null, AdmitUnit: null, DischargeDisposition: null, icuOrder: null, PrimaryInsurance: null,
+    age: null, generalCareOrder: null, stepdownOrder: null, isoResult: null
   };
   showPrediction = false;
 

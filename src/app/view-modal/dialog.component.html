@@ -1,93 +1,110 @@
 <div>
-<md-toolbar>
-    <span class="example-spacer"></span>
-  <div>
-    <button (click)="closeDialog()" md-mini-fab><i class="fa fa-times"  style="color:#fff; " aria-hidden="true"></i></button>
-  </div>
-</md-toolbar>
+  <md-toolbar>
+    Graph Type:  
+    <md-radio-group [(ngModel)]="graph">
+      <md-radio-button value="1">Dot</md-radio-button>
+      <md-radio-button value="2">bar</md-radio-button>
+      <md-radio-button value="3">Line</md-radio-button>
 
-<div class="row"> 
-  <md-grid-list cols="2" rowHeight="550px">
-    <md-grid-tile>
-      <table class="table" *ngIf="calculatedModal.linear">
-        <thead>
-          <tr>
-            <th colspan="2">Linear Regression</th>
+    </md-radio-group>
+    <span class="example-spacer"></span>
+    <div>
+      <button (click)="closeDialog()" md-mini-fab><i class="fa fa-times"  style="color:#fff; " aria-hidden="true"></i></button>
+    </div>
+  </md-toolbar>
+
+  <div class="row">
+    <md-grid-list cols="2" rowHeight="550px">
+      <md-grid-tile>
+        <table class="table" *ngIf="calculatedModal.linear">
+          <thead>
+            <tr>
+              <th colspan="2">Linear Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.linear[v]}}</td>
           </tr>
-        </thead>
-        <tr *ngFor="let v of variables">
-          <td>{{v}}</td>
-          <td>{{calculatedModal.linear[v]}}</td>
-        </tr>
-      </table>
-    </md-grid-tile>
-    <md-grid-tile>
-      <img [src]="'assets/newimage/'+images['linear'].bar">
-    </md-grid-tile>
-    <md-grid-tile>
-      <table class="table table-hover table-bordered" *ngIf="calculatedModal.ridge">
-        <thead>
-          <tr>
-            <th colspan="2"> Ridge Regression</th>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img *ngIf="graph == 1" [src]="'assets/newimage/'+images['linear'].dot">
+        <img *ngIf="graph == 2" [src]="'assets/newimage/'+images['linear'].bar">
+        <img *ngIf="graph == 3" [src]="'assets/newimage/'+images['linear'].line">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table class="table table-hover table-bordered" *ngIf="calculatedModal.ridge">
+          <thead>
+            <tr>
+              <th colspan="2"> Ridge Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.ridge[v]}}</td>
           </tr>
-        </thead>
-        <tr *ngFor="let v of variables">
-          <td>{{v}}</td>
-          <td>{{calculatedModal.ridge[v]}}</td>
-        </tr>
-      </table>
-    </md-grid-tile>
-    <md-grid-tile>
-      <img [src]="'assets/newimage/'+images['ridge'].bar">
-    </md-grid-tile>
-    <md-grid-tile>
-      <table class="table table-hover table-bordered" *ngIf="calculatedModal.ridgeCv">
-        <thead>
-          <tr>
-            <th colspan="2"> Ridge Cross validation Regression</th>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile>
+        <img *ngIf="graph == 1" [src]="'assets/newimage/'+images['ridge'].dot">
+        <img *ngIf="graph == 2" [src]="'assets/newimage/'+images['ridge'].bar">
+        <img *ngIf="graph == 3" [src]="'assets/newimage/'+images['ridge'].line">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table class="table table-hover table-bordered" *ngIf="calculatedModal.ridgeCv">
+          <thead>
+            <tr>
+              <th colspan="2"> Ridge Cross validation Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.ridgeCv[v]}}</td>
           </tr>
-        </thead>
-        <tr *ngFor="let v of variables">
-          <td>{{v}}</td>
-          <td>{{calculatedModal.ridgeCv[v]}}</td>
-        </tr>
-      </table>
-    </md-grid-tile>
-    <md-grid-tile *ngIf="images.ridgeCv">
-      <img [src]="'assets/newimage/'+images['ridgeCv'].bar">
-    </md-grid-tile>
-    <md-grid-tile>
-      <table class="table table-hover table-bordered" *ngIf="calculatedModal.lasso">
-        <thead>
-          <tr>
-            <th colspan="2"> Lasso Regression</th>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile *ngIf="images.ridgeCv">
+        <img *ngIf="graph == 1" [src]="'assets/newimage/'+images['ridgeCv'].dot">
+        <img *ngIf="graph == 2" [src]="'assets/newimage/'+images['ridgeCv'].bar">
+        <img *ngIf="graph == 3" [src]="'assets/newimage/'+images['ridgeCv'].line">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table class="table table-hover table-bordered" *ngIf="calculatedModal.lasso">
+          <thead>
+            <tr>
+              <th colspan="2"> Lasso Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.lasso[v]}}</td>
           </tr>
-        </thead>
-        <tr *ngFor="let v of variables">
-          <td>{{v}}</td>
-          <td>{{calculatedModal.lasso[v]}}</td>
-        </tr>
-      </table>
-    </md-grid-tile>
-    <md-grid-tile *ngIf="images.lasso">
-      <img [src]="'assets/newimage/'+images['lasso'].bar">
-    </md-grid-tile>
-    <md-grid-tile>
-      <table class="table table-hover table-bordered" *ngIf="calculatedModal.lassoCv">
-        <thead>
-          <tr>
-            <th colspan="2"> Lasso Cross validation Regression</th>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile *ngIf="images.lasso">
+        <img *ngIf="graph == 1" [src]="'assets/newimage/'+images['lasso'].dot">
+        <img *ngIf="graph == 2" [src]="'assets/newimage/'+images['lasso'].bar">
+        <img *ngIf="graph == 3" [src]="'assets/newimage/'+images['lasso'].line">
+      </md-grid-tile>
+      <md-grid-tile>
+        <table class="table table-hover table-bordered" *ngIf="calculatedModal.lassoCv">
+          <thead>
+            <tr>
+              <th colspan="2"> Lasso Cross validation Regression</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let v of variables">
+            <td>{{v}}</td>
+            <td>{{calculatedModal.lassoCv[v]}}</td>
           </tr>
-        </thead>
-        <tr *ngFor="let v of variables">
-          <td>{{v}}</td>
-          <td>{{calculatedModal.lassoCv[v]}}</td>
-        </tr>
-      </table>
-    </md-grid-tile>
-    <md-grid-tile *ngIf="images['lassoCv']">
-      <img [src]="'assets/newimage/'+images['lassoCv'].bar">
-    </md-grid-tile>
-  </md-grid-list>
-</div>
+        </table>
+      </md-grid-tile>
+      <md-grid-tile *ngIf="images.lassoCv">
+        <img *ngIf="graph == 1" [src]="'assets/newimage/'+images['lassoCv'].dot">
+        <img *ngIf="graph == 2" [src]="'assets/newimage/'+images['lassoCv'].bar">
+        <img *ngIf="graph == 3" [src]="'assets/newimage/'+images['lassoCv'].line">
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
 </div>
