@@ -9,7 +9,33 @@ import { Model } from '../models/modal';
 })
 export class WholeDatasetComponent implements OnInit {
 
-  constructor() { }
+ images = {
+    'linear': {
+      bar: 'wholeDataset_linearReg.csv1.png',
+      line: 'wholeDataset_linearReg.csv2.png',
+      dot: 'wholeDataset_linearReg.csv3.png',
+    },
+    'ridge': {
+      bar: 'wholeDataset_ridge.csv1.png',
+      line: 'wholeDataset_ridge.csv2.png',
+      dot: 'wholeDataset_ridge.csv3.png',
+    },
+    'ridgeCv': {
+      bar: 'wholeDataset_ridgecv.csv1.png',
+      line: 'wholeDataset_ridgecv.csv2.png',
+      dot: 'wholeDataset_ridgecv.csv3.png',
+    },
+    'lesso': {
+      bar: 'wholeDataset_lasso.csv1.png',
+      line: 'wholeDataset_lasso.csv2.png',
+      dot: 'wholeDataset_lasso.csv3.png',
+    },
+    'lessoCv': {
+      bar: 'wholeDataset_lassocv.csv1.png',
+      line: 'wholeDataset_lassocv.csv2.png',
+      dot: 'wholeDataset_lassocv.csv3.png',
+    }
+  }
   lines = [];
   selectedModel = {
     linear: false,
@@ -17,20 +43,20 @@ export class WholeDatasetComponent implements OnInit {
     ridgeCv: false,
     lasso: false,
     lassoCv: false
-  }
+  };;
   prediction = [];
   variables = [
-    "Admit_Source",
-    "Primary_Insurance",
-    "Discharge_Disposition",
-    "Admit_Unit",
-    "iso_result",
-    "adm_order_md_dept",
-    "icu_order",
-    "stepdown_order",
+    'Admit_Source',
+    'Primary_Insurance',
+    'Discharge_Disposition',
+    'Admit_Unit',
+    'iso_result',
+    'adm_order_md_dept',
+    'icu_order',
+    'stepdown_order',
     'general_care_order',
     'attending_change_order',
-    'age']
+    'age'];
   patient = {};
   showPrediction = false;
   hide = true;
@@ -40,7 +66,6 @@ export class WholeDatasetComponent implements OnInit {
     age: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
   };
   WHOLEDATASETC = {
-
     'lasso': {
       Admit_Source: -0.000000,
       Primary_Insurance: -0.000000,
@@ -258,24 +283,9 @@ export class WholeDatasetComponent implements OnInit {
       { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }
     ],
   };
-
+  constructor() { }
   ngOnInit() {
   }
-  processData(allText) {
-    let allTextLines = allText.split(/\r\n|\n/);
-    let headers = allTextLines[0].split(',');
 
-    for (let i = 1; i < allTextLines.length; i++) {
-      let data = allTextLines[i].split(',');
-      if (data.length == headers.length) {
 
-        let tarr = [];
-        for (var j = 0; j < headers.length; j++) {
-          tarr.push(headers[j] + ':' + data[j]);
-        }
-        this.lines.push(tarr);
-      }
-    }
-    // alert(lines);
-  }
-}
+};

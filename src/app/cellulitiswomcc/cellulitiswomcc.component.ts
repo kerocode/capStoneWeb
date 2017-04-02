@@ -235,13 +235,8 @@ export class CELLULITISWOMCCComponent implements OnInit {
   ngOnInit() {
 
   }
-  clickOutside(event) {
-    this.hide = true;
-  }
-  openDailog(event) {
-    this.dailogListener = true;
 
-  }
+
 }
 
 

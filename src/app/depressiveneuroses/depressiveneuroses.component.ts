@@ -10,7 +10,6 @@ import { Model } from '../models/modal';
 })
 export class DEPRESSIVENEUROSESComponent implements OnInit {
 
-  constructor() { }
   lines = [];
   selectedModel = {
     linear: false,
@@ -185,28 +184,11 @@ export class DEPRESSIVENEUROSESComponent implements OnInit {
     general_care_order: [{ viewValue: '0', value: 0 }, { viewValue: 'LEVEL OF CARE - GENERAL', value: 1 }]
   };
 
-  // attending_change_order_md_dept = [
-  // { viewValue: '0', value:0},
-  // { viewValue:'PSYCHIATRY', value:4 }];
 
+
+  constructor() { }
 
   ngOnInit() {
   }
-  processData(allText) {
-    let allTextLines = allText.split(/\r\n|\n/);
-    let headers = allTextLines[0].split(',');
 
-    for (let i = 1; i < allTextLines.length; i++) {
-      let data = allTextLines[i].split(',');
-      if (data.length == headers.length) {
-
-        let tarr = [];
-        for (let j = 0; j < headers.length; j++) {
-          tarr.push(headers[j] + ':' + data[j]);
-        }
-        this.lines.push(tarr);
-      }
-    }
-    // alert(lines);
-  }
 }

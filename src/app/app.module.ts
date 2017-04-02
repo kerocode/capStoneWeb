@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdIconRegistry } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MyHeaderComponent } from './my-header/my-header.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MyTabsComponent } from './my-tabs/my-tabs.component';
 import { CELLULITISWOMCCComponent } from './cellulitiswomcc/cellulitiswomcc.component';
 import { CIRCULATORYDISORDERSEXCEPTAMIWCARDCATHWOMCCComponent } from './circulatorydisordersexceptamiwcardcathwomcc/circulatorydisordersexceptamiwcardcathwomcc.component';
@@ -21,7 +22,7 @@ import { ViewModalComponent, DialogComponent } from './view-modal/view-modal.com
 import { WholeDatasetComponent } from './whole-dataset/whole-dataset.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule,BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PredictionComponent } from './prediction/prediction.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -55,12 +56,13 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
   entryComponents: [DialogComponent],
-  providers: [],
+  providers: [MdIconRegistry],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

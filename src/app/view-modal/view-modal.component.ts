@@ -1,17 +1,17 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewContainerRef } from '@angular/core';
 import { Model } from '../models/modal';
 import { MdDialogRef, MdDialog, MdDialogConfig } from '@angular/material';
-export interface ImgTypes{
-bar?:string;
-dot?:string;
-line?:string;
+export interface ImgTypes {
+  bar?: string;
+  dot?: string;
+  line?: string;
 }
-export interface Images{
-linear?: ImgTypes;
-ridge?: ImgTypes;
-ridgeCv?: ImgTypes;
-lasso?: ImgTypes;
-lassoCv?: ImgTypes;
+export interface Images {
+  linear?: ImgTypes;
+  ridge?: ImgTypes;
+  ridgeCv?: ImgTypes;
+  lasso?: ImgTypes;
+  lassoCv?: ImgTypes;
 }
 
 @Component({
@@ -20,9 +20,12 @@ lassoCv?: ImgTypes;
 })
 export class DialogComponent {
   images: Images;
-  calculatedModal={};
-  variables=[];
+  calculatedModal = {};
+  variables = [];
   constructor(public dialogRef: MdDialogRef<DialogComponent>) {
+  }
+  closeDialog(){
+    this.dialogRef.close();
   }
 }
 @Component({
@@ -36,6 +39,8 @@ export class ViewModalComponent implements OnInit {
   @Input() images: Images;
   dialogRef: MdDialogRef<DialogComponent>;
   selectedOption: any;
+  calc2Cols = '2 2 calc(10em + 10px);';
+  calc3Cols = '3 3 calc(15em + 20px);';
   model: Model = {
     AdmitSource: 0, AdmitUnit: 0, DischargeDisposition: 0, icuOrder: 0, PrimaryInsurance: 0,
     age: 0, generalCareOrder: 0, stepdownOrder: 0, isoResult: 0
@@ -55,7 +60,6 @@ export class ViewModalComponent implements OnInit {
     'Primary_Insurance',
     'Discharge_Disposition',
     'Admit_Unit',
-    'Bed_Category',
     'iso_result',
     'icu_order',
     'stepdown_order',
@@ -153,12 +157,15 @@ export class ViewModalComponent implements OnInit {
     this.prediction = [];
   }
   openDialog() {
-    let config = new MdDialogConfig();
+    const config = new MdDialogConfig();
     config.viewContainerRef = this.viewContainerRef;
     if (this.calculatedModal && this.images) {
-      this.dialogRef = this.dialog.open(DialogComponent, config);
-      this.dialogRef.componentInstance.images = this.images ;
-      this.dialogRef.componentInstance.calculatedModal = this.calculatedModal ;
+      this.dialogRef = this.dialog.open(DialogComponent, {
+        height: '100%',
+        width: '90%',
+      });
+      this.dialogRef.componentInstance.images = this.images;
+      this.dialogRef.componentInstance.calculatedModal = this.calculatedModal;
       this.dialogRef.componentInstance.variables = this.variables;
       this.dialogRef.afterClosed().subscribe(result => {
         this.dialogRef = null;

@@ -1,88 +1,137 @@
+<div *ngIf="!showPrediction">
+  <section class="example-section">
+    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.linear">Linear</md-checkbox>
+    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridge">Ridge</md-checkbox>
+    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridgeCv">Ridge Cross Validation </md-checkbox>
+    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
+    <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
+    <button md-raised-button style="display:block; position: absolute; right:10px;   background-color:rgb(248, 184, 0); font-size:18px;"
+      (click)="openDialog()"> Models </button>
+    <!-- Modal Trigger -->
+    <!-- Modal Structure -->
 
-  <div *ngIf="!showPrediction">
-    <section class="example-section">
-      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.linear">Linear</md-checkbox>
-      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridge">Ridge</md-checkbox>
-      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.ridgeCv">Ridge Cross Validation </md-checkbox>
-      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lasso">Lasso</md-checkbox>
-      <md-checkbox class="example-margin" [(ngModel)]="selectedModel.lassoCv">Lasso Cross Validation</md-checkbox>
-      <button md-raised-button style="display:block; position: absolute; right:10px;   background-color:rgb(248, 184, 0); font-size:18px;"
-        (click)="openDialog()"> Models </button>
-      <!-- Modal Trigger -->
-      <!-- Modal Structure -->
-      
-    </section>
+  </section>
 
-    <div class="padd container" style="margin-top: 30px;">
-      <form (ngSubmit)="onSubmit()" #modelForm="ngForm">
+  <div class="padd" style="margin-top: 30px;">
+    <form (ngSubmit)="onSubmit()" #modelForm="ngForm">
+      <div class="containerX" style="margin: 10px;">
         <div class="row">
-          <div class="col-md-3">
+          <!--<div class="col-md-3">
             <label class="label-style" for="AdmitSource">Admit Source</label>
             <select [(ngModel)]="model.AdmitSource" class="form-control" id="AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
                 <option *ngFor="let a of options.Admit_Source" [ngValue]="a.value">
                   {{ a.viewValue }}
                 </option>
               </select>
+          </div>-->
+          <div fxFlex="20" class="one">
+            <md-select placeholder="Admit Source" [(ngModel)]="model.AdmitSource" required name="AdmitSource" #AdmitSource="ngModel">
+              <md-option *ngFor="let a of options.Admit_Source" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-
-          <div class="col-md-2">
-            <label class="label-style" for="PrimaryInsurance">Primary Insurance</label>
-            <select [(ngModel)]="model.PrimaryInsurance" class="form-control" id="PrimaryInsurance" required name="PrimaryInsurance"
-              #PrimaryInsurance="ngModel">
+          <!--<div class="col-md-2">
+          <label class="label-style" for="PrimaryInsurance">Primary Insurance</label>
+          <select [(ngModel)]="model.PrimaryInsurance" class="form-control" id="PrimaryInsurance" required name="PrimaryInsurance"
+            #PrimaryInsurance="ngModel">
                 <option *ngFor="let a of options.Primary_Insurance" [ngValue]="a.value">
                     {{ a.viewValue }}
                </option>
                </select>
+        </div>-->
+          <div fxFlex="20"  class="two">
+            <md-select placeholder="Primary Insurance" [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" #PrimaryInsurance="ngModel">
+              <md-option *ngFor="let a of options.Primary_Insurance" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-
-          <div class="col-md-2">
-            <label class="label-style" for="generalCareOrder"> General Care Order</label>
-            <select [(ngModel)]="model.generalCareOrder" class="form-control" [required]="model.icuOrder==0 && model.stepdownOrder==0"
-              #generalCareOrder="ngModel" id="generalCareOrder" name="generalCareOrder">
+          <!--<div class="col-md-2">
+          <label class="label-style" for="generalCareOrder"> General Care Order</label>
+          <select [(ngModel)]="model.generalCareOrder" class="form-control" [required]="model.icuOrder==0 && model.stepdownOrder==0"
+            #generalCareOrder="ngModel" id="generalCareOrder" name="generalCareOrder">
                 <option *ngFor="let a of options.general_care_order" [ngValue]="a.value">
                   {{ a.viewValue }}
                </option>
               </select>
+        </div>-->
+          <div fxFlex="20" class="three">
+            <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" [required]="model.icuOrder==0 && model.stepdownOrder==0"
+              #generalCareOrder="ngModel" id="generalCareOrder" name="generalCareOrder">
+              <md-option *ngFor="let a of options.general_care_order" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-          <div class="col-md-2">
-            <label class="label-style" for="stepdownOrder"> Stepdown Order</label>
-            <select [(ngModel)]="model.stepdownOrder" class="form-control" [required]="model.icuOrder==0 && model.generalCareOrder==0"
-              #stepdownOrder="ngModel" id="stepdownOrder" name="stepdownOrder">
+          <!--<div class="col-md-2">
+          <label class="label-style" for="stepdownOrder"> Stepdown Order</label>
+          <select [(ngModel)]="model.stepdownOrder" class="form-control" [required]="model.icuOrder==0 && model.generalCareOrder==0"
+            #stepdownOrder="ngModel" id="stepdownOrder" name="stepdownOrder">
               <option *ngFor="let a of options.stepdown_order" [ngValue]="a.value">
                {{ a.viewValue }}
              </option>
              </select>
+        </div>-->
+          <div fxFlex="20"  class="four">
+            <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" [required]="model.icuOrder==0 && model.generalCareOrder==0"
+              #stepdownOrder="ngModel" id="stepdownOrder" name="stepdownOrder">
+              <md-option *ngFor="let a of options.stepdown_order" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-
-          <div class="col-md-2">
-            <label class="label-style" for="icuOrder">ICU Order</label>
-            <select [(ngModel)]="model.icuOrder" class="form-control" [required]="model.stepdownOrder==0 && model.generalCareOrder==0"
-              #icuOrder="ngModel" id="icuOrder" name="icuOrder">
+          <!--<div class="col-md-2">
+          <label class="label-style" for="icuOrder">ICU Order</label>
+          <select [(ngModel)]="model.icuOrder" class="form-control" [required]="model.stepdownOrder==0 && model.generalCareOrder==0"
+            #icuOrder="ngModel" id="icuOrder" name="icuOrder">
                 <option *ngFor="let a of options.icu_order" [value]="a.value">
                 {{ a.viewValue }}
                 </option>
               </select>
+        </div>-->
+          <div fxFlex="20"  class="five">
+            <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" [required]="model.stepdownOrder==0 && model.generalCareOrder==0"
+              #icuOrder="ngModel" id="icuOrder" name="icuOrder">
+              <md-option *ngFor="let a of options.icu_order" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
         </div>
-        <div class="row" style="margin-top: 10px;">
-          <div class="col-md-3">
+        <div  fxLayout="row" fxLayoutWrap style="margin-top: 40px;">
+          <!--<div class="col-md-3">
             <label class="label-style" for="AdmitUnit">Admit Unit</label>
             <select [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required #AdmitUnit="ngModel" name="AdmitUnit">
               <option *ngFor="let a of options.Admit_Unit" [value]="a.value">
                 {{ a.viewValue }}
               </option>
               </select>
+          </div>-->
+          <div fxFlex="20" class="one">
+            <md-select placeholder="Admit Unit"  style="width: 90%;"  [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required #AdmitUnit="ngModel"
+              name="AdmitUnit">
+              <md-option *ngFor="let a of options.Admit_Unit" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-          <div class="col-md-2">
+          <!--<div class="col-md-2">
             <label class="label-style" for="isoResult">ISO Result </label>
             <select [(ngModel)]="model.isoResult" class="form-control" id="isoResult" required #isoResult="ngModel" name="isoResult">
                  <option *ngFor="let a of options.iso_result" [ngValue]="a.value">
                  {{ a.viewValue }}
                  </option>
               </select>
+          </div>-->
+          <div fxFlex="20" class="two">
+            <md-select placeholder="ISO Result" style="width: 90%;" [(ngModel)]="model.isoResult" id="isoResult" required #isoResult="ngModel" name="isoResult">
+              <md-option *ngFor="let a of options.iso_result" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-
-          <div class="col-md-4">
+          <!--<div class="col-md-4">
             <label class="label-style" for="DischargeDisposition"> Discharge Disposition </label>
             <select [(ngModel)]="model.DischargeDisposition" class="form-control" id="DischargeDisposition" required #DischargeDisposition="ngModel"
               name="DischargeDisposition">
@@ -90,47 +139,56 @@
                {{ a.viewValue }}
             </option>
             </select>
+          </div>-->
+          <div fxFlex="40"  class="three">
+            <md-select placeholder="Discharge Disposition" style="width: 90%;"  [(ngModel)]="model.DischargeDisposition" name="DischargeDisposition" id="DischargeDisposition"
+              required #DischargeDisposition="ngModel">
+              <md-option *ngFor="let a of options.Discharge_Disposition" [value]="a.value">
+                {{ a.viewValue }}
+              </md-option>
+            </md-select>
           </div>
-          <div class="col-md-2">
-            <label class="label-style" for="age"> Age </label>
-            <input type="number" min="18" [(ngModel)]="model.age" class="form-control" id="age" required #age="ngModel" name="age">
+          <div fxFlex="20"  class="four">
+            <md-input-container style="margin-top: -10px;">
+              <input mdInput placeholder="Age" style="width: 90%;"  [(ngModel)]="model.age" id="age" required #age="ngModel" name="age">
+            </md-input-container>
           </div>
         </div>
         <div class="row" style="margin-top:25px;">
-          <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
+          <button md-raised-button class="mat-primary" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
         </div>
-
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
-  <div *ngIf="showPrediction">
-    <h1 style="text-align: center;"> Report </h1>
-    <div>
-      <md-grid-list cols="2" rowHeight="550px">
-        <md-grid-tile *ngFor="let r of prediction;">
+</div>
+<div *ngIf="showPrediction">
+  <h1 style="text-align: center;"> Report </h1>
+  <div>
+    <md-grid-list cols="2" rowHeight="550px">
+      <md-grid-tile *ngFor="let r of prediction;">
+        <div>
           <div>
-            <div>
-              <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> {{r.results}} {{r.results==1
-                ? 'day':'days'}}
-              </h4>
-              <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
-              <h5> Variance: {{r.model['variance']}}</h5>
-            </div>
-            <table  class="table table-hover table-bordered">
-              <thead>
-                <tr>
-                  <th colspan="2">{{r.type}} </th>
-                </tr>
-              </thead>
-              <tr *ngFor="let v of variables">
-                <td>{{v}}</td>
-                <td>{{r.model[v]}}</td>
-              </tr>
-            </table>
+            <h4> <span style="margin-right: 5px;">predicted length of stay in hospital :</span> {{r.results}} {{r.results==1 ?
+              'day':'days'}}
+            </h4>
+            <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
+            <h5> Variance: {{r.model['variance']}}</h5>
           </div>
-        </md-grid-tile>
-      </md-grid-list>
-    </div>
-    <button md-raised-button class="md-accent" style="text-align: center;margin:0px auto;display: block; font-size:18px;" (click)="rePredict()">
-    Re-predict</button>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th colspan="2">{{r.type}} </th>
+              </tr>
+            </thead>
+            <tr *ngFor="let v of variables">
+              <td>{{v}}</td>
+              <td>{{r.model[v]}}</td>
+            </tr>
+          </table>
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
   </div>
+  <button md-raised-button class="mat-accent" style="text-align: center; margin:10px auto;display: block; font-size:18px;" (click)="rePredict()">
+    Re-predict</button>
+</div>
