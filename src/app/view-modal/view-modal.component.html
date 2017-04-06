@@ -57,7 +57,8 @@
               </select>
         </div>-->
           <div fxFlex="20" class="three">
-            <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" [required]="model.icuOrder==0 && model.stepdownOrder==0"
+            <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" 
+            [required]="(model.icuOrder==0 && model.stepdownOrder==0)|| (model.icuOrder===null && model.stepdownOrder===null)"
               id="generalCareOrder" name="generalCareOrder">
               <md-option *ngFor="let a of options.general_care_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -74,7 +75,8 @@
              </select>
         </div>-->
           <div fxFlex="20"  class="four">
-            <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" [required]="model.icuOrder==0 && model.generalCareOrder==0"
+            <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" 
+            [required]="(model.icuOrder==0 && model.generalCareOrder==0)|| (model.icuOrder===null && model.generalCareOrder===null)"
               id="stepdownOrder" name="stepdownOrder">
               <md-option *ngFor="let a of options.stepdown_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -91,7 +93,8 @@
               </select>
         </div>-->
           <div fxFlex="20"  class="five">
-            <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" [required]="model.stepdownOrder==0 && model.generalCareOrder==0"
+            <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" 
+            [required]="(model.stepdownOrder==0 && model.generalCareOrder==0) || (model.stepdownOrder=== null && model.generalCareOrder=== null)"
               id="icuOrder" name="icuOrder">
               <md-option *ngFor="let a of options.icu_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -172,7 +175,8 @@
               'day':'days'}}
             </h4>
             <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
-            <h5> Variance: {{r.model['variance']}}</h5>
+            <div></div>
+            <h5> Variance <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i> : {{r.model['variance']}}</h5>
           </div>
           <table>
             <thead>

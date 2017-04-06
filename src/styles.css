@@ -39,7 +39,7 @@ table {
 }
 
 .table {
-  margin-top: -80px;
+  margin-top: -50px;
 }
 
 .mat-grid-tile .mat-figure {
@@ -50,7 +50,9 @@ table td,
 table th {
   padding: 10px 10px;
 }
-
+.fa-2x{
+  font-size: 1.4em;
+}
 table tr:hover {
   background-color: #E1EEF4;
 }
