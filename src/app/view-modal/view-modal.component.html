@@ -9,7 +9,6 @@
       (click)="openDialog()"> Models </button>
     <!-- Modal Trigger -->
     <!-- Modal Structure -->
-
   </section>
 
   <div class="padd" style="margin-top: 30px;">
@@ -25,7 +24,7 @@
               </select>
           </div>-->
           <div fxFlex="20" class="one">
-            <md-select placeholder="Admit Source" [(ngModel)]="model.AdmitSource" required name="AdmitSource" >
+            <md-select placeholder="Admit Source" [(ngModel)]="model.AdmitSource" required name="AdmitSource">
               <md-option *ngFor="let a of options.Admit_Source" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -40,8 +39,8 @@
                </option>
                </select>
         </div>-->
-          <div fxFlex="20"  class="two">
-            <md-select placeholder="Primary Insurance" [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance" >
+          <div fxFlex="20" class="two">
+            <md-select placeholder="Primary Insurance" [(ngModel)]="model.PrimaryInsurance" required name="PrimaryInsurance">
               <md-option *ngFor="let a of options.Primary_Insurance" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -57,8 +56,7 @@
               </select>
         </div>-->
           <div fxFlex="20" class="three">
-            <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" 
-            [required]="(model.icuOrder==0 && model.stepdownOrder==0)|| (model.icuOrder===null && model.stepdownOrder===null)"
+            <md-select placeholder="General Care Order" [(ngModel)]="model.generalCareOrder" [required]="(model.icuOrder==0 && model.stepdownOrder==0)|| (model.icuOrder===null && model.stepdownOrder===null)"
               id="generalCareOrder" name="generalCareOrder">
               <md-option *ngFor="let a of options.general_care_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -74,9 +72,8 @@
              </option>
              </select>
         </div>-->
-          <div fxFlex="20"  class="four">
-            <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" 
-            [required]="(model.icuOrder==0 && model.generalCareOrder==0)|| (model.icuOrder===null && model.generalCareOrder===null)"
+          <div fxFlex="20" class="four">
+            <md-select placeholder="Stepdown Order" [(ngModel)]="model.stepdownOrder" [required]="(model.icuOrder==0 && model.generalCareOrder==0)|| (model.icuOrder===null && model.generalCareOrder===null)"
               id="stepdownOrder" name="stepdownOrder">
               <md-option *ngFor="let a of options.stepdown_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -92,9 +89,8 @@
                 </option>
               </select>
         </div>-->
-          <div fxFlex="20"  class="five">
-            <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" 
-            [required]="(model.stepdownOrder==0 && model.generalCareOrder==0) || (model.stepdownOrder=== null && model.generalCareOrder=== null)"
+          <div fxFlex="20" class="five">
+            <md-select placeholder="ICU Order" [(ngModel)]="model.icuOrder" [required]="(model.stepdownOrder==0 && model.generalCareOrder==0) || (model.stepdownOrder=== null && model.generalCareOrder=== null)"
               id="icuOrder" name="icuOrder">
               <md-option *ngFor="let a of options.icu_order" [value]="a.value">
                 {{ a.viewValue }}
@@ -102,7 +98,7 @@
             </md-select>
           </div>
         </div>
-        <div  fxLayout="row" fxLayoutWrap style="margin-top: 40px;">
+        <div fxLayout="row" fxLayoutWrap style="margin-top: 40px;">
           <!--<div class="col-md-3">
             <label class="label-style" for="AdmitUnit">Admit Unit</label>
             <select [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required #AdmitUnit="ngModel" name="AdmitUnit">
@@ -112,8 +108,8 @@
               </select>
           </div>-->
           <div fxFlex="20" class="one">
-            <md-select placeholder="Admit Unit"  style="width: 90%;"  [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control" required 
-              name="AdmitUnit">
+            <md-select placeholder="Admit Unit" style="width: 90%;" [(ngModel)]="model.AdmitUnit" id="AdmitUnit" class="form-control"
+              required name="AdmitUnit">
               <md-option *ngFor="let a of options.Admit_Unit" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -128,7 +124,7 @@
               </select>
           </div>-->
           <div fxFlex="20" class="two">
-            <md-select placeholder="ISO Result" style="width: 90%;" [(ngModel)]="model.isoResult" id="isoResult" required  name="isoResult">
+            <md-select placeholder="ISO Result" style="width: 90%;" [(ngModel)]="model.isoResult" id="isoResult" required name="isoResult">
               <md-option *ngFor="let a of options.iso_result" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
@@ -143,22 +139,24 @@
             </option>
             </select>
           </div>-->
-          <div fxFlex="40"  class="three">
-            <md-select placeholder="Discharge Disposition" style="width: 90%;"  [(ngModel)]="model.DischargeDisposition" name="DischargeDisposition" id="DischargeDisposition"
-              required >
+          <div fxFlex="40" class="three">
+            <md-select placeholder="Discharge Disposition" style="width: 90%;" [(ngModel)]="model.DischargeDisposition" name="DischargeDisposition"
+              id="DischargeDisposition" required>
               <md-option *ngFor="let a of options.Discharge_Disposition" [value]="a.value">
                 {{ a.viewValue }}
               </md-option>
             </md-select>
           </div>
-          <div fxFlex="20"  class="four">
+          <div fxFlex="20" class="four">
             <md-input-container style="margin-top: -10px;">
-              <input mdInput placeholder="Age" style="width: 90%;"  [(ngModel)]="model.age" id="age" required  name="age">
+              <input mdInput placeholder="Age" style="width: 90%;" age
+               [(ngModel)]="model.age" id="age" required name="age" [type]="number" min="18" #age="ngModel">
             </md-input-container>
           </div>
         </div>
         <div class="row" style="margin-top:25px;">
-          <button md-raised-button class="mat-primary" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid">Predict</button>
+          <button md-raised-button class="mat-primary" style="text-align: center;margin:0px auto;display: block; font-size:18px;" [disabled]="!modelForm.form.valid || (!selectedModel.linear && !selectedModel.ridge && !selectedModel.lasso && !selectedModel.lassoCv && !selectedModel.ridgeCv)">
+          Predict</button>
         </div>
       </div>
     </form>
@@ -175,8 +173,7 @@
               'day':'days'}}
             </h4>
             <h5> Mean Square Error: {{r.model['meanSquareError']}}</h5>
-            <div></div>
-            <h5> Variance <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i> : {{r.model['variance']}}</h5>
+            <h5> Variance: {{r.model['variance']}}</h5>
           </div>
           <table>
             <thead>
@@ -193,6 +190,7 @@
       </md-grid-tile>
     </md-grid-list>
   </div>
-  <button md-raised-button class="mat-accent" style="text-align: center; margin:10px auto;display: block; font-size:18px;" (click)="rePredict()">
+  <button md-raised-button class="mat-accent" style="text-align: center; margin:10px auto;display: block; font-size:18px;"
+    (click)="rePredict()">
     Re-predict</button>
 </div>
