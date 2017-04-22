@@ -24,11 +24,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NoopAnimationsModule,BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PredictionComponent } from './prediction/prediction.component';
+import { AboutComponent } from './about/about.component';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'prediction', component: MyTabsComponent },
-
+  { path: 'about', component: AboutComponent },
 ];
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ const appRoutes: Routes = [
     WholeDatasetComponent,
     FooterComponent,
     HomeComponent,
-    PredictionComponent
+    PredictionComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
