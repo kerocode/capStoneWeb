@@ -1,3 +1,48 @@
-<p>
-  about works!
-</p>
+<h1>
+  Internal Medicine</h1>
+<h4> Project Team: Keroles Hakem, Robert Trachy, Khanh Tran</h4>
+<h3 style="color:#e91e63">Computer Science</h3>
+<h4>Project Number: CS 318</h4>
+<h4>Faculty Advisors: Bartosz Krawczyk, PhD; Vimal Mishra, MD</h4>
+<div class="row">
+  <div style="display:block; margin:0 auto; position:relative;max-width: 1200px;">
+    <div fxFlex="50" style="margin:auto;">
+      <img src="assets/newimage/datasetererror.png">
+    </div>
+    <div fxFlex="50" style="margin:auto; margin-top:20px;">
+      <img src="assets/newimage/cellulitis.png" height="420">
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div style="display:block; margin:0 auto; position:relative;max-width: 800px;" class="card">
+    <p>
+      Our objective was to develop a model to predict the length of stay of patients using data from MCV. We conducted our analysis
+      using a dataset of over 130,000 patients described by 66 features. The features contained clinical characteristics
+      (e.g. diagnosis), facility characteristics (e.g. bed type), and socioeconomic characteristics (e.g. insurance type).
+      Our study was focused on patients that stayed in the hospital. To cope with data imperfections, such as missing data,
+      we applied data cleaning methods. Using learned domain knowledge, we identified 9 features to build our predictive
+      models: admit source, primary insurance, discharge disposition, admit unit, iso result, icu order, stepdown order,
+      general care order, and age. Regression algorithms were then applied for length of stay prediction, using two views:
+      one with the complete dataset, and the second decomposed independently into ten most popular diagnosis outcomes. We
+      then used regression to model the length of stay using the whole dataset as well as splitting the patients by diagnosis.
+      This division was dictated by a high variance within the data. Obtained machine learning models were embedded in a
+      web application created via Angular. The app allows the user to pick which disease they are modeling, the specific
+      model(s) to use, and the values for the variables. It then computes the result and displays visualization of the weights.
+      Example weights for one model of one of the diagnosis as well as the error of the combined datasets are shown below.
+    </p>
+    <div style="background-color:#eaeaea;padding:5px;">
+      <div style="padding-bottom:5px;"> Keywords:</div>
+      <div>
+        <span class="chip" style="background-color:#e91e63;"> Machine Learning</span>
+        <span class="chip" style="background-color:#303f9f;">Length of Stay</span>
+        <span class="chip" style="background-color:#1de9b6;"> Decision Support</span>
+        <span class="chip" style="background-color:#ffd600;"> Medical</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+</div>
